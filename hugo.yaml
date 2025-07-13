@@ -55,6 +55,7 @@ params:
   disable_theme_toggle: false
   disable_stay_uptodate: false
   logo: "images/bar-chart.svg"
+  hero_image: "images/pages/ian-face.jpg"
 
   p1:
     heading: "Our mission"
