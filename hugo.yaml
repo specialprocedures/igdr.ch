@@ -110,9 +110,9 @@ params:
         image: "images/clients/calp.svg"
         alt: "CALP Network"
   p4:
-    heading: "From the blog"
+    heading: "Latest Blog Posts & Projects"
     content:
-      - text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed."
+      - text: "Check out my latest thoughts, research, and project work."
   p5:
     heading: "Say hi"
     content:
@@ -136,37 +136,37 @@ params:
 
 menu:
   main:
-    - identifier: prose
-      name: Prose
-      url: /prose/
-      weight: 10
+    # - identifier: prose
+    #   name: Prose
+    #   url: /prose/
+    #   weight: 10
     - identifier: about
-      name: About
+      name: about
       url: /about/
       weight: 20
     - identifer: uses
       name: uses
       url: /uses/
       weight: 25
-    - identifier: categories
-      pre: dropdown
-      name: Categories
-      weight: 30
-    - identifier: dropdown
-      pre: complexdropdown
-      name: Dropdown
-      weight: 40
+    # - identifier: categories
+    #   pre: dropdown
+    #   name: Categories
+    #   weight: 30
+    # - identifier: dropdown
+    #   pre: complexdropdown
+    #   name: Dropdown
+    #   weight: 40
     - identifier: contact
-      name: Contact
+      name: contact
       url: /contact/
       weight: 50
   categories:
-    - identifier: prose
-      name: Prose
-      url: /prose/
-      weight: 10
+    # - identifier: prose
+    #   name: Prose
+    #   url: /prose/
+    #   weight: 10
     - identifier: about
-      name: About
+      name: about
       url: /about/
       weight: 20
   dropdown:
