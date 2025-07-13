@@ -49,15 +49,16 @@ markup:
 params:
   author: Ian Goodrich
   authorimage: ../assets/images/global/author.webp
-  og_image: /images/tailbliss-cover.png
+  og_image: /images/ian-face.jpg
   moto: "Research and engineering for impact"
   description: "Sexy analyst with big experience in lots."
   disable_theme_toggle: false
   disable_stay_uptodate: false
+  logo: "images/bar-chart.svg"
 
   p1:
     heading: "Our mission"
-    image: "images/pages/our-mission.png"
+    image: "images/pages/ian-face.jpg"
     content:
       - text: "Ian is "
       - text: "Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna. Sollicitudin tristique eroserat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna."
@@ -99,16 +100,22 @@ params:
   social_media:
     github:
       enabled: true
-      url: 'https://github.com/nusserstudios'
+      url: 'https://github.com/specialprocedures/'
     facebook:
-      enabled: true
+      enabled: false
       url: 'https://facebook.com/nusserstudios'
     instagram:
-      enabled: true
+      enabled: false
       url: 'https://instagram.com/nusserstudios'
     twitter:
-      enabled: true
+      enabled: false
       url: 'https://twitter.com/nusserstudios'
+    linkedin:
+      enabled: true
+      url: 'https://www.linkedin.com/in/igdrch/'
+    mastodon:
+      enabled: true
+      url: 'https://mastodon.social/@yourusername'
     
 
 menu:
