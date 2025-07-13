@@ -1,7 +1,6 @@
-# Hugo templates
-layouts/**/*.html
-archetypes/**/*.md
-
 # Generated files
 public/
 resources/
+
+# Specific problematic files (if any)
+# layouts/partials/complex-template.html
