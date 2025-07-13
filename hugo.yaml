@@ -144,6 +144,10 @@ menu:
       name: About
       url: /about/
       weight: 20
+    - identifer: uses
+      name: uses
+      url: /uses/
+      weight: 25
     - identifier: categories
       pre: dropdown
       name: Categories
