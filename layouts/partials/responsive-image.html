@@ -1,0 +1,47 @@
+{{/*
+Responsive Image Partial
+Usage: {{ partial "responsive-image.html" (dict "src" "path/to/image.jpg" "alt" "Alt text" "class" "css-classes" "sizes"
+"400x400,800x800") }}
+
+Parameters:
+- src: path to the image (required)
+- alt: alt text for the image (required)
+- class: CSS classes to apply (optional)
+- sizes: comma-separated list of sizes for raster images, e.g. "400x400,800x800" (optional)
+- loading: loading attribute (optional, defaults to "lazy")
+*/}}
+
+{{ $src := .src }}
+{{ $alt := .alt | default "Image" }}
+{{ $class := .class | default "" }}
+{{ $loading := .loading | default "lazy" }}
+{{ $sizes := .sizes | default "400x400,800x800" }}
+
+{{ $image := resources.Get $src }}
+{{ with $image }}
+{{ if strings.HasSuffix $src ".svg" }}
+{{/* Handle SVG files - display directly without processing */}}
+<img src="{{ .RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" />
+{{ else }}
+{{/* Handle raster images - create responsive versions */}}
+{{ $sizeList := split $sizes "," }}
+{{ $images := slice }}
+{{ $srcset := slice }}
+
+{{ range $sizeList }}
+{{ $size := . }}
+{{ $processed := $image.Fill (printf "%s webp q90" $size) }}
+{{ $images = $images | append $processed }}
+{{ $srcset = $srcset | append (printf "%s %sw" $processed.RelPermalink (index (split $size "x") 0)) }}
+{{ end }}
+
+{{ $defaultImg := index $images 0 }}
+<img srcset="{{ delimit $srcset " , " }}" src="{{ $defaultImg.RelPermalink }}" width="{{ $defaultImg.Width }}"
+    height="{{ $defaultImg.Height }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" />
+{{ end }}
+{{ else }}
+{{/* Fallback if image not found */}}
+<div class="bg-gray-300 dark:bg-gray-700 rounded-lg flex items-center justify-center p-8">
+    <span class="text-gray-500 dark:text-gray-400">Image not found: {{ $src }}</span>
+</div>
+{{ end }}

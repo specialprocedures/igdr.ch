@@ -52,23 +52,22 @@ params:
   og_image: /images/ian-face.jpg
   moto: "Research and engineering for impact"
   description: "Sexy analyst with big experience in lots."
-  disable_theme_toggle: false
+  disable_theme_toggle: true
   disable_stay_uptodate: false
   logo: "images/bar-chart.svg"
   hero_image: "images/pages/ian-face.jpg"
 
   p1:
-    heading: "Our mission"
-    image: "images/pages/ian-face.jpg"
+    heading: "Making sense of the world"
+    image: "images/global/network_diagram.svg"
     content:
-      - text: "Ian is "
       - text: "Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna. Sollicitudin tristique eroserat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna."
-      - text: "Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra."
   p2:
-    heading: "Just in time for Hacktoberfest with JIT Tailwind."
+    heading: "Showcase project to show off l33t skillz"
     image: "images/pages/hacktoberfest.jpg"
     content:
-      - text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at purus non enim commodo tincidunt vel in nulla. Aenean pretium dolor non ultricies bibendum. Etiam quis blandit enim. Nunc condimentum ut lorem in faucibus. Phasellus varius ligula et commodo tristique. Nunc sodales nisl nec laoreet vehicula. Donec velit nibh, sollicitudin at nulla a, egestas dignissim eros. Sed lacinia hendrerit interdum. Vestibulum pellentesque sem venenatis nisl tempor accumsan sit amet tempus felis. Mauris leo diam, porttitor nec bibendum id, tempus ac nulla. Etiam congue ornare erat at convallis. Donec in nisi dapibus, mattis risus vel, imperdiet enim. Donec fermentum sit amet tortor nec tincidunt. Nam nec lectus tortor. Nunc sit amet laoreet orci, porta ornare massa. Phasellus eget lorem mi. Nam eleifend ultricies sapien, quis mollis leo bibendum at. Quisque viverra lorem sit amet magna aliquet, et dignissim arcu eleifend."
+      - text: "Here's something really fucking cool that I done."
+
   p3:
     heading: "Very impressive client list"
     content:
@@ -77,20 +76,45 @@ params:
       - text: Meet our investors and advisors
         url: "#"
     logos:
-      - identifier: a
-        image: "images/global/sample-logo.svg"
-        alt: "a"
-      - identifier: b
-      - identifier: c
-      - identifier: d
-      - identifier: e
-      - identifier: f
+      - identifier: meliore
+        image: "images/clients/m.svg"
+        alt: "The Meliore Foundation"
+      # - identifier: ecf
+      #   image: "images/clients/logo-ecfwhite.png"
+      #   alt: "European Climate Foundation"
+      - identifier: gscc
+        image: "images/clients/gscc.svg"
+        alt: "Global Strategic Communications Council"
+      - identifier: oxfam
+        image: "images/clients/oxfam.svg"
+        alt: "Oxfam"
+      - identifier: aah
+        image: "images/clients/aah.svg"
+        alt: "Action Against Hunger"
+      - identifier: brc
+        image: "images/clients/brc.svg"
+        alt: "British Red Cross"
+      - identifier: care
+        image: "images/clients/care.svg"
+        alt: "Care International"
+      - identifier: kvinna
+        image: "images/clients/kvinna.svg"
+        alt: "Kvinna till Kvinna Foundation"
+      - identifier: irex
+        image: "images/clients/irex.svg"
+        alt: "IREX"
+      - identifier: unicef
+        image: "images/clients/unicef.svg"
+        alt: "UNICEF"
+      - identifier: calp
+        image: "images/clients/calp.svg"
+        alt: "CALP Network"
   p4:
     heading: "From the blog"
     content:
       - text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed."
   p5:
-    heading: "Stay Up to Date"
+    heading: "Say hi"
     content:
       - text: "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque."
     action: "#"
@@ -102,21 +126,12 @@ params:
     github:
       enabled: true
       url: 'https://github.com/specialprocedures/'
-    facebook:
-      enabled: false
-      url: 'https://facebook.com/nusserstudios'
-    instagram:
-      enabled: false
-      url: 'https://instagram.com/nusserstudios'
-    twitter:
-      enabled: false
-      url: 'https://twitter.com/nusserstudios'
     linkedin:
       enabled: true
       url: 'https://www.linkedin.com/in/igdrch/'
     mastodon:
       enabled: true
-      url: 'https://mastodon.social/@yourusername'
+      url: 'https://defcon.social/@specialprocedures'
     
 
 menu:
