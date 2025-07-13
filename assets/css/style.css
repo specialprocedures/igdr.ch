@@ -2771,6 +2771,10 @@ video {
   height: 100%;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .max-h-12 {
   max-height: 3rem;
 }
@@ -3098,6 +3102,11 @@ video {
 
 .bg-center {
   background-position: center;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .object-fill {
