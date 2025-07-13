@@ -17,8 +17,8 @@
                     </p>
                 </div>
                 <div class="col-span-6">
-                    {{ partial "responsive-image.html" (dict "src" .Site.Params.Hero_image "alt" "Ian Goodrich" "class"
-                    "w-full max-w-xl mx-auto rounded-lg" "sizes" "400x400,576x576") }}
+                    <!-- prettier-ignore -->
+                    {{ partial "responsive-image.html" (dict "src" .Site.Params.Hero_image "alt" "Ian Goodrich" "class" "w-full max-w-xl mx-auto rounded-lg" "sizes" "400x400,576x576") }}
                 </div>
             </div>
         </div>
@@ -47,8 +47,8 @@
                 </div>
                 <div class="relative w-full h-auto px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:px-0 lg:py-20">
                     <div class="overflow-hidden shadow-xl rounded-2xl">
-                        {{ partial "responsive-image.html" (dict "src" .Site.Params.P1.Image "alt" "P1" "class" "w-full
-                        h-auto") }}
+                        <!-- prettier-ignore -->
+                        {{ partial "responsive-image.html" (dict "src" .Site.Params.P1.Image "alt" "P1" "class" "w-full h-auto") }}
                     </div>
                 </div>
             </div>
@@ -109,8 +109,8 @@
                     </svg>
                 </div>
                 <div class="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
-                    {{ partial "responsive-image.html" (dict "src" .Site.Params.P2.Image "alt" "p2" "class" "w-full
-                    rounded-lg shadow-xl lg:h-full lg:w-auto lg:max-w-none") }}
+                    <!-- prettier-ignore -->
+                    {{ partial "responsive-image.html" (dict "src" .Site.Params.P2.Image "alt" "p2" "class" "w-full rounded-lg shadow-xl lg:h-full lg:w-auto lg:max-w-none") }}
                 </div>
             </div>
         </div>
@@ -177,8 +177,8 @@
                         <div class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-gray-50 dark:bg-gray-900">
                             <a href="{{.Permalink}}">
                                 {{ with .Params.featured_image }}
-                                {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "object-fill
-                                overflow-hidden rounded-t-lg" "sizes" "500x500") }}
+                                <!-- prettier-ignore -->
+                                {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "object-fill overflow-hidden rounded-t-lg" "sizes" "500x500") }}
                                 {{ end }}
                             </a>
                             <div class="p-6">
@@ -204,8 +204,8 @@
                                     <div class="flex-shrink-0">
                                         <span class="sr-only">{{ .Params.author }}</span>
                                         {{ with .Params.authorimage }}
-                                        {{ partial "responsive-image.html" (dict "src" . "alt" "" "class" "w-10 h-10
-                                        rounded-full" "sizes" "40x40") }}
+                                        <!-- prettier-ignore -->
+                                        {{ partial "responsive-image.html" (dict "src" . "alt" "" "class" "w-10 h-10 rounded-full" "sizes" "40x40") }}
                                         {{ end }}
                                     </div>
                                     <div class="pt-1 ml-3">
