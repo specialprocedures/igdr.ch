@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.html": "hugo"
+  },
+  "[hugo]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false
+  },
+  "emmet.includeLanguages": {
+    "hugo": "html"
+  }
+}

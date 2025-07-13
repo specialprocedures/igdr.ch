@@ -1,0 +1,7 @@
+# Hugo templates
+layouts/**/*.html
+archetypes/**/*.md
+
+# Generated files
+public/
+resources/
