@@ -51,7 +51,7 @@ params:
   authorimage: ../assets/images/global/author.webp
   og_image: /images/ian-face.jpg
   moto: "Research and engineering for impact"
-  description: "Sexy analyst with big experience in lots."
+  description: ""
   disable_theme_toggle: true
   disable_stay_uptodate: false
   logo: "images/bar-chart.svg"
@@ -66,7 +66,7 @@ params:
     heading: "Showcase project to show off l33t skillz"
     image: "images/pages/hacktoberfest.jpg"
     content:
-      - text: "Here's something really fucking cool that I done."
+      - text: "Here's something really cool that I done."
 
   p3:
     heading: "Very impressive client list"
@@ -221,25 +221,25 @@ taxonomies:
 
 privacy:
   disqus:
-    disable: false
+    disable: true
   googleAnalytics:
     anonymizeIP: true
-    disable: false
-    respectDoNotTrack: false
+    disable: true
+    respectDoNotTrack: true
     useSessionStorage: false
   instagram:
-    disable: false
-    simple: false
-  twitter:
-    disable: false
-    enableDNT: false
-    simple: false
+    disable: true
+    simple: true
+  x:
+    disable: true
+    enableDNT: true
+    simple: true
   vimeo:
-    disable: false
-    enableDNT: false
-    simple: false
+    disable: true
+    enableDNT: true
+    simple: true
   youtube:
-    disable: false
+    disable: true
     privacyEnhanced: true
 
 module:
