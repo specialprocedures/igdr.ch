@@ -7,8 +7,8 @@
             {{ with $heroImage }}
             <img src="{{ .RelPermalink }}" alt="Ian Goodrich" class="w-full h-full object-cover" />
             {{ end }}
-            <!-- Overlay for better text readability -->
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <!-- Gradient overlay for better text readability -->
+            <div class="absolute inset-0 hero-gradient-overlay"></div>
         </div>
         
         <!-- Text content overlaid on image -->
@@ -22,7 +22,7 @@
             </h2>
             <div
                 class="max-w-3xl mx-auto mb-6 font-normal text-white md:text-lg xl:text-xl drop-shadow-lg">
-                {{ .Site.Params.Description | markdownify }}
+                {{ .Site.Params.Description }}
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
                         <div class="mt-6 space-y-6 text-gray-900 dark:text-white">
                             {{ range .Site.Params.P1.Content }}
                             <p class="text-lg text-gray-900 dark:text-white">
-                                {{ .text }}
+                                {{ .text | markdownify}}
                             </p>
                             {{ end }}
                         </div>

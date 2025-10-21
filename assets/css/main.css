@@ -1,28 +1,42 @@
-/* assets */ 
+/* assets */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-font-family: ui-sans-serif,
-system-ui,
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-"Noto Sans",
-sans-serif,
-Apple Color Emoji,
-Segoe UI Emoji,
-NotoColorEmoji,
-Segoe UI Symbol,
-Android Emoji,
-EmojiSymbols;
+font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  "Noto Sans", sans-serif, Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji,
+  EmojiSymbols;
 /* Custom CSS */
 
 .prose :where(h1):not(:where([class~="not-prose"] *)) {
-    color: white !important;
+  color: white !important;
+}
+
+/* Hero image brightness gradient overlay */
+.hero-gradient-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+/* Alternative: Vertical gradient (top to bottom) */
+.hero-gradient-overlay-vertical {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.6) 80%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* Alternative: Radial gradient (center lighter) */
+.hero-gradient-overlay-radial {
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%);
 }
 
 /* Custom CSS end */
