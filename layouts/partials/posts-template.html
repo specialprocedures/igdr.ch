@@ -28,9 +28,9 @@
                         <span>
                         {{ range $elem_index, $elem_val := (.GetTerms "tags") }}
                         {{- if gt $elem_index 0 }}, {{ end -}}
-                        <a href="{{ .Permalink }}"
-                           class="inline-flex items-center rounded-md bg-gray-300 hover:bg-primary-200 hover:text-black px-2.5 py-0.5 text-sm font-medium text-gray-900 capitalize">{{ .LinkTitle }}</a>
-                        {{- end -}}
+                        <a href="{{ $elem_val.Permalink }}"
+                           class="inline-flex items-center rounded-md bg-gray-300 hover:bg-primary-200 hover:text-black px-2.5 py-0.5 text-sm font-medium text-gray-900 capitalize">{{ $elem_val.Name }}</a>
+                           {{- end -}}
                         </span>
                     </div>
                     <div class="flex items-center mt-6">
