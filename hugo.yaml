@@ -55,31 +55,39 @@ params:
     
   text: "Hello"
   disable_theme_toggle: true
-  disable_stay_uptodate: false
+  disable_stay_uptodate: true
   logo: "images/bar-chart.svg"
   hero_image: "images/network.jpg"
 
   p1:
-    heading: "Analytics"
-    # image: "images/global/network_diagram.svg"
+    heading: "Analysis"
+    image: "images/global/network_diagram.svg"
     content:
-      - text: "Uncover "
+      - text: |
+          I help organizations make data-driven decisions through research, analysis, and visualization.
+
+              - Data analysis and visualization
+              - Studies and evaluations
   p2:
     heading: "Engineering"
     # image: "images/pages/hacktoberfest.jpg"
     content:
       - text: "Build scaleable data pipelines and tools to support research and advocacy."
   p3:
+    heading: "Media monitoring"
+    content:
+      - text: "Go beyond mentions and break free of the limitations of proprietary tooling"
+  p4:
     heading: "Latest Blog Posts & Projects"
     content:
       - text: "Check out my latest thoughts, research, and project work."
-  p4:
+  p3:
     heading: "Very impressive client list"
     content:
       - text: "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus morbi vel porttitor vitae ut. Amet vitae fames senectus vitae."
-    links:
-      - text: Meet our investors and advisors
-        url: "#"
+    # links:
+    #   - text: Meet our investors and advisors
+    #     url: "#"
     logos:
       - identifier: meliore
         image: "images/clients/m.svg"
@@ -96,24 +104,24 @@ params:
       - identifier: aah
         image: "images/clients/aah.svg"
         alt: "Action Against Hunger"
-      - identifier: brc
-        image: "images/clients/brc.svg"
-        alt: "British Red Cross"
+      # - identifier: brc
+      #   image: "images/clients/brc.svg"
+      #   alt: "British Red Cross"
       - identifier: care
         image: "images/clients/care.svg"
         alt: "Care International"
-      - identifier: kvinna
-        image: "images/clients/kvinna.svg"
-        alt: "Kvinna till Kvinna Foundation"
+      # - identifier: kvinna
+      #   image: "images/clients/kvinna.svg"
+      #   alt: "Kvinna till Kvinna Foundation"
       - identifier: irex
         image: "images/clients/irex.svg"
         alt: "IREX"
-      - identifier: unicef
-        image: "images/clients/unicef.svg"
-        alt: "UNICEF"
-      - identifier: calp
-        image: "images/clients/calp.svg"
-        alt: "CALP Network"
+      # - identifier: unicef
+      #   image: "images/clients/unicef.svg"
+      #   alt: "UNICEF"
+      # - identifier: calp
+      #   image: "images/clients/calp.svg"
+      #   alt: "CALP Network"
 
   p5:
     heading: "Say hi"
