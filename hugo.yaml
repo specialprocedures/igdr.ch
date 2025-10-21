@@ -50,9 +50,9 @@ params:
   author: Ian Goodrich
   # authorimage: ../assets/images/global/author.webp
   # og_image: /images/ian-face.jpg
-  moto: "Research and engineering for impact"
-  description:
-    
+  moto: "Research Engineering Impact"
+  description: Ian is a researcher and engineer specializing in data science, media monitoring, and strategy for non-profits.
+  
   text: "Hello"
   disable_theme_toggle: true
   disable_stay_uptodate: true
@@ -60,68 +60,65 @@ params:
   hero_image: "images/network.jpg"
 
   p1:
-    heading: "Analysis"
+    heading: "Research"
     image: "images/global/network_diagram.svg"
     content:
       - text: |
-          I help organizations make data-driven decisions through research, analysis, and visualization.
+          I combine sophisticated tooling and methodological rigour to provide novel insights into intractable problems. 
+                    
+          Establishing NLP and LLM-based approaches to **media monitoring**, enabling my organisation to look beyond simple mentions and hit counts into the narratives that shape the media environmental    
+          
+          Leading a ground-breaking study into darkweb drug-sales in Georgia, providing the country's first estimate of online sales and revenues
 
-              - Data analysis and visualization
-              - Studies and evaluations
-  p2:
-    heading: "Engineering"
-    # image: "images/pages/hacktoberfest.jpg"
-    content:
-      - text: "Build scaleable data pipelines and tools to support research and advocacy."
+  # p2:
+  #   heading: "Engineering"
+  #   # image: "images/pages/hacktoberfest.jpg"
+  #   content:
+  #     - text: "Build scaleable data pipelines and tools to support research and advocacy."
+  # p3:
+  #   heading: "Media monitoring"
+  #   content:
+  #     - text: "Go beyond mentions and break free of the limitations of proprietary tooling"
   p3:
-    heading: "Media monitoring"
+    heading: "Clients and colleagues"
     content:
-      - text: "Go beyond mentions and break free of the limitations of proprietary tooling"
-  p4:
-    heading: "Latest Blog Posts & Projects"
-    content:
-      - text: "Check out my latest thoughts, research, and project work."
-  p3:
-    heading: "Very impressive client list"
-    content:
-      - text: "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus morbi vel porttitor vitae ut. Amet vitae fames senectus vitae."
-    # links:
-    #   - text: Meet our investors and advisors
-    #     url: "#"
+      - text: |
+              With nearly two decades experience in humanitarian action, development assistance and environmental advocacy, 
+              I am proud to have worked with some of my sectors' most impactful organisations.
+              <br><br>
+              My CV and client list includes UN agencies, global foundations, and some of the world's top aid organisations.
+              <br><br>
+              I am also proud to have spent much of my career supporting think tanks and NGOs headquartered in aid-receiving countries.
+            
+              
     logos:
       - identifier: meliore
         image: "images/clients/m.svg"
         alt: "The Meliore Foundation"
-      # - identifier: ecf
-      #   image: "images/clients/logo-ecfwhite.png"
-      #   alt: "European Climate Foundation"
-      - identifier: gscc
-        image: "images/clients/gscc.svg"
-        alt: "Global Strategic Communications Council"
+      - identifier: ecf
+        image: "images/clients/logo-ecfwhite.png"
+        alt: "European Climate Foundation"
+      # - identifier: gscc
+      #   image: "images/clients/gscc.svg"
+      #   alt: "Global Strategic Communications Council"
       - identifier: oxfam
         image: "images/clients/oxfam.svg"
         alt: "Oxfam"
       - identifier: aah
         image: "images/clients/aah.svg"
         alt: "Action Against Hunger"
-      # - identifier: brc
-      #   image: "images/clients/brc.svg"
-      #   alt: "British Red Cross"
+      - identifier: brc
+        image: "images/clients/brc.svg"
+        alt: "British Red Cross"
       - identifier: care
         image: "images/clients/care.svg"
         alt: "Care International"
-      # - identifier: kvinna
-      #   image: "images/clients/kvinna.svg"
-      #   alt: "Kvinna till Kvinna Foundation"
       - identifier: irex
         image: "images/clients/irex.svg"
         alt: "IREX"
-      # - identifier: unicef
-      #   image: "images/clients/unicef.svg"
-      #   alt: "UNICEF"
-      # - identifier: calp
-      #   image: "images/clients/calp.svg"
-      #   alt: "CALP Network"
+      - identifier: unicef
+        image: "images/clients/unicef.svg"
+        alt: "UNICEF"
 
   p5:
     heading: "Say hi"

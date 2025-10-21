@@ -29,9 +29,27 @@
 
     <!-- More main page content here... -->
 
-    <!-- Our mission section -->
+    <!-- P1 -->
     <div class="relative my-4">
-        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
+        
+        <div class="lg:mx-auto lg:grid lg:max-w-7x1 lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
+            <div class="relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-0">
+                <div class="md:pt-12 sm:pt-6 lg:pt-20">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
+                        {{ .Site.Params.P1.Heading }}
+                    </h2>
+                    <div class="mt-6 text-gray-900 dark:text-white">
+                        <div class="mt-6 space-y-6 text-gray-900 dark:text-white">
+                            {{ range .Site.Params.P1.Content }}
+                            <p class="text-lg text-gray-900 dark:text-white">
+                                {{ .text | markdownify }}
+                            </p>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="relative sm:py-8 lg:py-0">
                 <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
                     <div
@@ -55,22 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-0">
-                <div class="md:pt-12 sm:pt-6 lg:pt-20">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
-                        {{ .Site.Params.P1.Heading }}
-                    </h2>
-                    <div class="mt-6 text-gray-900 dark:text-white">
-                        <div class="mt-6 space-y-6 text-gray-900 dark:text-white">
-                            {{ range .Site.Params.P1.Content }}
-                            <p class="text-lg text-gray-900 dark:text-white">
-                                {{ .text | markdownify}}
-                            </p>
-                            {{ end }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
@@ -148,7 +151,7 @@
                 {{ range .Site.Params.P3.Links }}
                 <div class="my-6">
                     <a href="{{ .url }}" class="text-base font-medium text-primary-400 dark:text-primary-100">
-                        {{ .text }}&nbsp&rarr;
+                        {{ .text | markdownify }};
                     </a>
                 </div>
                 {{ end }}
