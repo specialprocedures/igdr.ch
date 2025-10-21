@@ -1,4 +1,4 @@
-baseURL: ''
+baseURL: igdr.ch
 title: igdr.ch
 languageCode: en-us
 DefaultContentLanguage: en
@@ -53,7 +53,6 @@ params:
   moto: "Research Engineering Impact"
   description: Ian is a researcher and engineer specializing in data science, media monitoring, and strategy for non-profits.
   
-  text: "Hello"
   disable_theme_toggle: true
   disable_stay_uptodate: true
   logo: "images/bar-chart.svg"
@@ -61,20 +60,23 @@ params:
 
   p1:
     heading: "Research"
-    image: "images/global/network_diagram.svg"
+    image: "images/global/cosmo_semnet.png"
+    caption: "A semantic network of Guardian headlines. Built with **[semnet](https://github.com/specialprocedures/semnet)**, my Python library for embedding-based semantic networks."
     content:
       - text: |
           I combine sophisticated tooling and methodological rigour to provide novel insights into intractable problems. 
                     
-          Establishing NLP and LLM-based approaches to **media monitoring**, enabling my organisation to look beyond simple mentions and hit counts into the narratives that shape the media environmental    
+          I use NLP and LLM-based approaches to **media monitoring**, enabling clients to look beyond mentions and hit counts into the narratives and actors that shape stories.    
           
-          Leading a ground-breaking study into darkweb drug-sales in Georgia, providing the country's first estimate of online sales and revenues
+          I help clients find, collate, clean, and understand the data they need to answer their research questions.
+          From multi-million documents corpora and corporate APIs to small-n surveys and focus group discussions;
+          open, paid, collected or scraped.
 
-  # p2:
-  #   heading: "Engineering"
-  #   # image: "images/pages/hacktoberfest.jpg"
-  #   content:
-  #     - text: "Build scaleable data pipelines and tools to support research and advocacy."
+  p2:
+    heading: "Engineering"
+    # image: "images/pages/hacktoberfest.jpg"
+    content:
+      - text: "I build scaleable data pipelines and applications to support research and advocacy."
   # p3:
   #   heading: "Media monitoring"
   #   content:
@@ -204,14 +206,6 @@ menu:
       name: Blog
       url: /categories/blog/
       weight: 20
-    - identifier: news
-      name: News
-      url: /categories/news/
-      weight: 30
-    - identifier: prose
-      name: Prose
-      url: /prose/
-      weight: 40
     - identifier: contact
       name: Contact
       url: /contact/
