@@ -58,41 +58,54 @@ params:
   logo: "images/bar-chart.svg"
   hero_image: "images/network.jpg"
 
-  p1:
+  triplet1:
     heading: "Research"
     image: "images/global/cosmo_semnet.png"
     caption: "A semantic network of Guardian headlines. Built with **[semnet](https://github.com/specialprocedures/semnet)**, my Python library for embedding-based semantic networks."
     content:
       - text: |
-          I combine sophisticated tooling and methodological rigour to provide novel insights into intractable problems. 
-                    
-          I use NLP and LLM-based approaches to **media monitoring**, enabling clients to look beyond mentions and hit counts into the narratives and actors that shape stories.    
-          
-          I help clients find, collate, clean, and understand the data they need to answer their research questions.
-          From multi-million documents corpora and corporate APIs to small-n surveys and focus group discussions;
-          open, paid, collected or scraped.
 
-  p2:
+          **Bespoke media analysis:** use AI and full-text data to understand the messages and actors shaping stories in your sector
+          
+          **Diverse toolkit:** supercharge your research with scraping, natural language processing, machine learning, GIS, network analysis and more
+          
+          **Mixed methods research:** contextualize findings through key informant interviews, focus groups, and surveys
+          
+  triplet2:
     heading: "Engineering"
-    # image: "images/pages/hacktoberfest.jpg"
+    image: "images/data-engineer.svg"
+    caption: Planning data replication from a legacy system
     content:
-      - text: "I build scaleable data pipelines and applications to support research and advocacy."
-  # p3:
-  #   heading: "Media monitoring"
-  #   content:
-  #     - text: "Go beyond mentions and break free of the limitations of proprietary tooling"
-  p3:
-    heading: "Clients and colleagues"
+      - text: |
+          **Data pipelines:** Replicate, enrich and integrate data from across your organisation with robust and scaleable data pipelines
+          
+          **Applications and dashboards:** Collect data from your users and transform it into meaningful insights 
+          
+          **Python libraries:** Develop custom tooling to solve the specific problems your organisation faces
+          
+  triplet3:
+    heading: "Impact"
+    image: "images/case-study.png"
+    caption: Documenting Oxfam's flagship programmes
+    content:
+      - text: |
+          **Bid-writing and programme design:** develop compelling grant applications based on research, consultation and sound financial planning   
+          
+          **Monitoring, evaluation and learning:** define your goals, use the right tools to track your progress, learn what makes your programme tick  
+          
+          **Strategic communications:** go beyond tracking hits and mentions to understand your work's impact on media narratives
+  
+  partners:
+    heading: "Clients, colleagues and contexts"
     content:
       - text: |
               With nearly two decades experience in humanitarian action, development assistance and environmental advocacy, 
               I am proud to have worked with some of my sectors' most impactful organisations.
-              <br><br>
-              My CV and client list includes UN agencies, global foundations, and some of the world's top aid organisations.
-              <br><br>
-              I am also proud to have spent much of my career supporting think tanks and NGOs headquartered in aid-receiving countries.
-            
               
+              My CV and client list includes UN agencies, global foundations, and some of the world's top aid organisations.              
+              I am also proud to worked for several think tanks and NGOs headquartered in aid-receiving countries.
+              
+              I have spent most of my career living and working internationally: in Georgia, Palestine, Lebanon, the Philippines and Hungary.
     logos:
       - identifier: meliore
         image: "images/clients/m.svg"
@@ -122,6 +135,14 @@ params:
         image: "images/clients/unicef.svg"
         alt: "UNICEF"
 
+
+  work:
+    heading: "My work"
+    content:
+      - text: |
+              Nice.
+            
+
   p5:
     heading: "Say hi"
     content:
@@ -145,10 +166,10 @@ params:
 
 menu:
   main:
-    # - identifier: prose
-    #   name: Prose
-    #   url: /prose/
-    #   weight: 10
+    - identifier: blog
+      name: blog
+      url: categories/blog/
+      weight: 10
     - identifier: about
       name: about
       url: /about/
