@@ -29,134 +29,184 @@
 
     <!-- More main page content here... -->
 
-    <!-- P1 -->
-    <div class="relative my-4">
-        
-        <div class="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-12 lg:px-8">
-            <div class="relative max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-0">
-                <div class="md:pt-12 sm:pt-6 lg:pt-20">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
-                        {{ .Site.Params.P1.Heading }}
-                    </h2>
-                    <div class="mt-6 text-gray-900 dark:text-white">
-                        <div class="mt-6 space-y-6 text-gray-900 dark:text-white">
-                            {{ range .Site.Params.P1.Content }}
-                            <p class="text-lg text-gray-900 dark:text-white">
-                                {{ .text | markdownify }}
-                            </p>
+    <!-- Triplet1 -->
+    <div class="triplet-section section-spacing">
+        <div class="section-container">
+            <div class="section-grid">
+                <div class="triplet-content">
+                    <div class="triplet-text">
+                        <h2 class="triplet-heading">
+                            {{ .Site.Params.Triplet1.Heading }}
+                        </h2>
+                        <div class="triplet-content-wrapper">
+                            <div class="triplet-content-inner">
+                                {{ range .Site.Params.Triplet1.Content }}
+                                <p class="triplet-paragraph">
+                                    {{ .text | markdownify }}
+                                </p>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="triplet-image-container">
+                    <div class="triplet-background-pattern" aria-hidden="true">
+                        <div class="triplet-background-shape"></div>
+                        <svg class="triplet-svg-pattern" width="404" height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
+                            <defs>
+                                <pattern id="triplet1-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60" fill="currentcolor"></rect>
+                                </pattern>
+                            </defs>
+                            <rect width="404" height="392" fill="url(#triplet1-pattern)"></rect>
+                        </svg>
+                    </div>
+                    <div class="triplet-image-wrapper">
+                        <div class="triplet-image-frame">
+                            {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet1.Image "alt" "Triplet1" "sizes" "1600x900" "class" "object-fill") }}
+                            {{ if .Site.Params.Triplet1.Caption }}
+                            <div class="triplet-caption">
+                                <p>{{ .Site.Params.Triplet1.Caption | markdownify }}</p>
+                            </div>
                             {{ end }}
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="relative sm:py-8 lg:py-0">
-                <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
-                    <div
-                        class="absolute inset-y-0 w-full bg-gray-50 dark:bg-gray-900/10 right-1/2 rounded-r-3xl lg:right-72">
-                    </div><svg class="absolute -ml-3 top-8 left-1/2 lg:-right-8 lg:left-auto lg:top-12" width="404"
-                        height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
-                        <defs>
-                            <pattern id="02f20b47-fd69-4224-a62a-4c9de5c763f7" x="0" y="0" width="20" height="20"
-                                patternUnits="userSpaceOnUse">
-                                <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60"
-                                    fill="currentcolor"></rect>
-                            </pattern>
-                        </defs>
-                        <rect width="404" height="392" fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)"></rect>
-                    </svg>
-                </div>
-                <div class="relative w-full h-auto px-4 py-6 mx-auto sm:max-w-3xl sm:px-6 lg:px-0 lg:py-20">
-                    <div class="overflow-hidden shadow-xl rounded-2xl">
-                        <!-- prettier-ignore -->
-                        {{ partial "responsive-image.html" (dict "src" .Site.Params.P1.Image "alt" "P1" "sizes" "800x400" "class" "object-fill") }}
-                        {{ if .Site.Params.P1.Caption }}
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-2">
-                            <p class="text-sm text-center">{{ .Site.Params.P1.Caption | markdownify }}</p>
-                        </div>
-                        {{ end }}
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
 
-    <!-- JITsection -->
-    <div class="overflow-hidden sm:pt-6 lg:relative">
-        <div class="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-12 lg:px-8">
-            <div>
-                <div class="md:mt-8">
-                    <div class="mt-6 sm:max-w-xl">
-                        <h2
-                            class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl md:mt-16">
-                            {{ .Site.Params.P2.Heading }}
+    <!-- Triplet2 -->
+    <div class="triplet-section section-spacing">
+        <div class="section-container">
+            <div class="section-grid">
+                <div class="triplet-content">
+                    <div class="triplet-text">
+                        <h2 class="triplet-heading">
+                            {{ .Site.Params.Triplet2.Heading }}
                         </h2>
-                        {{ range .Site.Params.P2.Content }}
-                        <p class="pb-12 mt-6 text-lg text-gray-900 dark:text-white">
-                            {{ .text }}
-                        </p>
-                        {{ end }}
-                        </p>
+                        <div class="triplet-content-wrapper">
+                            <div class="triplet-content-inner">
+                                {{ range .Site.Params.Triplet2.Content }}
+                                <p class="triplet-paragraph">
+                                    {{ .text | markdownify }}
+                                </p>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="triplet-image-container">
+                    <div class="triplet-background-pattern" aria-hidden="true">
+                        <div class="triplet-background-shape"></div>
+                        <svg class="triplet-svg-pattern" width="404" height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
+                            <defs>
+                                <pattern id="triplet2-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60" fill="currentcolor"></rect>
+                                </pattern>
+                            </defs>
+                            <rect width="404" height="392" fill="url(#triplet2-pattern)"></rect>
+                        </svg>
+                    </div>
+                    <div class="triplet-image-wrapper">
+                        <div class="triplet-image-frame">
+                            {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet2.Image "alt" "Triplet2" "sizes" "1600x900" "class" "object-fill") }}
+                            {{ if .Site.Params.Triplet2.Caption }}
+                            <div class="triplet-caption">
+                                <p>{{ .Site.Params.Triplet2.Caption | markdownify }}</p>
+                            </div>
+                            {{ end }}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
-            <div class="md:py-12 sm:relative sm:mt-12 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                <div class="hidden sm:block">
-                    <div
-                        class="absolute inset-y-0 w-screen left-1/2 rounded-l-3xl bg-gray-50 dark:bg-gray-900/10 lg:left-80 lg:right-0 lg:w-full">
-                    </div><svg class="absolute -mr-3 top-8 right-1/2 lg:left-0 lg:m-0" width="404" height="392"
-                        fill="none" viewBox="0 0 404 392" loading="lazy">
-                        <defs>
-                            <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
-                                patternUnits="userSpaceOnUse">
-                                <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60"
-                                    fill="currentcolor"></rect>
-                            </pattern>
-                        </defs>
-                        <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-                    </svg>
+    </div>
+
+    <!-- Triplet3 -->
+    <div class="triplet-section section-spacing">
+        <div class="section-container">
+            <div class="section-grid">
+                <div class="triplet-content">
+                    <div class="triplet-text">
+                        <h2 class="triplet-heading">
+                            {{ .Site.Params.Triplet3.Heading }}
+                        </h2>
+                        <div class="triplet-content-wrapper">
+                            <div class="triplet-content-inner">
+                                {{ range .Site.Params.Triplet3.Content }}
+                                <p class="triplet-paragraph">
+                                    {{ .text | markdownify }}
+                                </p>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
-                    <!-- prettier-ignore -->
-                    {{ partial "responsive-image.html" (dict "src" .Site.Params.P2.Image "alt" "p2" "class" "w-full rounded-lg shadow-xl lg:h-full lg:w-auto lg:max-w-none") }}
+                
+                <div class="triplet-image-container">
+                    <div class="triplet-background-pattern" aria-hidden="true">
+                        <div class="triplet-background-shape"></div>
+                        <svg class="triplet-svg-pattern" width="404" height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
+                            <defs>
+                                <pattern id="triplet3-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60" fill="currentcolor"></rect>
+                                </pattern>
+                            </defs>
+                            <rect width="404" height="392" fill="url(#triplet3-pattern)"></rect>
+                        </svg>
+                    </div>
+                    <div class="triplet-image-wrapper">
+                        <div class="triplet-image-frame">
+                            {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet3.Image "alt" "Triplet3" "sizes" "1600x900" "class" "object-fill") }}
+                            {{ if .Site.Params.Triplet3.Caption }}
+                            <div class="triplet-caption">
+                                <p>{{ .Site.Params.Triplet3.Caption | markdownify }}</p>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- Sponsors section -->
-    <div class="max-w-md px-4 mx-auto md:pt-24 md:pb-16 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <div class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-24">
-            <div class="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-                {{ range .Site.Params.P3.Logos }}
-                <div class="flex justify-center col-span-1 px-8 py-8 bg-gray-50 dark:bg-gray-900/10">
+    <!-- Partners section -->
+    <div class="section-container section-spacing-large">
+        <div class="partners-grid">
+            <div class="partners-logos-grid">
+                {{ range .Site.Params.Partners.Logos }}
+                <div class="partners-logo-item">
                     {{ if .image }}
                     {{ $sponsor := resources.Get .image }}
-                    <img src="{{ $sponsor.RelPermalink }}" class="max-h-12" alt="{{ .alt }}" loading="lazy" />
+                    <img src="{{ $sponsor.RelPermalink }}" class="partners-logo-image" alt="{{ .alt }}" loading="lazy" />
                     {{ else }}
                     {{ $sponsor := resources.Get "images/global/sample-logo.svg" }}
-                    <img src="{{ $sponsor.RelPermalink }}" class="max-h-12" alt="{{ .alt }}" loading="lazy" />
+                    <img src="{{ $sponsor.RelPermalink }}" class="partners-logo-image" alt="{{ .alt }}" loading="lazy" />
                     {{ end }}
                 </div>
                 {{ end }}
             </div>
-            <div>
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
-                    {{ .Site.Params.P3.Heading }}
+            <div class="partners-content">
+                <h2 class="partners-heading">
+                    {{ .Site.Params.Partners.Heading }}
                 </h2>
-                {{ range .Site.Params.P3.Content }}
-                <p class="max-w-3xl mt-6 text-lg leading-7 text-gray-900 dark:text-white">
-                    {{ .text }}
-                </p>
-                {{ end }}
-                {{ range .Site.Params.P3.Links }}
-                <div class="my-6">
-                    <a href="{{ .url }}" class="text-base font-medium text-primary-400 dark:text-primary-100">
-                        {{ .text | markdownify }};
+                <div class="partners-content-wrapper">
+                    <div class="partners-content-inner">
+                        {{ range .Site.Params.Partners.Content }}
+                        <p class="partners-paragraph">
+                            {{ .text | markdownify}}
+                        </p>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ range .Site.Params.Partners.Links }}
+                <div class="partners-links">
+                    <a href="{{ .url }}" class="partners-link">
+                        {{ .text }};
                     </a>
                 </div>
                 {{ end }}
@@ -164,69 +214,64 @@
         </div>
     </div>
 
-    <!-- Blog section -->
-    <div class="relative px-1 pt-8 pb-4 bg-transparent lg:px-8 lg:pt-12 lg:mb-4 md:mt-12">
-        <div class="absolute inset-0">
-            <div class="bg-gray-200 dark:bg-gray-900/50 h-1/3 sm:h-2/3"></div>
+    <!-- Work section -->
+    <div class="work-section section-spacing-large">
+        <div class="work-background">
+            <div class="work-background-shape"></div>
         </div>
-        <div class="relative px-2 mx-auto max-w-7xl">
-            <div class="text-center">
-                <h2 class="text-3xl font-black tracking-tight text-primary-500 dark:text-primary-300 sm:text-4xl">
-                    {{ .Site.Params.P4.Heading }}
+        <div class="section-container work-container">
+            <div class="work-header">
+                <h2 class="work-heading">
+                    {{ .Site.Params.Work.Heading }}
                 </h2>
-                {{ range .Site.Params.P4.Content }}
-                <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-500 dark:text-gray-300 sm:mt-4">
+                {{ range .Site.Params.Work.Content }}
+                <p class="work-description">
                     {{ .text }}
                 </p>
                 {{ end }}
             </div>
 
-            <div class="mx-auto text-gray-900 max-w-7xl dark:text-gray-50 md:px-1.5">
-                <div class="px-4 text-gray-900 dark:text-white not-prose dark:text-zinc-200">
-                    <div class="grid gap-4 mx-auto mt-12 mb-4 lg:max-w-none md:grid-cols-3">
+            <div class="work-content">
+                <div class="work-cards-container">
+                    <div class="work-cards-grid">
                         {{ range (where site.RegularPages "Params.categories" "in" (slice "Blog" "Projects") | first 3) }}
-                        <div class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-gray-50 dark:bg-gray-900">
+                        <div class="work-card">
                             <a href="{{.Permalink}}">
                                 {{ with .Params.featured_image }}
-                                <!-- prettier-ignore -->
                                 {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "object-fill overflow-hidden rounded-t-lg" "sizes" "500x500") }}
                                 {{ end }}
                             </a>
-                            <div class="p-6">
-                                <div class="flex-1">
-                                    <a href="{{.Permalink}}"
-                                        class="block mt-2 text-2xl font-black text-gray-900 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-500 hover:underline">
+                            <div class="work-card-content">
+                                <div class="work-card-main">
+                                    <a href="{{.Permalink}}" class="work-card-title">
                                         {{ .Title }}
                                     </a>
-                                    <p class="mt-3 text-base text-gray-900 dark:text-gray-300">
+                                    <p class="work-card-summary">
                                         {{ .Params.summary }}
                                     </p>
                                 </div>
-                                <div class="flex pt-6 font-medium text-primary-600 dark:text-primary-100 text-md">
-                                    <span class="pr-2 font-black">Tags:</span>
+                                <div class="work-card-tags">
+                                    <span class="work-card-tags-label">Tags:</span>
                                     {{ range $elem_index, $elem_val := (.GetTerms "tags") }}
                                     {{- if gt $elem_index 0 }}, {{ end -}}
-                                    <a href="{{ .Permalink }}"
-                                        class="inline-flex items-center rounded-md bg-gray-300 hover:bg-primary-200 hover:text-black px-2.5 py-0.5 text-sm font-medium text-gray-900 ">
+                                    <a href="{{ .Permalink }}" class="work-card-tag">
                                         {{ $elem_val.Name }}</a>
                                     {{- end -}}
                                 </div>
-                                <div class="flex items-center mt-6">
-                                    <div class="flex-shrink-0">
+                                <div class="work-card-meta">
+                                    <div class="work-card-avatar">
                                         <span class="sr-only">{{ .Params.author }}</span>
                                         {{ with .Params.authorimage }}
-                                        <!-- prettier-ignore -->
-                                        {{ partial "responsive-image.html" (dict "src" . "alt" "" "class" "w-10 h-10 rounded-full" "sizes" "40x40") }}
+                                        {{ partial "responsive-image.html" (dict "src" . "alt" "" "class" "work-card-avatar-image" "sizes" "40x40") }}
                                         {{ end }}
                                     </div>
-                                    <div class="pt-1 ml-3">
-                                        <p class="text-sm font-medium text-gray-900 dark:text-white">
+                                    <div class="work-card-author-info">
+                                        <p class="work-card-author">
                                             {{ .Params.author }}
                                         </p>
-                                        <div class="flex space-x-1 text-sm text-gray-500 dark:text-white">
-                                            <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">{{
-                                                .Date.Format "2006-01-02" }}</time>
-                                            <span aria-hidden="true">&middot;</span>
+                                        <div class="work-card-date-info">
+                                            <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+                                            <span class="work-card-separator" aria-hidden="true">&middot;</span>
                                             <span>{{ math.Round (div (countwords .Content) 220.0) }} min read</span>
                                         </div>
                                     </div>
