@@ -51,7 +51,7 @@ params:
   # authorimage: ../assets/images/global/author.webp
   # og_image: /images/ian-face.jpg
   moto: "Research Engineering Impact"
-  description: Ian is a researcher and engineer specializing in data science, media monitoring, and strategy for non-profits.
+  description: Ian is a researcher and engineer who helps non-profits solve problems with data.
   
   disable_theme_toggle: true
   disable_stay_uptodate: true
