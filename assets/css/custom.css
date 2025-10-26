@@ -326,12 +326,18 @@
 @media (max-width: 1023px) {
   .triplet-image-container {
     order: 1;
+    padding: 0 !important;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .triplet-image-container {
-    padding: 2rem 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
   }
 }
 
