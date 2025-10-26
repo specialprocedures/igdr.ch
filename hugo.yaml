@@ -110,30 +110,39 @@ params:
       - identifier: meliore
         image: "images/clients/m.svg"
         alt: "The Meliore Foundation"
+        url: "https://www.meliorefoundation.org/"
       - identifier: ecf
         image: "images/clients/logo-ecfwhite.png"
         alt: "European Climate Foundation"
-      # - identifier: gscc
-      #   image: "images/clients/gscc.svg"
-      #   alt: "Global Strategic Communications Council"
+        url: "https://europeanclimate.org/"
       - identifier: oxfam
         image: "images/clients/oxfam.svg"
         alt: "Oxfam"
+        url: "https://www.oxfam.org/"
       - identifier: aah
         image: "images/clients/aah.svg"
         alt: "Action Against Hunger"
+        url: "https://www.actionagainsthunger.org/"
       - identifier: brc
         image: "images/clients/brc.svg"
         alt: "British Red Cross"
+        url: "https://www.redcross.org.uk/"
       - identifier: care
         image: "images/clients/care.svg"
         alt: "Care International"
+        url: "https://www.care-international.org/"
       - identifier: irex
         image: "images/clients/irex.svg"
         alt: "IREX"
+        url: "https://www.irex.org/"
       - identifier: unicef
         image: "images/clients/unicef.svg"
         alt: "UNICEF"
+        url: "https://www.unicef.org/"
+      - identifier: calp
+        image: "images/clients/calp.svg"
+        alt: "CaLP"
+        url: "https://www.calpnetwork.org/"
 
   tools:
     heading: "Tools and frameworks"
@@ -150,78 +159,124 @@ params:
       - identifier: python
         image: "images/tools/python.svg"
         alt: "Python"
+        url: "https://www.python.org/"
       - identifier: pandas
         image: "images/tools/pandas.svg"
         alt: "Pandas"
+        url: "https://pandas.pydata.org/"
       - identifier: scikit-learn
         image: "images/tools/scikit-learn.png"
         alt: "scikit-learn"
+        url: "https://scikit-learn.org/"
       - identifier: matplotlib
         image: "images/tools/matplotlib.svg"
         alt: "Matplotlib"
+        url: "https://matplotlib.org/"
       - identifier: plotly
         image: "images/tools/plotly.svg"
         alt: "Plotly"
+        url: "https://plotly.com/"
       - identifier: networkx
-        image: "images/tools/networkx.svg"
+        image: "images/tools/networkx.png"
         alt: "NetworkX"
+        url: "https://networkx.org/"
       - identifier: geopandas
         image: "images/tools/geopandas.svg"
         alt: "GeoPandas"
-      - identifier: postgresql
-        image: "images/tools/postgresql.png"
-        alt: "PostgreSQL"
-      - identifier: django
-        image: "images/tools/django.svg"
-        alt: "Django"
-      - identifier: html
-        image: "images/tools/html.svg"
-        alt: "HTML5"
-      - identifier: css
-        image: "images/tools/css.svg"
-        alt: "CSS3"
-      - identifier: d3
-        image: "images/tools/d3.png"
-        alt: "D3.js"
-      - identifier: google-cloud
-        image: "images/tools/google-cloud.svg"
-        alt: "Google Cloud"
-      - identifier: azure
-        image: "images/tools/azure.svg"
-        alt: "Microsoft Azure"
-      - identifier: github
-        image: "images/tools/github.svg"
-        alt: "GitHub"
-      - identifier: git
-        image: "images/tools/git.svg"
-        alt: "Git"
-      - identifier: looker-studio
-        image: "images/tools/looker-studio.svg"
-        alt: "Looker Studio"
-      - identifier: power-apps
-        image: "images/tools/power-apps.svg"
-        alt: "Power Apps"
-      - identifier: appsheet
-        image: "images/tools/appsheet.svg"
-        alt: "AppSheet"
-      - identifier: linux
-        image: "images/tools/linux.svg"
-        alt: "Linux"
+        url: "https://huggingface.co/"
       - identifier: huggingface
         image: "images/tools/huggingface.svg"
+        url: "https://geopandas.org/"
         alt: "Hugging Face"
       - identifier: ollama
         image: "images/tools/ollama.svg"
         alt: "Ollama"
-      - identifier: gemini
-        image: "images/tools/gemini.png"
-        alt: "Google Gemini"
+        url: "https://ollama.ai/"
       - identifier: bertopic
         image: "images/tools/bertopic.png"
         alt: "BERTopic"
+        url: "https://maartengr.github.io/BERTopic/"
+      - identifier: rlang
+        image: "images/tools/r.svg"
+        alt: "R"
+        url: "https://www.r-project.org/"
+      - identifier: stata
+        image: "images/tools/stata.svg"
+        alt: "Stata"
+        url: "https://www.stata.com/"
+      - identifier: linux
+        image: "images/tools/linux.svg"
+        alt: "Linux"
+        url: "https://www.linuxfoundation.org/"
+      - identifier: google-cloud
+        image: "images/tools/google-cloud.svg"
+        alt: "GCP"
+        url: "https://cloud.google.com/"
+      - identifier: azure
+        image: "images/tools/azure.svg"
+        alt: "Azure"
+        url: "https://azure.microsoft.com/"
+      - identifier: cloudflare
+        image: "images/tools/cloudflare.png"
+        alt: "Cloudflare"
+        url: "https://cloudflare.com/"
+      - identifier: github
+        image: "images/tools/github.svg"
+        alt: "GitHub"
+        url: "https://github.com/"
+      - identifier: git
+        image: "images/tools/git.svg"
+        alt: "Git"
+        url: "https://git-scm.com/"
+      - identifier: postgresql
+        image: "images/tools/postgresql.png"
+        alt: "PostgreSQL"
+        url: "https://www.postgresql.org/"
+      - identifier: html
+        image: "images/tools/html.svg"
+        alt: "HTML"
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+      - identifier: css
+        image: "images/tools/css.svg"
+        alt: "CSS"
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+      - identifier: django
+        image: "images/tools/django.svg"
+        alt: "Django"
+        url: "https://www.djangoproject.com/"
+      - identifier: hugo
+        image: "images/tools/hugo.png"
+        alt: "Hugo"
+        url: "https://gohugo.io/"
+      - identifier: d3
+        image: "images/tools/d3.png"
+        alt: "D3.js"
+        url: "https://d3js.org/"
+      - identifier: looker-studio
+        image: "images/tools/looker-studio.svg"
+        alt: "Looker Studio"
+        url: "https://lookerstudio.google.com/"
+      - identifier: power-apps
+        image: "images/tools/power-apps.svg"
+        alt: "Power Apps"
+        url: "https://powerapps.microsoft.com/"
+      - identifier: appsheet
+        image: "images/tools/appsheet.svg"
+        alt: "AppSheet"
+        url: "https://www.appsheet.com/"
+      - identifier: vscode
+        image: "images/tools/vscode.svg"
+        alt: VS Code
+        url: https://code.visualstudio.com/
       - identifier: blender
         image: "images/tools/blender.svg"
         alt: "Blender"
+        url: "https://www.blender.org/"
+      - identifier: cosmograph
+        image: "images/tools/cosmograph.png"
+        alt: "Cosmograph"
+        url: "https://www.cosmograph.app"
+
 
 
   work:
