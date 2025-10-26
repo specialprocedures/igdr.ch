@@ -150,13 +150,14 @@ params:
     heading: "Tools and frameworks"
     content:
       - text: |
-              I work with a diverse toolkit spanning programming languages, data science libraries, cloud platforms, and design tools.
+              I've been working in Python for about seven years and it's my go-to language in most situations. I've also written a lot of SQL, and have professional experience with R and Stata. 
+              I've worked with most mainstream languages for data science and AI, and write pipelines, API integrations and scrapers.
               
-              **Languages**: Python for data analysis and web development, SQL for database work, JavaScript/HTML/CSS for web interfaces
+              I have recently published **[Semnet](https://github.com/specialprocedures/semnet)**, a library that creates semantic networks from embeddings.
               
-              **Data Science**: pandas, scikit-learn, matplotlib, plotly for analysis and visualization; NetworkX and GeoPandas for specialized use cases
+              I am comfortable on a range of platforms, most so on Linux and GCP, but I've spent a lot of time around Azure and Power Platform. This site is hosted on Cloudflare pages, just to mix things up.
               
-              **Platforms**: Google Cloud, Azure, GitHub for development and deployment; Looker Studio and Power Apps for business intelligence
+              
     logos:
       - identifier: linux
         image: "images/tools/linux.svg"
@@ -170,22 +171,34 @@ params:
         image: "images/tools/azure.svg"
         alt: "Azure"
         url: "https://azure.microsoft.com/"
+      - identifier: power-platform
+        image: "images/tools/power-platform.svg"
+        alt: "Power Platform"
+        url: "https://powerapps.microsoft.com/"
       - identifier: cloudflare
         image: "images/tools/cloudflare.png"
         alt: "Cloudflare"
         url: "https://cloudflare.com/"
-      - identifier: github
-        image: "images/tools/github.svg"
-        alt: "GitHub"
-        url: "https://github.com/"
-      - identifier: git
-        image: "images/tools/git.svg"
-        alt: "Git"
-        url: "https://git-scm.com/"
+      - identifier: postgresql
+        image: "images/tools/postgresql.png"
+        alt: "PostgreSQL"
+        url: "https://www.postgresql.org/"
+      # - identifier: github
+      #   image: "images/tools/github.svg"
+      #   alt: "GitHub"
+      #   url: "https://github.com/"
+      # - identifier: git
+      #   image: "images/tools/git.svg"
+      #   alt: "Git"
+      #   url: "https://git-scm.com/"
       - identifier: python
         image: "images/tools/python.svg"
         alt: "Python"
         url: "https://www.python.org/"
+      - identifier: rlang
+        image: "images/tools/r.svg"
+        alt: "R"
+        url: "https://www.r-project.org/"
       - identifier: pandas
         image: "images/tools/pandas.svg"
         alt: "Pandas"
@@ -194,22 +207,10 @@ params:
         image: "images/tools/scikit-learn.png"
         alt: "scikit-learn"
         url: "https://scikit-learn.org/"
-      - identifier: matplotlib
-        image: "images/tools/matplotlib.svg"
-        alt: "Matplotlib"
-        url: "https://matplotlib.org/"
-      - identifier: plotly
-        image: "images/tools/plotly.svg"
-        alt: "Plotly"
-        url: "https://plotly.com/"
-      - identifier: networkx
-        image: "images/tools/networkx.png"
-        alt: "NetworkX"
-        url: "https://networkx.org/"
-      - identifier: geopandas
-        image: "images/tools/geopandas.svg"
-        alt: "GeoPandas"
-        url: "https://huggingface.co/"
+      # - identifier: matplotlib
+      #   image: "images/tools/matplotlib.svg"
+      #   alt: "Matplotlib"
+      #   url: "https://matplotlib.org/"
       - identifier: huggingface
         image: "images/tools/huggingface.svg"
         url: "https://geopandas.org/"
@@ -218,22 +219,26 @@ params:
         image: "images/tools/ollama.svg"
         alt: "Ollama"
         url: "https://ollama.ai/"
+      - identifier: networkx
+        image: "images/tools/networkx.png"
+        alt: "NetworkX"
+        url: "https://networkx.org/"
+      - identifier: geopandas
+        image: "images/tools/geopandas.svg"
+        alt: "GeoPandas"
+        url: "https://huggingface.co/"
       - identifier: bertopic
         image: "images/tools/bertopic.png"
         alt: "BERTopic"
         url: "https://maartengr.github.io/BERTopic/"
-      - identifier: rlang
-        image: "images/tools/r.svg"
-        alt: "R"
-        url: "https://www.r-project.org/"
-      - identifier: stata
-        image: "images/tools/stata.svg"
-        alt: "Stata"
-        url: "https://www.stata.com/"
-      - identifier: postgresql
-        image: "images/tools/postgresql.png"
-        alt: "PostgreSQL"
-        url: "https://www.postgresql.org/"
+      - identifier: plotly
+        image: "images/tools/plotly.svg"
+        alt: "Plotly/Dash"
+        url: "https://plotly.com/"
+      # - identifier: stata
+      #   image: "images/tools/stata.svg"
+      #   alt: "Stata"
+      #   url: "https://www.stata.com/"
       - identifier: html
         image: "images/tools/html.svg"
         alt: "HTML"
@@ -250,26 +255,22 @@ params:
         image: "images/tools/hugo.png"
         alt: "Hugo"
         url: "https://gohugo.io/"
-      - identifier: d3
-        image: "images/tools/d3.png"
-        alt: "D3.js"
-        url: "https://d3js.org/"
+      # - identifier: d3
+      #   image: "images/tools/d3.png"
+      #   alt: "D3.js"
+      #   url: "https://d3js.org/"
       - identifier: looker-studio
         image: "images/tools/looker-studio.svg"
-        alt: "Looker Studio"
+        alt: "Looker"
         url: "https://lookerstudio.google.com/"
-      - identifier: power-apps
-        image: "images/tools/power-apps.svg"
-        alt: "Power Apps"
-        url: "https://powerapps.microsoft.com/"
       - identifier: appsheet
         image: "images/tools/appsheet.svg"
         alt: "AppSheet"
         url: "https://www.appsheet.com/"
-      - identifier: vscode
-        image: "images/tools/vscode.svg"
-        alt: VS Code
-        url: https://code.visualstudio.com/
+      # - identifier: vscode
+      #   image: "images/tools/vscode.svg"
+      #   alt: VS Code
+      #   url: https://code.visualstudio.com/
       - identifier: newsapi
         image: "images/tools/eventregistry.png"
         alt: "NewsApi.ai"
