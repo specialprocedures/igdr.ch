@@ -135,12 +135,100 @@ params:
         image: "images/clients/unicef.svg"
         alt: "UNICEF"
 
+  tools:
+    heading: "Tools and frameworks"
+    content:
+      - text: |
+              I work with a diverse toolkit spanning programming languages, data science libraries, cloud platforms, and design tools.
+              
+              **Languages**: Python for data analysis and web development, SQL for database work, JavaScript/HTML/CSS for web interfaces
+              
+              **Data Science**: pandas, scikit-learn, matplotlib, plotly for analysis and visualization; NetworkX and GeoPandas for specialized use cases
+              
+              **Platforms**: Google Cloud, Azure, GitHub for development and deployment; Looker Studio and Power Apps for business intelligence
+    logos:
+      - identifier: python
+        image: "images/tools/python.svg"
+        alt: "Python"
+      - identifier: pandas
+        image: "images/tools/pandas.svg"
+        alt: "Pandas"
+      - identifier: scikit-learn
+        image: "images/tools/scikit-learn.png"
+        alt: "scikit-learn"
+      - identifier: matplotlib
+        image: "images/tools/matplotlib.svg"
+        alt: "Matplotlib"
+      - identifier: plotly
+        image: "images/tools/plotly.svg"
+        alt: "Plotly"
+      - identifier: networkx
+        image: "images/tools/networkx.svg"
+        alt: "NetworkX"
+      - identifier: geopandas
+        image: "images/tools/geopandas.svg"
+        alt: "GeoPandas"
+      - identifier: postgresql
+        image: "images/tools/postgresql.png"
+        alt: "PostgreSQL"
+      - identifier: django
+        image: "images/tools/django.svg"
+        alt: "Django"
+      - identifier: html
+        image: "images/tools/html.svg"
+        alt: "HTML5"
+      - identifier: css
+        image: "images/tools/css.svg"
+        alt: "CSS3"
+      - identifier: d3
+        image: "images/tools/d3.png"
+        alt: "D3.js"
+      - identifier: google-cloud
+        image: "images/tools/google-cloud.svg"
+        alt: "Google Cloud"
+      - identifier: azure
+        image: "images/tools/azure.svg"
+        alt: "Microsoft Azure"
+      - identifier: github
+        image: "images/tools/github.svg"
+        alt: "GitHub"
+      - identifier: git
+        image: "images/tools/git.svg"
+        alt: "Git"
+      - identifier: looker-studio
+        image: "images/tools/looker-studio.svg"
+        alt: "Looker Studio"
+      - identifier: power-apps
+        image: "images/tools/power-apps.svg"
+        alt: "Power Apps"
+      - identifier: appsheet
+        image: "images/tools/appsheet.svg"
+        alt: "AppSheet"
+      - identifier: linux
+        image: "images/tools/linux.svg"
+        alt: "Linux"
+      - identifier: huggingface
+        image: "images/tools/huggingface.svg"
+        alt: "Hugging Face"
+      - identifier: ollama
+        image: "images/tools/ollama.svg"
+        alt: "Ollama"
+      - identifier: gemini
+        image: "images/tools/gemini.png"
+        alt: "Google Gemini"
+      - identifier: bertopic
+        image: "images/tools/bertopic.png"
+        alt: "BERTopic"
+      - identifier: blender
+        image: "images/tools/blender.svg"
+        alt: "Blender"
+
 
   work:
     heading: "My work"
     content:
       - text: |
-              Nice.
+              Recent projects and some greatest hits from the archive.
             
 
   p5:
@@ -166,9 +254,9 @@ params:
 
 menu:
   main:
-    - identifier: blog
-      name: blog
-      url: categories/blog/
+    - identifier: work
+      name: work
+      url: categories/work/
       weight: 10
     - identifier: about
       name: about
@@ -223,9 +311,9 @@ menu:
       name: About
       url: /about/
       weight: 10
-    - identifier: blog
-      name: Blog
-      url: /categories/blog/
+    - identifier: work
+      name: Work
+      url: /categories/work/
       weight: 20
     - identifier: contact
       name: Contact

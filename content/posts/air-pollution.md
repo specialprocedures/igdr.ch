@@ -3,12 +3,12 @@ title: "Air pollution in Tbilisi almost halved by COVID-19 measures"
 date: 2020-03-30T11:10:36+08:00
 draft: false
 language: en
-featured_image: ../assets/images/featured/blogs/airpollution.webp
+featured_image: ../assets/images/featured/work/airpollution.webp
 summary: Particulate matter in Tbilisi’s air has fallen by as much as 45% following the introduction of measures to combat the spread of COVID-19, according to analysis of air quality data by CRRC Georgia.
 description: Hello world
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
-categories: Blog
+categories: Work
 tags: ["Covid", "Environment"]
 ---
 

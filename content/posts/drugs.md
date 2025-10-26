@@ -3,11 +3,11 @@ title: "How high? Georgia spends millions online on illegal drugs each year"
 date: 2020-09-29T11:10:36+08:00
 draft: false
 language: en
-featured_image: ../assets/images/featured/blogs/drugs.webp
+featured_image: ../assets/images/featured/work/drugs.webp
 summary: Drug users in Georgia spent over $1.5 million dollars online between February and August 2020, according to a new study into the darknet market, Matanga, conducted by CRRC Georgia.
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
-categories: Blog
+categories: Work
 tags: ["Darknet", "Policy", "Scraping"]
 ---
 

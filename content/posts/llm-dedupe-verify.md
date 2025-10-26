@@ -8,7 +8,7 @@ summary: LLMs allow for quote-extraction at scale, enabling exciting new opportu
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, odio nec venenatis lacinia, lacus lectus varius nisi, in tristique mi purus ut libero. Vestibulum vel convallis felis. Ut finibus lorem vestibulum lobortis rhoncus.
 author: Ian
 authorimage: ../assets/images/global/author.webp
-categories: Blog
+categories: Work
 tags: ["Semnet", "LLMs", "Gaza"]
 ---
 

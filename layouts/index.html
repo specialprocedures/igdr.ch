@@ -175,41 +175,110 @@
 
 
     <!-- Partners section -->
-    <div class="section-container section-spacing-large">
-        <div class="partners-grid">
-            <div class="partners-logos-grid">
-                {{ range .Site.Params.Partners.Logos }}
-                <div class="partners-logo-item">
-                    {{ if .image }}
-                    {{ $sponsor := resources.Get .image }}
-                    <img src="{{ $sponsor.RelPermalink }}" class="partners-logo-image" alt="{{ .alt }}" loading="lazy" />
-                    {{ else }}
-                    {{ $sponsor := resources.Get "images/global/sample-logo.svg" }}
-                    <img src="{{ $sponsor.RelPermalink }}" class="partners-logo-image" alt="{{ .alt }}" loading="lazy" />
-                    {{ end }}
-                </div>
-                {{ end }}
-            </div>
-            <div class="partners-content">
-                <h2 class="partners-heading">
-                    {{ .Site.Params.Partners.Heading }}
-                </h2>
-                <div class="partners-content-wrapper">
-                    <div class="partners-content-inner">
-                        {{ range .Site.Params.Partners.Content }}
-                        <p class="partners-paragraph">
-                            {{ .text | markdownify}}
-                        </p>
+    <div class="triplet-section section-spacing">
+        <div class="section-container">
+            <div class="section-grid">
+                <div class="triplet-content">
+                    <div class="triplet-text">
+                        <h2 class="triplet-heading">
+                            {{ .Site.Params.Partners.Heading }}
+                        </h2>
+                        <div class="triplet-content-wrapper">
+                            <div class="triplet-content-inner">
+                                {{ range .Site.Params.Partners.Content }}
+                                <p class="triplet-paragraph">
+                                    {{ .text | markdownify}}
+                                </p>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ range .Site.Params.Partners.Links }}
+                        <div class="partners-links">
+                            <a href="{{ .url }}" class="partners-link">
+                                {{ .text }}
+                            </a>
+                        </div>
                         {{ end }}
                     </div>
                 </div>
-                {{ range .Site.Params.Partners.Links }}
-                <div class="partners-links">
-                    <a href="{{ .url }}" class="partners-link">
-                        {{ .text }};
-                    </a>
+                
+                <div class="triplet-image-container">
+                    <div class="triplet-image-wrapper">
+                        <div class="triplet-image-frame">
+                            <div class="partners-logos-grid">
+                                {{ range .Site.Params.Partners.Logos }}
+                                <div class="partners-logo-item">
+                                    {{ if .image }}
+                                    {{ $sponsor := resources.Get .image }}
+                                    <img src="{{ $sponsor.RelPermalink }}" class="partners-logo-image" alt="{{ .alt }}" loading="lazy" />
+                                    {{ else }}
+                                    {{ $sponsor := resources.Get "images/global/sample-logo.svg" }}
+                                    <img src="{{ $sponsor.RelPermalink }}" class="partners-logo-image" alt="{{ .alt }}" loading="lazy" />
+                                    {{ end }}
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools section -->
+    <div class="triplet-section section-spacing">
+        <div class="section-container">
+            <div class="section-grid">
+                <div class="triplet-image-container">
+                    <div class="triplet-background-pattern" aria-hidden="true">
+                        <div class="triplet-background-shape"></div>
+                        <svg class="triplet-svg-pattern" width="404" height="392" fill="none" viewBox="0 0 404 392" loading="lazy">
+                            <defs>
+                                <pattern id="tools-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-900/60" fill="currentcolor"></rect>
+                                </pattern>
+                            </defs>
+                            <rect width="404" height="392" fill="url(#tools-pattern)"></rect>
+                        </svg>
+                    </div>
+                    <div class="triplet-image-wrapper">
+                        <div class="triplet-image-frame">
+                            <div class="tools-logos-grid">
+                                {{ range .Site.Params.Tools.Logos }}
+                                <div class="tools-logo-item">
+                                    <div class="tools-logo-image-container">
+                                        {{ if .image }}
+                                        {{ $tool := resources.Get .image }}
+                                        <img src="{{ $tool.RelPermalink }}" class="tools-logo-image" alt="{{ .alt }}" loading="lazy" />
+                                        {{ else }}
+                                        {{ $tool := resources.Get "images/global/sample-logo.svg" }}
+                                        <img src="{{ $tool.RelPermalink }}" class="tools-logo-image" alt="{{ .alt }}" loading="lazy" />
+                                        {{ end }}
+                                    </div>
+                                    <div class="tools-logo-name">{{ .alt }}</div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="triplet-content">
+                    <div class="triplet-text">
+                        <h2 class="triplet-heading">
+                            {{ .Site.Params.Tools.Heading }}
+                        </h2>
+                        <div class="triplet-content-wrapper">
+                            <div class="triplet-content-inner">
+                                {{ range .Site.Params.Tools.Content }}
+                                <p class="triplet-paragraph">
+                                    {{ .text | markdownify}}
+                                </p>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -234,7 +303,7 @@
             <div class="work-content">
                 <div class="work-cards-container">
                     <div class="work-cards-grid">
-                        {{ range (where site.RegularPages "Params.categories" "in" (slice "Blog" "Projects") | first 3) }}
+                        {{ range (where site.RegularPages "Params.categories" "in" (slice "Work" "Projects") | first 3) }}
                         <div class="work-card">
                             <a href="{{.Permalink}}">
                                 {{ with .Params.featured_image }}
