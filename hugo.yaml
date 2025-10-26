@@ -80,8 +80,10 @@ params:
           **Data pipelines:** Replicate, enrich and integrate data from across your organisation with robust and scaleable data pipelines
           
           **Applications and dashboards:** Collect data from your users and transform it into meaningful insights 
+
+          **Platform agnostic:** Deploy to cloud, VPS or on-premises; build from scratch or with a low-code framework
           
-          **Python libraries:** Develop custom tooling to solve the specific problems your organisation faces
+          **Python libraries:** Develop, package, document and test bespoke tools to address your data needs
           
   triplet3:
     heading: "Impact"
@@ -89,11 +91,11 @@ params:
     caption: Documenting Oxfam's flagship programmes
     content:
       - text: |
-          **Bid-writing and programme design:** develop compelling grant applications based on research, consultation and sound financial planning   
+          **Programme design:** Develop compelling grant applications based on research, consultation and sound financial planning   
           
-          **Monitoring, evaluation and learning:** define your goals, use the right tools to track your progress, learn what makes your programme tick  
+          **Monitoring, evaluation and learning:** Define your goals, use the right tools to track your progress, learn what makes your programme tick  
           
-          **Strategic communications:** go beyond tracking hits and mentions to understand your work's impact on media narratives
+          **Communications and technical writing:** Get your message across with clean, clear language, written by a bona-fide human with an eye for presentation
   
   partners:
     heading: "Clients, colleagues and contexts"
@@ -156,6 +158,30 @@ params:
               
               **Platforms**: Google Cloud, Azure, GitHub for development and deployment; Looker Studio and Power Apps for business intelligence
     logos:
+      - identifier: linux
+        image: "images/tools/linux.svg"
+        alt: "Linux"
+        url: "https://www.linuxfoundation.org/"
+      - identifier: google-cloud
+        image: "images/tools/google-cloud.svg"
+        alt: "GCP"
+        url: "https://cloud.google.com/"
+      - identifier: azure
+        image: "images/tools/azure.svg"
+        alt: "Azure"
+        url: "https://azure.microsoft.com/"
+      - identifier: cloudflare
+        image: "images/tools/cloudflare.png"
+        alt: "Cloudflare"
+        url: "https://cloudflare.com/"
+      - identifier: github
+        image: "images/tools/github.svg"
+        alt: "GitHub"
+        url: "https://github.com/"
+      - identifier: git
+        image: "images/tools/git.svg"
+        alt: "Git"
+        url: "https://git-scm.com/"
       - identifier: python
         image: "images/tools/python.svg"
         alt: "Python"
@@ -204,30 +230,6 @@ params:
         image: "images/tools/stata.svg"
         alt: "Stata"
         url: "https://www.stata.com/"
-      - identifier: linux
-        image: "images/tools/linux.svg"
-        alt: "Linux"
-        url: "https://www.linuxfoundation.org/"
-      - identifier: google-cloud
-        image: "images/tools/google-cloud.svg"
-        alt: "GCP"
-        url: "https://cloud.google.com/"
-      - identifier: azure
-        image: "images/tools/azure.svg"
-        alt: "Azure"
-        url: "https://azure.microsoft.com/"
-      - identifier: cloudflare
-        image: "images/tools/cloudflare.png"
-        alt: "Cloudflare"
-        url: "https://cloudflare.com/"
-      - identifier: github
-        image: "images/tools/github.svg"
-        alt: "GitHub"
-        url: "https://github.com/"
-      - identifier: git
-        image: "images/tools/git.svg"
-        alt: "Git"
-        url: "https://git-scm.com/"
       - identifier: postgresql
         image: "images/tools/postgresql.png"
         alt: "PostgreSQL"
@@ -268,10 +270,10 @@ params:
         image: "images/tools/vscode.svg"
         alt: VS Code
         url: https://code.visualstudio.com/
-      - identifier: blender
-        image: "images/tools/blender.svg"
-        alt: "Blender"
-        url: "https://www.blender.org/"
+      - identifier: newsapi
+        image: "images/tools/eventregistry.png"
+        alt: "NewsApi.ai"
+        url: "https://newsapi.ai/"
       - identifier: cosmograph
         image: "images/tools/cosmograph.png"
         alt: "Cosmograph"
@@ -317,10 +319,10 @@ menu:
       name: about
       url: /about/
       weight: 20
-    - identifier: uses
-      name: uses
-      url: /uses/
-      weight: 25
+    # - identifier: uses
+    #   name: uses
+    #   url: /uses/
+    #   weight: 25
     # - identifier: categories
     #   pre: dropdown
     #   name: Categories

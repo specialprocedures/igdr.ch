@@ -195,8 +195,8 @@
 }
 
 .section-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
@@ -237,16 +237,16 @@
   z-index: 2;
 }
 
+@media (max-width: 1023px) {
+  .triplet-content {
+    order: 2;
+  }
+}
+
 .triplet-text {
   padding-top: 1.5rem;
   position: relative;
   z-index: 3;
-}
-
-@media (max-width: 1023px) {
-  .triplet-text {
-    order: 2;
-  }
 }
 
 @media (min-width: 768px) {
