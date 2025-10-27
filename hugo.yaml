@@ -52,7 +52,15 @@ params:
   # og_image: /images/ian-face.jpg
   moto: "Research Engineering Impact"
   description: Ian is a researcher and engineer who helps non-profits solve problems with data.
-  
+
+  services:
+    heading: "Services"
+    # content:
+    #   - text: foo
+
+  aboutme:
+    heading: "About Me"
+
   disable_theme_toggle: true
   disable_stay_uptodate: true
   logo: "images/bar-chart.svg"
@@ -316,14 +324,14 @@ menu:
       name: work
       url: categories/work/
       weight: 10
+    - identifier: github
+      name: github
+      url: https://github.com/specialprocedures/
+      weight: 11
     - identifier: about
       name: about
       url: /about/
       weight: 20
-    # - identifier: uses
-    #   name: uses
-    #   url: /uses/
-    #   weight: 25
     # - identifier: categories
     #   pre: dropdown
     #   name: Categories
@@ -337,10 +345,6 @@ menu:
       url: /contact/
       weight: 50
   categories:
-    # - identifier: prose
-    #   name: Prose
-    #   url: /prose/
-    #   weight: 10
     - identifier: about
       name: about
       url: /about/
