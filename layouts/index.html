@@ -25,25 +25,6 @@
         </div>
     </div>
 
-    <!-- Services Section -->
-    <div class="section-spacing"></div>
-        <div class="section-container">
-            <h2 class="standalone-section-heading">
-                {{ .Site.Params.Services.Heading }}
-            </h2>
-
-        <div>
-        {{ if .Site.Params.Services.Content }}
-            <div class="standalone-section-content">
-                {{ range .Site.Params.Services.Content }}
-                    <p class="standalone-section-paragraph">
-                        {{ .text | markdownify }}
-                    </p>
-                {{ end }}
-            </div>
-        {{ end }}
-    </div>
-
     <!-- Section 1 -->
     <div class="section-wrapper section-spacing">
         <div class="section-container">
@@ -158,22 +139,12 @@
     <!-- Work section -->
     <div class="work-section-wrapper">
         <div class="section-container">
-            <div class="work-header">
-                <h2 class="standalone-section-heading">
-                    {{ .Site.Params.Work.Heading }}
-                </h2>
-                {{ range .Site.Params.Work.Content }}
-                <p class="work-description">
-                    {{ .text }}
-                </p>
-                {{ end }}
-            </div>
+
 
             <div class="work-content">
                 <div class="work-cards-container">
                     <div class="work-cards-grid">
-                        {{ range (where site.RegularPages "Params.categories" "in" (slice "Work" "Projects") | first 3) }}
-                        <div class="work-card">
+                        {{ range (where site.RegularPages "Params.categories" "in" (slice "Work" "Projects") | first 3) }} <div class="work-card">
                             <a href="{{.Permalink}}">
                                 {{ with .Params.featured_image }}
                                 {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "object-fill overflow-hidden rounded-t-lg" "sizes" "500x500") }}
@@ -227,12 +198,6 @@
     <!-- About Me Section -->
         <!-- Services Section -->
     <div class="section-spacing"></div>
-        <div class="section-container">
-            <h2 class="standalone-section-heading">
-                {{ .Site.Params.AboutMe.Heading }}
-            </h2>
-
-        <div>
         {{ if .Site.Params.AboutMe.Content }}
             <div class="standalone-section-content">
                 {{ range .Site.Params.AboutMe.Content }}
