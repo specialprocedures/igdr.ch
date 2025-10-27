@@ -10,161 +10,207 @@ author: Ian
 authorimage: ../assets/images/global/ian-face.png
 categories: Work
 tags: ["Semnet", "NLP"]
+math: true
 ---
 
-# Semnet: Graph structures from embeddings
+I'm happy to introduce Semnet, a small Python library which efficiently constructs graph structures from embeddings.
 
-Semnet constructs graph structures from embeddings, enabling graph-based analysis and operations over embedded documents, images, and more.
+The name "Semnet" derives from _[semantic network](https://en.wikipedia.org/wiki/Semantic_network)_, as it was initially designed for an NLP use-case, but the tool will work well with any form of embedded document (e.g., images, audio, even or [graphs](https://arxiv.org/abs/1707.05005)).
 
-Semnet uses [Annoy](https://github.com/spotify/annoy) to perform efficient pair-wise distance calculations across all embeddings in the dataset, then constructs [NetworkX](https://networkx.org) graphs representing relationships between embeddings.
+In this post, I'll quickly run over some of the features, before talking about Semnet's origins and how it might be useful. I'll then dig in to how graphs are constructed, before closing with a few examples of it in action.
 
-## Use cases
+## Features
+
+Semnet is a relatively simple library, effectively chaining together Annoy and NetworkX in an easy-to-use package.
+
+It's key features are:
+
+- Rapid conversion of large embedding collections to graph format, with nodes as documents and edges as document similarity (e.g., cosine distance)
+- It's fast and memory efficient: Semnet uses [Annoy](https://github.com/spotify/annoy) under the hood to perform efficient pair-wise distance calculations, allowing for million-node networks to be constructed in minutes on consumer hardware
+- Graphs are returned as [NetworkX](https://networkx.org) objects, opening up a wide range of algorithms for your project.
+- Pass arbitrary metadata during graph construction or update it later in NetworkX
+- Control graph construction by setting distance measures, similarity cut-offs, and limits on outbound edges per node
+- Easily convert to [pandas](https://pandas.pydata.org/) for downstream use
 
 Semnet may be used for:
 
+- **Graph algorithms**: enrich your data with [communities](https://networkx.org/documentation/stable/reference/algorithms/community.html), [centrality](https://networkx.org/documentation/stable/reference/algorithms/centrality.html) and [much more](https://networkx.org/documentation/stable/reference/algorithms/) for use in NLP, search, RAG and context engineering
 - **Deduplication**: remove duplicate records (e.g., "Donald Trump", "Donald J. Trump) from datasets
-- **Clustering**: find groups of similar documents via [community detection](https://networkx.org/documentation/stable/reference/algorithms/community.html) algorithms
-- **Recommendation systems**: Account for relationships, and take advantage of graph structures such as communities and paths in search and RAG
-- **Knowledge graph construction**: Build networks of related concepts or entities, as a regular NetworkX graph it's easy to add additional entities
 - **Exploratory data analysis and visualisation**, [Cosmograph](https://cosmograph.app/) works brilliantly for large corpora
 
-Exposing the full NetworkX and Annoy APIs, Semnet offers plenty of opportunity for experimentation depending on your use-case. Check out the examples for inspiration.
+## Origins
 
-## Quick Start
+Semnet came about whilst working on a particularly large and messy disambiguation task in another project. I'd passed a set of news articles to an LLM for quote extraction, and found myself dealing with tens of thousands of records like this:
+
+| name             | org                              |
+| :--------------- | :------------------------------- |
+| Rishi Sunak      | Government of the United Kingdom |
+| Lord Cameron     | UK Government                    |
+| David Cameron    | UK Government                    |
+| Emanuel Macron   | French Government                |
+| John Healy       | UK Government                    |
+| David Cameron    | Government of the United Kingdom |
+| Keir Starmer     | UK Government                    |
+| Sir Keir Starmer | United Kingdom Government        |
+| Macron           | Government of France             |
+| James Cleverly   | Government of the UK             |
+
+Note how many ways there are to address Starmer and Cameron, let alone the UK government. I needed to deduplicate.
+
+I played around with the [Python Record Linkage Toolkit](https://recordlinkage.readthedocs.io) in the past, but didn't get on with it. I also knew it leaned heavily on [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) which would struggle with pairs like ("Government of the United Kingdom", "UK Government") so I thought I'd reinvent the wheel and try another approach.
+
+I'd stumbled across the Annoy + NetworkX combination visualising chunks of news articles a while ago, and realised I could use `nx.connected_components()` to disambiguate.
+
+![Simple connected component disambiguation](images/posts/semnet/semantic_network_deduplication.png)
+
+The approach worked well, particularly when combined with blocking, and I started thinking about other ways in which NetworkX could be used on text corpora. We could leverage paths, communities, centrality algorithms. Most
+
+Looking around, I couldn't find anything doing quite the same thing so I thought I'd package my graph generation functions up neatly as a package for others to use.
+
+## Why use graph structures?
+
+By opening up the NetworkX API to embedded documents, Semnet provides a new suite of tools and metrics for workflows in domains such as NLP, RAG, search and context engineering.
+
+For most use cases, Semnet will work best as a complement to traditional workflows, rather than as a replacement. Its power lies in encoding information about relationships between data points, which can be used as features in downstream tasks.
+
+Approaches will vary depending on your use case, but benefits might include:
+
+- Representing indirect connections that aren't encoded in traditional workflows
+- Examining graph structure around a node may provide richer context than just its nearest neighbours
+- Centrality measures that capture an entire graph or subgraph structure, rather than just a position in multi-dimensional space
+- It's simpler to add new nodes, edges and data, compared to a structure based on dimensionality reduction (e.g., UMAP) which may be unstable during recomputation
+- Some very pretty charts
+
+## What problem does Semnet solve?
+
+Graph construction entails finding pairwise relationships (edges) between entities (nodes) in a dataset.
+
+For large corpora, scaling problems rapidly become apparent as the number of possible pairs in a set scales quadratically.
+
+$$pairs = \frac{n(n-1)}{2}$$
+
+### Naive approach
+
+If we were to naively attempt to construct a graph from a modestly-sized set of documents we'd hit problems rapidly. For example, 10,000 documents is about 50 million pairs to check, for 100,000 it's around 5 billion!
+
+Iterating over each pair is of course very slow. Faster approaches exist, but here we run into a larger problem: it's memory intensive:
+
+```python
+from sklearn.metrics import DistanceMetric
+import numpy as np
+
+dist = DistanceMetric.get_metric("euclidean")
+
+# Generate 10_000 random embeddings
+embeddings = np.random.rand(100_000, 768)
+dist_scores = dist.pairwise(embeddings)
+
+>> MemoryError: Unable to allocate 74.5 GiB for an array
+   with shape (100000, 100000) and data type float64
+```
+
+### With Semnet
+
+Semnet solves this scaling problem using [Approximate Nearest Neighbours](https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor) search with [Annoy](https://github.com/spotify/annoy).
+
+Instead of making comparisons between each document in the corpus, Semnet indexes the embeddings, iterates over each one, and returns a `top_k` best matches from within their neighbourhood.
+
+Trying this again on the same rig with Semnet.
 
 ```python
 from semnet import SemanticNetwork
-from sentence_transformers import SentenceTransformer
-import networkx as nx
 
-# Your documents
+# Kick off timer again
+start_time = time.time()
+
+# Make 100,000 copies this time
+embeddings = np.random.rand(100_000, 768)
+
+# Build semantic network
+semnet = SemanticNetwork(thresh=0.4, top_k=5)
+G = semnet.fit_transform(embeddings)
+
+# Close off the timer
+end_time = time.time()
+print(f"Processing time: {end_time - start_time:.2f} seconds")
+
+>> Processing time: 24.26 seconds
+```
+
+We're not only able to process all the embeddings without crashing our computer, but it's done in under 30 seconds.
+
+## Graph construction
+
+Constructing a graph with all possible pairs and distances presents a further scaling challenge, this time when managing the graph after pairs are found.
+
+A fully-connected graph with 10,000 nodes would also have ~50 million edges, making relatively simple algorithms challenging on consumer hardware.
+
+Semnet provides two parameters during graph construction to address this problem:
+
+#### `thresh`
+
+The similarity threshold at which two nodes are considered to have an edge. Any pairs with a similarity lower than `thresh` are discarded.
+
+`thresh` limits how similar two documents can be to be considered related.
+
+![Similarity relationships at different thresholds](images/posts/semnet/semantic_network_thresholds.png)
+
+`thresh` is the most important parameter in determining graph density, particularly at larger scales.
+
+Lower values will result in large numbers of increasingly tenuous connections (false positives), higher values will result in more false negatives and orphan nodes.
+
+#### `top_k`
+
+Passed to the `AnnoyIndex`, `top_k` limits the number of results returned during search, and thus the number of out-bound edges a single node may possess.
+
+`top_k` limits the maximum number of connections a graph can have.
+
+![Similarity relationships at different top_k](images/posts/semnet/semantic_network_top_k.png)
+
+Higher values of `top_k` quickly result in heavily connected networks, but are strongly limited by `thresh`.
+
+## Examples
+
+### Visualisation
+
+```python
+
+# Export to pandas for visualisation with cosmograph
+# Export using standalone function (recommended)
+from semnet import to_pandas
+nodes, edges = to_pandas(G)
+
+
+```
+
+### Deduplication
+
+Semnet was built as a by-product of a complex deduplication task: disambiguating structured LLM output from a large corpus.
+
+```python
+from sentence_transformers import SentenceTransformer
+from semnet import SemanticNetwork
+import networkx as nx
+import matplotlib.pyplot as plt
+
 docs = [
-    "The cat sat on the mat",
-    "A cat was sitting on a mat",
-    "The dog ran in the park",
-    "I love Python",
-    "Python is a great programming language",
+    "Tony Blair",
+    "Anthony Blair",
+    "Sir Tony Blair",
+    "President Obama",
+    "Barack Obama",
+    "Donald J. Trump",
+    "Donald Trump",
+    "The Donald",
+    "Joe Biden",
+    "Joseph Biden",
+    "Elon Musk",
 ]
 
-# Generate embeddings (use any embedding provider)
 embedding_model = SentenceTransformer("BAAI/bge-base-en-v1.5")
-embeddings = embedding_model.encode(docs)
-
-# Create and configure semantic network
-sem = SemanticNetwork(thresh=0.3, verbose=True)  # Larger values give sparser networks
-
-# Build the semantic graph from your embeddings
-G = sem.fit_transform(embeddings, labels=docs)
-
-# Analyze the graph
-print(f"Nodes: {G.number_of_nodes()}")
-print(f"Edges: {G.number_of_edges()}")
-print(f"Connected components: {nx.number_connected_components(G)}")
-
-# Find similar document groups
-for component in nx.connected_components(G):
-    if len(component) > 1:
-        similar_docs = [G.nodes[i]["label"] for i in component]
-        print(f"Similar documents: {similar_docs}")
-
-# Calculate centrality measures,
-# Degree centrality not that interesting in the example, but shown here for demonstration
-centrality = nx.degree_centrality(G)
-for node, cent_value in centrality.items():
-    print(f"Document: {G.nodes[node]['label']}, Degree Centrality: {cent_value:.4f}")
-    G.nodes[node]["degree_centrality"] = cent_value
-
-# Export to pandas
-nodes_df, edges_df = sem.to_pandas(G)
+embeddings = embedding_model.encode(docs, show_progress_bar=True)
 ```
 
-## Installation
+### Clustering
 
-```bash
-pip install semnet
-```
-
-For development:
-
-```bash
-git clone https://github.com/specialprocedures/semnet.git
-cd semnet
-pip install -e ".[dev]"
-```
-
-## Configuration Options
-
-### SemanticNetwork Parameters
-
-- **metric**: Distance metric for Annoy index ('angular', 'euclidean', etc.) (default: 'angular')
-- **n_trees**: Number of trees for Annoy index (more = better accuracy, slower) (default: 10)
-- **thresh**: Similarity threshold (0.0 to 1.0) (default: 0.3)
-- **top_k**: Maximum neighbors to check per document (default: 100)
-- **verbose**: Show progress bars and logging (default: False)
-
-### Method Parameters
-
-- **fit(embeddings, labels=None, ids=None, node_data=None)**:
-  - embeddings are required pre-computed embeddings array with shape (n_docs, embedding_dim)
-  - labels are optional text labels/documents for the embeddings
-  - ids are optional custom IDs for the embeddings
-  - node_data is optional dictionary containing additional data to attach to nodes
-- **transform(thresh=None, top_k=None)**: Optional threshold and top_k overrides
-- **fit_transform(embeddings, labels=None, ids=None, node_data=None, thresh=None, top_k=None)**: Combined fit and transform
-- **to_pandas(graph)**: Export NetworkX graph to pandas DataFrames
-
-## Performance Tips
-
-- Use `"angular"` metric for cosine similarity (default and recommended)
-- Increase `n_trees` for better accuracy (try 50-100 for large datasets)
-- Decrease `top_k` if you have memory constraints
-- Use smaller embedding models for speed: `"all-MiniLM-L6-v2"`
-- Use larger models for accuracy: `"BAAI/bge-large-en-v1.5"`
-
-## Requirements
-
-- Python 3.8+
-- networkx
-- annoy
-- numpy
-- pandas
-- tqdm
-
-## Project origin and statement on the use of AI
-
-I love network analysis, and have explored embedding-derived [semantic networks](https://en.wikipedia.org/wiki/Semantic_network) in the past as an alternative approach to representing, clustering and querying news data.
-
-Whilst using semantic networks for graph analysis on some forthcoming research, I decided to package some of my code for others to use.
-
-I kicked off the project by hand-refactoring my initial code into the class-based structure that forms the core functionality of the current module.
-
-I then used Github Copilot in VSCode to:
-
-- Bootstrap scaffolding, tests, documentation, examples and typing
-- Refactor the core methods in the style of the scikit-learn API
-- Add additional functionality for convenient analysis of graph structures and to allow the use of custom embeddings.
-
-## Roadmap
-
-Semnet is a relatively simple project focused on core graph construction functionality. Potential future additions:
-
-- Better examples showcasing network analysis on large corpora
-- Integration with graph visualization tools
-- Performance optimizations for very large datasets
-
-## License
-
-MIT License
-
-## Citation
-
-If you use Semnet in academic work, please cite:
-
-```bibtex
-@software{semnet,
-  title={Semnet: Semantic Networks from Embeddings},
-  author={Ian Goodrich},
-  year={2025},
-  url={https://github.com/specialprocedures/semnet}
-}
-```
+### Extending the graph
