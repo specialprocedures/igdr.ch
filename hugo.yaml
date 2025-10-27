@@ -11,7 +11,9 @@ pagination:
 darkmode_js:
   - assets/js/darkmode.js
 enableInlineShortcodes: true
-
+buildDrafts: false
+buildExpired: false
+buildFuture: false
 markup:
   goldmark:
     extensions:
@@ -324,14 +326,18 @@ menu:
       name: work
       url: categories/work/
       weight: 10
-    - identifier: github
-      name: github
-      url: https://github.com/specialprocedures/
-      weight: 11
     - identifier: about
       name: about
       url: /about/
       weight: 20
+    - identifier: contact
+      name: contact
+      url: /contact/
+      weight: 30
+    - identifier: github
+      name: github
+      url: https://github.com/specialprocedures/
+      weight: 40
     # - identifier: categories
     #   pre: dropdown
     #   name: Categories
@@ -340,10 +346,6 @@ menu:
     #   pre: complexdropdown
     #   name: Dropdown
     #   weight: 40
-    - identifier: contact
-      name: contact
-      url: /contact/
-      weight: 50
   categories:
     - identifier: about
       name: about
