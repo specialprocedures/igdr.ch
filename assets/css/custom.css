@@ -10,11 +10,103 @@
 }
 
 /* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+
+/* Navigation title styling - matches original behavior but synchronized */
+.nav-title-logo-effect {
+  color: #f3f4f6;
+  background-color: #374151; /* This uses the overridden primary-600 color */
+  outline: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.nav-title {
+  margin-top: 0.25rem;
+  margin-left: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #f3f4f6;
+  /* transition: color 1000ms ease-in-out; */
+}
+
+/* Navigation logo styling - matches original behavior */
+.nav-logo {
+  height: 2.25rem;
+  width: 2.25rem;
+  /* transition: opacity 1000ms ease-in-out; */
+  filter: invert(1);
+}
+
+.nav-menu-item:hover,
+.nav-menu-item:focus {
+  color: #f3f4f6;
+  background-color: #374151; /* This uses the overridden primary-600 color */
+  outline: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Navigation menu item styling - restores original behavior */
+.nav-menu-item {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  color: #f3f4f6;
+}
+
+.nav-menu-item:hover,
+.nav-menu-item:focus {
+  color: #f3f4f6;
+  background-color: #374151; /* This uses the overridden primary-600 color */
+  outline: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Dropdown button styling - restores original behavior */
+.nav-dropdown-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  color: #f3f4f6;
+}
+
+.nav-dropdown-button:hover,
+.nav-dropdown-button:focus {
+  color: #f3f4f6;
+  background-color: #374151; /* This uses the overridden primary-600 color */
+  outline: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile responsive adjustments */
+@media (min-width: 768px) {
+  .nav-menu-item,
+  .nav-dropdown-button {
+    width: auto;
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+/* ==========================================================================
    HERO SECTION
    ========================================================================== */
 
 .hero-section {
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
 .hero-gradient-overlay {
@@ -25,6 +117,35 @@
     rgba(0, 0, 0, 0.5) 60%,
     rgba(0, 0, 0, 0.7) 100%
   );
+  /* padding-bottom: 3rem; */
+}
+
+.hero-title {
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #f3f4f6;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.hero-subtitle {
+  padding-bottom: 0.5rem;
+  font-size: 1.875rem;
+  font-weight: 300;
+  color: #f3f4f6;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.hero-description {
+  max-width: 48rem;
+  margin: 0 auto 1.5rem;
+  font-weight: 400;
+  color: #f3f4f6;
+  font-size: 1rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  text-wrap: balance;
 }
 
 /* ==========================================================================
@@ -85,15 +206,45 @@
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.025em;
-  color: #ffffff;
+  color: #f3f4f6;
   text-wrap-style: balance;
   /* margin-bottom: 1.5rem; */
+}
+
+/* Standalone section headings (Services, About Me, etc.) */
+.standalone-section-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  color: #f3f4f6;
+  text-align: left;
+  /* margin-bottom: 3rem; */
+  text-wrap: balance;
+}
+
+.standalone-section-content {
+  max-width: 4xl;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.standalone-section-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: #e5e7eb;
+  margin-bottom: 2rem;
+  text-wrap: balance;
+}
+
+.standalone-section-paragraph:last-child {
+  margin-bottom: 0;
 }
 
 /* Content wrapper styles */
 .section-content-wrapper,
 .section-content-inner {
-  color: #ffffff;
+  color: #f3f4f6;
   position: relative;
   z-index: 3;
 }
@@ -106,7 +257,7 @@
 .section-paragraph {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: #ffffff;
+  color: #f3f4f6;
   text-wrap: balance;
 }
 
@@ -150,7 +301,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
+  color: #f3f4f6;
   padding: 0.5rem;
 }
 
@@ -276,9 +427,22 @@
    WORK SECTION
    ========================================================================== */
 
+.work-section-wrapper {
+  all: unset; /* Reset all styles */
+  background-color: #111827; /* Explicitly redefine background color */
+  width: 100vw; /* Explicitly redefine width */
+  margin: 0; /* Explicitly redefine margin */
+  padding: 0; /* Explicitly redefine padding */
+  box-sizing: border-box; /* Explicitly redefine box-sizing */
+  position: relative; /* Explicitly redefine position */
+}
+
 .work-section {
   position: relative;
-  background-color: transparent;
+  /* max-width: 80rem; Constrain content width */
+  margin: 0 auto; /* Center content */
+  /* padding: 6rem 2rem; Add spacing */
+  /* background-color: transparent; */
 }
 
 .work-background {
@@ -287,10 +451,10 @@
   right: 0;
   bottom: 0;
   left: 0;
+  /* max-width: none; */
 }
 
 .work-background-shape {
-  background-color: #111827;
   height: 33.333333%;
 }
 
@@ -303,11 +467,14 @@
 }
 
 .work-heading {
-  font-size: 1.875rem;
-  font-weight: 900;
-  line-height: 1.25;
-  letter-spacing: -0.025em;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
   color: #8b5cf6;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
 }
 
 .work-description {
@@ -318,20 +485,20 @@
 }
 
 .work-content {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   color: #111827;
-  max-width: 80rem;
+  /* max-width: 80rem; */
 }
 
 .work-cards-container {
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   color: #111827;
 }
 
 .work-cards-grid {
   display: grid;
   gap: 1rem;
-  margin: 3rem auto 1rem;
+  margin: 3rem auto;
   max-width: none;
 }
 
@@ -341,7 +508,7 @@
   overflow: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background-color: #f9fafb;
+  background-color: rgb(51, 60, 82);
 }
 
 .work-card-content {
@@ -357,7 +524,7 @@
   margin-top: 0.5rem;
   font-size: 1.5rem;
   font-weight: 900;
-  color: #111827;
+  color: white;
   transition-property: color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -371,7 +538,7 @@
 .work-card-summary {
   margin-top: 0.75rem;
   font-size: 1rem;
-  color: #111827;
+  color: white;
 }
 
 .work-card-tags {
@@ -408,6 +575,7 @@
 
 .work-card-meta {
   display: flex;
+  color: white;
   align-items: center;
   margin-top: 1.5rem;
 }
@@ -430,14 +598,14 @@
 .work-card-author {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #111827;
+  color: white;
 }
 
 .work-card-date-info {
   display: flex;
   column-gap: 0.25rem;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: white;
 }
 
 .work-card-separator {
@@ -452,10 +620,23 @@
 
   .work-heading {
     font-size: 2.25rem;
+    margin-bottom: 1rem;
   }
 
   .work-description {
     margin-top: 1rem;
+  }
+
+  .hero-title {
+    font-size: 3.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
   }
 }
 
@@ -472,6 +653,14 @@
 @media (min-width: 1024px) {
   .work-cards-grid {
     max-width: none;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
   }
 }
 
@@ -512,6 +701,28 @@
   .section-heading {
     font-size: 1.875rem;
     margin-bottom: 2rem;
+  }
+
+  .standalone-section-heading {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .standalone-section-paragraph {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2.25rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
   }
 
   .section-content-wrapper {
