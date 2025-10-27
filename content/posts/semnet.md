@@ -19,24 +19,29 @@ The name "Semnet" derives from _[semantic network](https://en.wikipedia.org/wiki
 
 In this post, I'll quickly run over some of the features, before talking about Semnet's origins and how it might be useful. I'll then dig in to how graphs are constructed, before closing with a few examples of it in action.
 
+It's a pretty dense and technical piece, if you'd just like to see something cool you can do with Semnet, [click here](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&) or the image below for an interactive visualisation of a collection of quotes.
+
+[![Cosmograph static image](images/posts/semnet/cosmo_static.png)](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&)
+_Graph built with Semnet and visualised in Cosmograph. Data: [m-ric](https://huggingface.co/datasets/m-ric/english_historical_quotes/) via [Hugging Face](huggingface.co)._
+
 ## Features
 
-Semnet is a relatively simple library, effectively chaining together Annoy and NetworkX in an easy-to-use package.
+Semnet is a relatively small library, which does just one thing: make network structures from embeddings.
 
-It's key features are:
+Its key features are:
 
-- Rapid conversion of large embedding collections to graph format, with nodes as documents and edges as document similarity (e.g., cosine distance)
-- It's fast and memory efficient: Semnet uses [Annoy](https://github.com/spotify/annoy) under the hood to perform efficient pair-wise distance calculations, allowing for million-node networks to be constructed in minutes on consumer hardware
+- Rapid conversion of large embedding collections to graph format, with nodes as documents and edges as document similarity.
+- It's fast and memory efficient: Semnet uses [Annoy](https://github.com/spotify/annoy) under the hood to perform efficient pair-wise distance calculations, allowing for million-node networks to be constructed in minutes on consumer hardware.
 - Graphs are returned as [NetworkX](https://networkx.org) objects, opening up a wide range of algorithms for your project.
-- Pass arbitrary metadata during graph construction or update it later in NetworkX
-- Control graph construction by setting distance measures, similarity cut-offs, and limits on outbound edges per node
-- Easily convert to [pandas](https://pandas.pydata.org/) for downstream use
+- Pass arbitrary metadata during graph construction or update it later in NetworkX.
+- Control graph construction by setting distance measures, similarity cut-offs, and limits on outbound edges per node.
+- Easily convert to [pandas](https://pandas.pydata.org/) for downstream use.
 
 Semnet may be used for:
 
-- **Graph algorithms**: enrich your data with [communities](https://networkx.org/documentation/stable/reference/algorithms/community.html), [centrality](https://networkx.org/documentation/stable/reference/algorithms/centrality.html) and [much more](https://networkx.org/documentation/stable/reference/algorithms/) for use in NLP, search, RAG and context engineering
-- **Deduplication**: remove duplicate records (e.g., "Donald Trump", "Donald J. Trump) from datasets
-- **Exploratory data analysis and visualisation**, [Cosmograph](https://cosmograph.app/) works brilliantly for large corpora
+- **Graph algorithms**: enrich your data with [communities](https://networkx.org/documentation/stable/reference/algorithms/community.html), [centrality](https://networkx.org/documentation/stable/reference/algorithms/centrality.html) and [much more](https://networkx.org/documentation/stable/reference/algorithms/) for use in NLP, search, RAG and context engineering.
+- **Deduplication**: remove duplicate records (e.g., "Donald Trump", "Donald J. Trump) from datasets.
+- **Exploratory data analysis and visualisation**, [Cosmograph](https://cosmograph.app/) works brilliantly for large corpora.
 
 ## Origins
 
@@ -63,23 +68,10 @@ I'd stumbled across the Annoy + NetworkX combination visualising chunks of news 
 
 ![Simple connected component disambiguation](images/posts/semnet/semantic_network_deduplication.png)
 
-The approach worked well, particularly when combined with blocking, and I started thinking about other ways in which NetworkX could be used on text corpora. We could leverage paths, communities, centrality algorithms. Most
+The approach worked well, and I started thinking about other ways in which NetworkX could be used on text corpora.
 
-Looking around, I couldn't find anything doing quite the same thing so I thought I'd package my graph generation functions up neatly as a package for others to use.
-
-## Why use graph structures?
-
-By opening up the NetworkX API to embedded documents, Semnet provides a new suite of tools and metrics for workflows in domains such as NLP, RAG, search and context engineering.
-
-For most use cases, Semnet will work best as a complement to traditional workflows, rather than as a replacement. Its power lies in encoding information about relationships between data points, which can be used as features in downstream tasks.
-
-Approaches will vary depending on your use case, but benefits might include:
-
-- Representing indirect connections that aren't encoded in traditional workflows
-- Examining graph structure around a node may provide richer context than just its nearest neighbours
-- Centrality measures that capture an entire graph or subgraph structure, rather than just a position in multi-dimensional space
-- It's simpler to add new nodes, edges and data, compared to a structure based on dimensionality reduction (e.g., UMAP) which may be unstable during recomputation
-- Some very pretty charts
+Looking around, the writing I could find on similarity networks all seemed to be lacking the  
+I couldn't find anything doing quite the same thing so I thought I'd package my graph generation functions up neatly as a package for others to use.
 
 ## What problem does Semnet solve?
 
@@ -138,6 +130,20 @@ print(f"Processing time: {end_time - start_time:.2f} seconds")
 ```
 
 We're not only able to process all the embeddings without crashing our computer, but it's done in under 30 seconds.
+
+## Why use graph structures?
+
+By opening up the NetworkX API to embedded documents, Semnet provides a new suite of tools and metrics for workflows in domains such as NLP, RAG, search and context engineering.
+
+For most use cases, Semnet will work best as a complement to traditional workflows, rather than as a replacement. Its power lies in encoding information about relationships between data points, which can be used as features in downstream tasks.
+
+Approaches will vary depending on your use case, but benefits might include:
+
+- Representing indirect connections that aren't encoded in traditional workflows
+- Examining graph structure around a node may provide richer context than just its nearest neighbours
+- Centrality measures that capture an entire graph or subgraph structure, rather than just a position in multi-dimensional space
+- It's simpler to add new nodes, edges and data, compared to a structure based on dimensionality reduction (e.g., UMAP) which may be unstable during recomputation
+- Some very pretty charts
 
 ## Graph construction
 
