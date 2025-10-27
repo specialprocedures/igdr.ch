@@ -1,0 +1,9 @@
+{{- $src := .Destination -}} {{- $alt := .Text -}} {{- $title := .Title -}} {{/* Try to get the image as a resource
+first */}} {{- $image := resources.Get $src -}} {{- if $image -}} {{/* Image found in assets - process it */}} {{- if
+strings.HasSuffix $src ".svg" -}} {{/* SVG - display directly */}}
+<img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" {{- with $title }} title="{{ . }}" {{ end }} />
+{{- else -}} {{/* Raster image - create responsive version */}} {{- $processed := $image.Resize "800x webp q90" -}}
+<img src="{{ $processed.RelPermalink }}" alt="{{ $alt }}" {{- with $title }} title="{{ . }}" {{ end }} />
+{{- end -}} {{- else -}} {{/* Fallback to regular img tag for external images or if not found in assets */}}
+<img src="{{ $src }}" alt="{{ $alt }}" {{- with $title }} title="{{ . }}" {{ end }} />
+{{- end -}}

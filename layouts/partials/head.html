@@ -25,3 +25,27 @@
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
 {{ end }} {{/* Custom CSS - Safe from Tailwind rebuilds */}} {{ $customCSS := resources.Get "/css/custom.css" }}
 <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}" />
+
+{{/* MathJax support for math equations */}} {{ if or .Params.math .Site.Params.math }}
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      displayMath: [
+        ["$$", "$$"],
+        ["\\[", "\\]"],
+      ],
+      processEscapes: true,
+      processEnvironments: true,
+    },
+    options: {
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+    },
+  };
+</script>
+<script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{ end }}
