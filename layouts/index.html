@@ -162,7 +162,7 @@
             <div class="work-content">
                 <div class="work-cards-container">
                     <div class="work-cards-grid">
-                        {{ range (where site.RegularPages "Params.categories" "in" (slice "Work" "Projects") | first 3) }} <div class="work-card">
+                        {{ range (where (where site.RegularPages "Params.categories" "in" (slice "Work" "Projects")) "Params.featured" "eq" true | first .Site.Params.featured.max_items) }} <div class="work-card">
                             <a href="{{.Permalink}}">
                                 {{ with .Params.featured_image }}
                                 {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "object-fill overflow-hidden rounded-t-lg" "sizes" "500x500") }}

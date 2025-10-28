@@ -6,8 +6,8 @@
                 <a href="{{.Permalink}}">
                     {{ with .Params.featured_image }}
                     {{ with resources.Get . }}
-                    {{ $postimage := (.Resize "500x webp q90").RelPermalink }}
-                    <img src="{{ $postimage }}" class="object-fill overflow-hidden rounded-t-lg" width="100%" height=""
+                    {{ $postimage := (.Resize "500x300 webp q90").RelPermalink }}
+                    <img src="{{ $postimage }}" class="object-cover w-full h-48 rounded-t-lg" width="100%" height="192"
                          loading="lazy" alt="{{ .Title }}" />
 
                     {{ end }}
