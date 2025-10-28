@@ -338,9 +338,9 @@ menu:
       name: About
       url: /about/
       weight: 20
-    # - identifier: contact
-    #   name: Contact
-    #   url: /contact/
+    - identifier: contact
+      name: Contact
+      url: /contact/
       weight: 30
     - identifier: github
       name: Github
