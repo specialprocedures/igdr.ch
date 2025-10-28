@@ -49,7 +49,13 @@
                 <div class="section-image-container">
                     <div class="section-image-wrapper">
                         <div class="section-image-frame">
+                            {{ if .Site.Params.Triplet1.ImageUrl }}
+                            <a href="{{ .Site.Params.Triplet1.ImageUrl }}" target="_blank" rel="noopener noreferrer">
+                                {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet1.Image "alt" "Section 1" "sizes" "1600x900" "class" "object-fill hover:opacity-90 transition-opacity cursor-pointer") }}
+                            </a>
+                            {{ else }}
                             {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet1.Image "alt" "Section 1" "sizes" "1600x900" "class" "object-fill") }}
+                            {{ end }}
                             {{ if .Site.Params.Triplet1.Caption }}
                             <div class="section-caption">
                                 <p>{{ .Site.Params.Triplet1.Caption | markdownify }}</p>
@@ -86,7 +92,13 @@
                 <div class="section-image-container">
                     <div class="section-image-wrapper">
                         <div class="section-image-frame">
+                            {{ if .Site.Params.Triplet2.ImageUrl }}
+                            <a href="{{ .Site.Params.Triplet2.ImageUrl }}" target="_blank" rel="noopener noreferrer">
+                                {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet2.Image "alt" "Section 2" "sizes" "1600x900" "class" "object-fill hover:opacity-90 transition-opacity cursor-pointer") }}
+                            </a>
+                            {{ else }}
                             {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet2.Image "alt" "Section 2" "sizes" "1600x900" "class" "object-fill") }}
+                            {{ end }}
                             {{ if .Site.Params.Triplet2.Caption }}
                             <div class="section-caption">
                                 <p>{{ .Site.Params.Triplet2.Caption | markdownify }}</p>
@@ -123,7 +135,13 @@
                 <div class="section-image-container">
                     <div class="section-image-wrapper">
                         <div class="section-image-frame">
+                            {{ if .Site.Params.Triplet3.ImageUrl }}
+                            <a href="{{ .Site.Params.Triplet3.ImageUrl }}" target="_blank" rel="noopener noreferrer">
+                                {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet3.Image "alt" "Section 3" "sizes" "1600x900" "class" "object-fill hover:opacity-90 transition-opacity cursor-pointer") }}
+                            </a>
+                            {{ else }}
                             {{ partial "responsive-image.html" (dict "src" .Site.Params.Triplet3.Image "alt" "Section 3" "sizes" "1600x900" "class" "object-fill") }}
+                            {{ end }}
                             {{ if .Site.Params.Triplet3.Caption }}
                             <div class="section-caption">
                                 <p>{{ .Site.Params.Triplet3.Caption | markdownify }}</p>

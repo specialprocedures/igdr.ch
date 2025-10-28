@@ -71,6 +71,7 @@ params:
   triplet1:
     heading: "Research"
     image: "images/global/cosmo_semnet.png"
+    imageUrl: "https://github.com/specialprocedures/semnet"
     caption: "A semantic network of Guardian headlines. Built with **[semnet](https://github.com/specialprocedures/semnet)**, my Python library for embedding-based semantic networks."
     content:
       - text: |
@@ -98,6 +99,7 @@ params:
   triplet3:
     heading: "Impact"
     image: "images/case-study.png"
+    imageUrl: "https://policy-practice.oxfam.org/authors/goodrich-ian/"
     caption: Documenting Oxfam's flagship programmes
     content:
       - text: |
@@ -119,14 +121,14 @@ params:
               
               I have spent most of my career living and working internationally: in Georgia, Palestine, Lebanon, the Philippines and Hungary.
     logos:
-      - identifier: meliore
-        image: "images/clients/m.svg"
-        alt: "The Meliore Foundation"
-        url: "https://www.meliorefoundation.org/"
       - identifier: ecf
         image: "images/clients/logo-ecfwhite.png"
         alt: "European Climate Foundation"
         url: "https://europeanclimate.org/"
+      - identifier: meliore
+        image: "images/clients/m.svg"
+        alt: "The Meliore Foundation"
+        url: "https://www.meliorefoundation.org/"
       - identifier: oxfam
         image: "images/clients/oxfam.svg"
         alt: "Oxfam"
@@ -223,12 +225,8 @@ params:
       #   url: "https://matplotlib.org/"
       - identifier: huggingface
         image: "images/tools/huggingface.svg"
-        url: "https://geopandas.org/"
+        url: "https://huggingface.co/"
         alt: "Hugging Face"
-      - identifier: ollama
-        image: "images/tools/ollama.svg"
-        alt: "Ollama"
-        url: "https://ollama.ai/"
       - identifier: networkx
         image: "images/tools/networkx.png"
         alt: "NetworkX"
@@ -236,7 +234,7 @@ params:
       - identifier: geopandas
         image: "images/tools/geopandas.svg"
         alt: "GeoPandas"
-        url: "https://huggingface.co/"
+        url: "https://geopandas.org/"
       - identifier: bertopic
         image: "images/tools/bertopic.png"
         alt: "BERTopic"
@@ -249,14 +247,10 @@ params:
       #   image: "images/tools/stata.svg"
       #   alt: "Stata"
       #   url: "https://www.stata.com/"
-      - identifier: html
+      - identifier: html-css
         image: "images/tools/html.svg"
-        alt: "HTML"
+        alt: "HTML/CSS"
         url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
-      - identifier: css
-        image: "images/tools/css.svg"
-        alt: "CSS"
-        url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
       - identifier: django
         image: "images/tools/django.svg"
         alt: "Django"
@@ -269,9 +263,17 @@ params:
       #   image: "images/tools/d3.png"
       #   alt: "D3.js"
       #   url: "https://d3js.org/"
+      - identifier: copilot
+        image: "images/tools/copilot.png"
+        alt: "Github Copilot"
+        url: "https://github.com/features/copilot"
+      - identifier: ollama
+        image: "images/tools/ollama.svg"
+        alt: "Ollama"
+        url: "https://ollama.ai/"
       - identifier: looker-studio
         image: "images/tools/looker-studio.svg"
-        alt: "Looker"
+        alt: "Looker Studio"
         url: "https://lookerstudio.google.com/"
       - identifier: appsheet
         image: "images/tools/appsheet.svg"
@@ -323,19 +325,19 @@ params:
 menu:
   main:
     - identifier: work
-      name: work
+      name: Work
       url: categories/work/
       weight: 10
     - identifier: about
-      name: about
+      name: About
       url: /about/
       weight: 20
     - identifier: contact
-      name: contact
+      name: Contact
       url: /contact/
       weight: 30
     - identifier: github
-      name: github
+      name: Github
       url: https://github.com/specialprocedures/
       weight: 40
     # - identifier: categories
