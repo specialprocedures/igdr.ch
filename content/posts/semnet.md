@@ -4,7 +4,7 @@ date: 2025-10-24T11:10:36+08:00
 draft: false
 language: en
 featured_image: ../assets/images/global/cosmo_semnet.png
-summary: Semnet constructs graph structures from embeddings, enabling graph-based analysis and operations over embedded documents, images, and more.
+summary: Semnet constructs network structures from embeddings, enabling graph-based analysis and operations over embedded documents, images, and more.
 description: Semnet constructs graph structures from embeddings, enabling graph-based analysis and operations over embedded documents, images, and more.
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
