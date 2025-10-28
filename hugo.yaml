@@ -54,6 +54,7 @@ params:
   og_image: /images/network.jpg  # Using your hero image as default OG image
   moto: "Research Engineering Impact"
   description: Ian is a researcher and engineer who helps non-profits solve problems with data.
+  summary: Ian is a researcher and engineer who helps non-profits solve problems with data.
 
   services:
     heading: "Services"
