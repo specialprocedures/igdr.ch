@@ -68,6 +68,11 @@ params:
   disable_stay_uptodate: true
   logo: "images/bar-chart.svg"
   hero_image: "images/network.jpg"
+  
+  # Featured content control
+  featured:
+    enabled: true
+    max_items: 3
 
   triplet1:
     heading: "Research"
@@ -319,7 +324,7 @@ params:
       enabled: true
       url: 'https://www.linkedin.com/in/igdrch/'
     mastodon:
-      enabled: true
+      enabled: false
       url: 'https://defcon.social/@specialprocedures'
     
 
@@ -333,9 +338,9 @@ menu:
       name: About
       url: /about/
       weight: 20
-    - identifier: contact
-      name: Contact
-      url: /contact/
+    # - identifier: contact
+    #   name: Contact
+    #   url: /contact/
       weight: 30
     - identifier: github
       name: Github

@@ -19,14 +19,110 @@
         {{- with $medium -}}, {{.}} 550w{{- end -}}
         {{- with $large -}}, {{.}} 768w{{- end -}}
         {{- with $featuredimage -}}, {{.}} 1100w{{- end -}}"
-        class="object-fill overflow-hidden rounded-lg shadow-lg ring-4 ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
+        class="object-fill overflow-hidden rounded-lg shadow-lg"
         width="100%"
         alt="{{ .Params.title }}"
       />
       {{ end }} {{ end }}
+      
+      <!-- Featured image caption (only for posts) -->
+      {{ if and (eq .Section "posts") .Params.caption }}
+      <div class="featured-image-caption">
+        <p>{{ .Params.caption | markdownify }}</p>
+      </div>
+      {{ end }}
     </div>
   </div>
+  
+  <!-- Author and date information (only for posts) -->
+  {{ if eq .Section "posts" }}
+  <div class="post-author-container">
+    <div class="post-author-card">
+      <div class="post-author-avatar">
+        {{ with .Params.authorimage }}
+        {{ with resources.Get . }}
+        {{ $authorimage := (.Resize "48x webp").RelPermalink }}
+        <img src="{{ $authorimage }}" alt="{{ $.Params.author }}">
+        {{ end }}
+        {{ end }}
+      </div>
+      <div class="post-author-info">
+        <p class="post-author-name">
+          {{ .Params.author }}
+        </p>
+        <div class="post-author-meta">
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
   <!-- " {{.Content}}" pulls from the markdown content of the corresponding _index.md -->
   <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">{{.Content}}</div>
+  
+  <!-- Related Articles Section (only for posts) -->
+  {{ if eq .Section "posts" }}
+  <div class="related-articles-container">
+    <h3 class="related-articles-heading">Related Articles</h3>
+    <div class="related-articles-list">
+      {{ $currentPage := . }}
+      {{ $relatedPages := slice }}
+      
+      <!-- First, get posts with same tags -->
+      {{ range .GetTerms "tags" }}
+        {{ range first 10 .Pages }}
+          {{ if ne .Permalink $currentPage.Permalink }}
+            {{ $relatedPages = $relatedPages | append . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      
+      <!-- If we don't have enough, add recent posts -->
+      {{ if lt (len $relatedPages) 3 }}
+        {{ range first 10 (where site.RegularPages "Section" "posts") }}
+          {{ if ne .Permalink $currentPage.Permalink }}
+            {{ $found := false }}
+            {{ range $relatedPages }}{{ if eq .Permalink $.Permalink }}{{ $found = true }}{{ end }}{{ end }}
+            {{ if not $found }}
+              {{ $relatedPages = $relatedPages | append . }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      
+      <!-- Display first 3 related posts -->
+      {{ range first 3 $relatedPages }}
+      <article class="related-article-item">
+        {{ with .Params.featured_image }}
+        {{ with resources.Get . }}
+        {{ $relatedimage := (.Resize "120x80 webp q80").RelPermalink }}
+        <div class="related-article-image">
+          <a href="{{ $.Permalink }}">
+            <img src="{{ $relatedimage }}" alt="{{ $.Title }}">
+          </a>
+        </div>
+        {{ end }}
+        {{ end }}
+        <div class="related-article-content">
+          <h4 class="related-article-title">
+            <a href="{{ .Permalink }}">
+              {{ .Title }}
+            </a>
+          </h4>
+          <p class="related-article-summary">
+            {{ .Params.summary }}
+          </p>
+          <div class="related-article-meta">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            <span>&middot;</span>
+            <span>{{ math.Round (div (countwords .Content) 220.0) }} min read</span>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
 </article>
 {{end}}
