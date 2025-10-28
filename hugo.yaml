@@ -1,11 +1,11 @@
-baseURL: ""
+baseURL: "https://igdr.ch"
 title: igdr.ch
 languageCode: en-us
 DefaultContentLanguage: en
 enableEmoji: true
 enableGitInfo: true
 enableRobotsTXT: true
-canonifyURLs: true
+canonifyURLs: false
 pagination:
   pagerSize: 6
 darkmode_js:
