@@ -2,6 +2,7 @@
 title: "Introducing Semnet: Semantic networks from embeddings"
 date: 2025-10-24T11:10:36+08:00
 draft: false
+featured: true
 language: en
 featured_image: ../assets/images/global/cosmo_semnet.png
 summary: Semnet constructs network structures from embeddings, enabling graph-based analysis and operations over embedded documents, images, and more.
@@ -19,14 +20,14 @@ The name "Semnet" derives from _[semantic network](https://en.wikipedia.org/wiki
 
 In this post, I'll quickly run over some of the features, before talking about Semnet's origins and how it might be useful. I'll then dig in to how graphs are constructed, before closing with a few examples of it in action.
 
-It's a pretty dense and technical piece, if you'd just like to see something cool you can do with Semnet, [click here](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&) or the image below for an interactive visualisation of a collection of quotes.
+It's a pretty dense and technical piece. If you'd just like to see something cool you can do with Semnet, [click here](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&), or the image below for an interactive visualisation of a collection of quotes.
 
-[![Cosmograph static image](images/posts/semnet/cosmo_static.png)](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&)
+[![Cosmograph static image](images/posts/semnet/cosmo-static.png)](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&)
 _Graph built with Semnet and visualised in Cosmograph. Data: [m-ric](https://huggingface.co/datasets/m-ric/english_historical_quotes/) via [Hugging Face](huggingface.co)._
 
 ## Features
 
-Semnet is a relatively small library, which does just one thing: make network structures from embeddings.
+Semnet is a relatively small library, which does just one thing: efficiently construct network structures from embeddings.
 
 Its key features are:
 
@@ -42,6 +43,20 @@ Semnet may be used for:
 - **Graph algorithms**: enrich your data with [communities](https://networkx.org/documentation/stable/reference/algorithms/community.html), [centrality](https://networkx.org/documentation/stable/reference/algorithms/centrality.html) and [much more](https://networkx.org/documentation/stable/reference/algorithms/) for use in NLP, search, RAG and context engineering.
 - **Deduplication**: remove duplicate records (e.g., "Donald Trump", "Donald J. Trump) from datasets.
 - **Exploratory data analysis and visualisation**, [Cosmograph](https://cosmograph.app/) works brilliantly for large corpora.
+
+## Why use graph structures?
+
+By opening up the NetworkX API to embedded documents, Semnet provides a new suite of tools and metrics for workflows in domains such as NLP, RAG, search and context engineering.
+
+For most use cases, Semnet will work best as a complement to traditional workflows, rather than as a replacement. Its power lies in encoding information about relationships between data points, which can be used as features in downstream tasks.
+
+Approaches will vary depending on your use case, but benefits include:
+
+- Representing indirect connections that aren't encoded in traditional workflows
+- Examining graph structure around a node may provide richer context than just its nearest neighbours
+- Centrality measures that capture an entire graph or subgraph structure, rather than just a position in multi-dimensional space
+- It's simpler to add new nodes, edges and data, compared to a structure based on dimensionality reduction (e.g., UMAP) which may be unstable during recomputation
+- Some very pretty charts
 
 ## What problem does Semnet solve?
 
@@ -101,20 +116,6 @@ print(f"Processing time: {end_time - start_time:.2f} seconds")
 
 We're not only able to process all the embeddings without crashing our computer, but it's done in under 30 seconds.
 
-## Why use graph structures?
-
-By opening up the NetworkX API to embedded documents, Semnet provides a new suite of tools and metrics for workflows in domains such as NLP, RAG, search and context engineering.
-
-For most use cases, Semnet will work best as a complement to traditional workflows, rather than as a replacement. Its power lies in encoding information about relationships between data points, which can be used as features in downstream tasks.
-
-Approaches will vary depending on your use case, but benefits might include:
-
-- Representing indirect connections that aren't encoded in traditional workflows
-- Examining graph structure around a node may provide richer context than just its nearest neighbours
-- Centrality measures that capture an entire graph or subgraph structure, rather than just a position in multi-dimensional space
-- It's simpler to add new nodes, edges and data, compared to a structure based on dimensionality reduction (e.g., UMAP) which may be unstable during recomputation
-- Some very pretty charts
-
 ## Graph construction
 
 Constructing a graph with all possible pairs and distances presents a further scaling challenge, this time when managing the graph after pairs are found.
@@ -144,6 +145,8 @@ Passed to the `AnnoyIndex`, `top_k` limits the number of results returned during
 ![Similarity relationships at different top_k](images/posts/semnet/semantic_network_top_k.png)
 
 Higher values of `top_k` quickly result in heavily connected networks, but are strongly limited by `thresh`.
+
+`top_k` is passed to `Annoy` during search and affects performance. Higher values will take longer to run, given the larger search space required.
 
 ## Examples
 

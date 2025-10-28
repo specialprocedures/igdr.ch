@@ -2,22 +2,32 @@
 title: "Scraping Georgia's Darkweb"
 date: 2020-09-29T11:10:36+08:00
 draft: false
+featured: true
 language: en
-featured_image: ../assets/images/featured/work/drugs.webp
+featured_image: images/posts/drugs/moriarty.png
+caption: МОРИАРТИ (Moriarty), the mascot of the Russian darknet market, Mega. I didn't actually scrape his site, but the picture is related and too good to pass up
 summary: I provided the first estimate of online drug sales in Georgia, tracking over USD 1.5 million in purchases over a six-month period, and finding that Georgia's online drug trade is substantially larger than most European countries.
 author: Ian
-authorimage: ../assets/images/global/ian-face.png
+authorimage: images/global/ian-face.png
 categories: Work
 tags: ["Darknet", "Policy", "Scraping"]
 ---
 
-I provided the first estimate of online drug sales in Georgia, tracking over USD 1.5 million in purchases over a six-month period, and finding that Georgia's online drug trade is substantially larger than most European countries.
+---
 
-The study continues to be cited in [high-impact research](https://globalinitiative.net/analysis/russia-drug-trade-organized-crime/) with the methodology [adopted and replicated](https://altgeorgia.ge/news/2023-07-12-07-49-01/) by researchers at Ilia State University.
+Drug markets in the former Soviet Union are fascinating. Stiff penalties for drug possession and low levels of trust between market participants have pushed sales online, where much of the trade now takes place. Transactions are conducted in crypto-currency, with purchases being dropped off in hidden locations for collection.
 
-_This article was originally published at [OC Media](https://oc-media.org/datablog-how-high-georgia-spends-millions-online-on-illegal-drugs-each-year/). Photo: police.ge/OC Media_
+In 2020, I provided the first estimate of online drug sales in Georgia, tracking over USD 1.5 million in purchases over a six-month period, and finding that Georgia's online drug trade is substantially larger than most European countries.
+
+The study continues to be cited in [high-impact research](https://globalinitiative.net/analysis/russia-drug-trade-organized-crime/), with the methodology [adopted and replicated](https://altgeorgia.ge/news/2023-07-12-07-49-01/) by researchers at Ilia State University.
+
+The study launch blog, originally published at [OC Media](https://oc-media.org/datablog-how-high-georgia-spends-millions-online-on-illegal-drugs-each-year/) is reproduced below.
+
+The full report can be found on the CRRC Georgia [website](https://crrc.ge/uploads/tinymce/documents/PolicyBriefs/Online%20Markets%20for%20Illicit%20Drugs%20in%20Georgia%20-%20Report%20-%20FINAL.pdf?ref=igdr.ch) with source code and data available on [Github](https://github.com/crrcgeorgia/matanga?ref=igdr.ch).
 
 ---
+
+# How high? Georgia spends millions online on illegal drugs each year
 
 **Drug users in Georgia spent over $1.5 million dollars online between February and August 2020, according to [a new study](https://crrc.ge/en/online-markets-for-illicit-drugs-in-georgia/) into the darknet market, Matanga, conducted by CRRC Georgia.**
 
@@ -73,7 +83,3 @@ Despite recent cannabis liberalisation, Georgian law still mandates severe, [lon
 Matanga allows buyers and sellers to trade anonymously, without ever needing to meet. Sellers do not even need to hide the drugs themselves and recruit couriers to further distance themselves from transactions.
 
 In Europe, where markets are larger and penalties lower, online trade may be considered unnecessarily cumbersome by buyers and sellers. In Georgia, however, where both buyer and seller may face lengthy prison time for the smallest exchange, online markets may be becoming a normal part of doing business.
-
----
-
-_This article was the launch piece for my study into illicit drugs in Georgia. The full report can be found on the CRRC Georgia_ [_website_](https://crrc.ge/uploads/tinymce/documents/PolicyBriefs/Online%20Markets%20for%20Illicit%20Drugs%20in%20Georgia%20-%20Report%20-%20FINAL.pdf?ref=oc-media.org) _with source code and data available on_ [_Github_](https://github.com/crrcgeorgia/matanga?ref=oc-media.org)_._

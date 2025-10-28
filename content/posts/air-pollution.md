@@ -4,6 +4,7 @@ date: 2020-03-30T11:10:36+08:00
 draft: false
 language: en
 featured_image: ../assets/images/featured/work/airpollution.webp
+caption: A factory in Rustavi. Tamuna Chkareuli/OC Media.
 summary: Particulate matter in Tbilisi’s air has fallen by as much as 45% following the introduction of measures to combat the spread of COVID-19, according to analysis of air quality data by CRRC Georgia.
 description: Hello world
 author: Ian
@@ -12,7 +13,7 @@ categories: Work
 tags: ["Covid", "Environment"]
 ---
 
-_This article was originally published at [OC Media](https://oc-media.org/analysis-air-pollution-in-tbilisi-nearly-halved-by-covid-19-measures/). Photo: A factory in Rustavi. Tamuna Chkareuli/OC Media._
+_This article was originally published at [OC Media](https://oc-media.org/analysis-air-pollution-in-tbilisi-nearly-halved-by-covid-19-measures/)._
 
 **Particulate matter in Tbilisi’s air has fallen by as much as 45% following the introduction of measures to combat the spread of COVID-19, according to analysis of air quality data by CRRC Georgia.**
 
