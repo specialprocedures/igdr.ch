@@ -793,6 +793,70 @@
 }
 
 /* ==========================================================================
+   GRID LAYOUTS
+   ========================================================================== */
+
+/* Simple direct image grid for Oxfam */
+.oxfam-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+  text-align: left;
+  font-size: small;
+}
+
+@media (min-width: 768px) {
+  .oxfam-simple-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .oxfam-simple-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+.oxfam-simple-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0;
+  padding: 0;
+  /* transition: transform 0.3s ease; */
+}
+
+.oxfam-simple-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* Generic grid styling for image grids */
+.grid img {
+  width: 100%;
+  height: auto;
+  /* max-height: 4rem; */
+  object-fit: fill;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* transition: all 0.3s ease; */
+}
+
+.grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+}
+
+.grid .rounded-lg {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+/* ==========================================================================
    UTILITY CLASSES
    ========================================================================== */
 
