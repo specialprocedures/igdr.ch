@@ -10,7 +10,7 @@ description: In 2017 I was contracted to write technical case studies on Oxfam's
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
 categories: Work
-tags: ["Humanitarian", "Development", "Qualitative"]
+tags: ["Humanitarian", "Research", "Qualitative"]
 ---
 
 In 2017 I was contracted to write case studies on Oxfam's flagship programmes in Sierra Leone, Ghana, Tajikistan, Rwanda, Kenya, Pakistan and the South Caucasus.

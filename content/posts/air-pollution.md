@@ -10,7 +10,7 @@ description: Hello world
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
 categories: Work
-tags: ["Covid", "Environment"]
+tags: ["Covid", "Environment", "Research", "Policy"]
 ---
 
 _This article was originally published at [OC Media](https://oc-media.org/analysis-air-pollution-in-tbilisi-nearly-halved-by-covid-19-measures/)._

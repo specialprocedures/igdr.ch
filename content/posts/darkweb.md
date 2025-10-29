@@ -6,11 +6,11 @@ featured: true
 language: en
 featured_image: images/posts/drugs/moriarty.png
 caption: МОРИАРТИ (Moriarty), the mascot of the Russian darknet market, Mega. I didn't actually scrape his site, but the picture is related and too good to pass up
-summary: I provided the first estimate of online drug sales in Georgia, tracking over USD 1.5 million in purchases over a six-month period, and finding that Georgia's online drug trade is substantially larger than most European countries.
+summary: I provided the first estimate of online drug sales in Georgia, tracking over USD 1.5 million in purchases over a six-month period.
 author: Ian
 authorimage: images/global/ian-face.png
 categories: Work
-tags: ["Darknet", "Policy", "Scraping"]
+tags: ["Darknet", "Research", "Policy", "Scraping"]
 ---
 
 ---
