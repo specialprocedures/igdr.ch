@@ -1,8 +1,9 @@
-<div class="mx-auto text-gray-900 max-w-7xl dark:text-gray-50">
-    <div class="px-4 not-prose">
-        <div class="grid gap-4 mx-auto mt-12 mb-4 lg:max-w-none md:grid-cols-3">
+<div class="section-container posts-template">
+    <div class="work-content">
+        <div class="work-cards-container">
+            <div class="work-cards-grid">
             {{ range .Paginator.Pages }}
-            <div class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-gray-50 dark:bg-gray-900">
+            <div class="work-card">
                 <a href="{{.Permalink}}">
                     {{ with .Params.featured_image }}
                     {{ with resources.Get . }}
@@ -14,43 +15,41 @@
                     {{ end }}
                     {{ end }}
                 </a>
-                <div class="p-6">
-                    <div class="flex-1">
-                        <a href="{{.Permalink}}"
-                           class="block mt-2 text-2xl font-black text-gray-900 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-500 hover:underline">
+                <div class="work-card-content">
+                    <div class="work-card-main">
+                        <a href="{{.Permalink}}" class="work-card-title">
                             {{.Title}}
                         </a>
-                        <p class="mt-3 text-base text-gray-900 dark:text-gray-300">
+                        <p class="work-card-summary">
                             {{ .Params.summary }}
                         </p>
                     </div>
-                    <div class="flex pt-6 font-medium text-primary-600 dark:text-primary-100 text-md">
-                        <span class="pr-2 font-black">Tags:</span>
-                        <span>
+                    <div class="work-card-tags">
+                        <span class="work-card-tags-label">Tags:</span>
+                        <div class="work-card-tags-container">
                         {{ range $elem_index, $elem_val := (.GetTerms "tags") }}
-                        {{- if gt $elem_index 0 }}, {{ end -}}
-                        <a href="{{ $elem_val.Permalink }}"
-                           class="inline-flex items-center rounded-md bg-gray-300 hover:bg-primary-200 hover:text-black px-2.5 py-0.5 text-sm font-medium text-gray-900 capitalize">{{ $elem_val.Name }}</a>
-                           {{- end -}}
-                        </span>
+                        {{- if gt $elem_index 0 }} {{ end -}}
+                        <a href="{{ $elem_val.Permalink }}" class="work-card-tag">{{ $elem_val.Name }}</a>
+                        {{- end -}}
+                        </div>
                     </div>
-                    <div class="flex items-center mt-6">
-                        <div class="flex-shrink-0">
+                    <div class="work-card-meta">
+                        <div class="work-card-avatar">
                             <span class="sr-only">{{ .Params.author }}</span>
                             {{ with .Params.authorimage }}
                             {{ with resources.Get . }}
                             {{ $authorimage := (.Resize "40x webp").RelPermalink }}
-                            <img class="w-10 h-10 rounded-full" src="{{ $authorimage }}" alt="">
+                            <img class="work-card-avatar-image" src="{{ $authorimage }}" alt="">
                             {{ end }}
                             {{ end }}
                         </div>
-                        <div class="pt-1 ml-3">
-                            <p class="text-sm font-medium text-gray-900 dark:text-white">
+                        <div class="work-card-author-info">
+                            <p class="work-card-author">
                                 {{ .Params.author }}
                             </p>
-                            <div class="flex space-x-1 text-sm text-gray-500 dark:text-white">
+                            <div class="work-card-date-info">
                                 <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
-                                <span aria-hidden="true">&middot;</span>
+                                <span class="work-card-separator" aria-hidden="true">&middot;</span>
                                 <span>{{ math.Round (div (countwords .Content) 220.0) }} min read</span>
                             </div>
                         </div>
@@ -58,6 +57,7 @@
                 </div>
             </div>
             {{ end }}
+            </div>
         </div>
     </div>
 </div>

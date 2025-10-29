@@ -181,11 +181,12 @@
                                 </div>
                                 <div class="work-card-tags">
                                     <span class="work-card-tags-label">Tags:</span>
+                                    <div class="work-card-tags-container">
                                     {{ range $elem_index, $elem_val := (.GetTerms "tags") }}
-                                    {{- if gt $elem_index 0 }}, {{ end -}}
-                                    <a href="{{ .Permalink }}" class="work-card-tag">
-                                        {{ $elem_val.Name }}</a>
+                                    {{- if gt $elem_index 0 }} {{ end -}}
+                                    <a href="{{ $elem_val.Permalink }}" class="work-card-tag">{{ $elem_val.Name }}</a>
                                     {{- end -}}
+                                    </div>
                                 </div>
                                 <div class="work-card-meta">
                                     <div class="work-card-avatar">
