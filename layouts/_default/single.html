@@ -67,28 +67,44 @@
     <h3 class="related-articles-heading">Related Articles</h3>
     <div class="related-articles-list">
       {{ $currentPage := . }}
-      {{ $relatedPages := slice }}
+      {{ $currentTags := .Params.tags }}
       
-      <!-- First, get posts with same tags -->
-      {{ range .GetTerms "tags" }}
-        {{ range first 10 .Pages }}
-          {{ if ne .Permalink $currentPage.Permalink }}
-            {{ $relatedPages = $relatedPages | append . }}
+      <!-- Get all posts except current one, sorted by date (newest first) -->
+      {{ $allPosts := sort (where (where site.RegularPages "Section" "posts") "Permalink" "!=" .Permalink) "Date" "desc" }}
+      
+      <!-- Create a single scored list: posts with matching tags get priority -->
+      {{ $scoredPosts := slice }}
+      {{ $now := now.Unix }}
+      {{ range $allPosts }}
+        {{ $score := 0 }}
+        {{ $tagMatchCount := 0 }}
+        
+        <!-- Count matching tags -->
+        {{ range .Params.tags }}
+          {{ if in $currentTags . }}
+            {{ $tagMatchCount = add $tagMatchCount 1 }}
           {{ end }}
         {{ end }}
+        
+        <!-- Tag score: 1000 points per matching tag -->
+        {{ $tagScore := mul $tagMatchCount 1000 }}
+        
+        <!-- Recency score: more recent posts get higher scores (0-100 scale) -->
+        {{ $daysSincePost := div (sub $now .Date.Unix) 86400 }}
+        {{ $recencyScore := sub 100 (div $daysSincePost 365) }} <!-- 1 point lost per year -->
+        {{ if lt $recencyScore 0 }}{{ $recencyScore = 0 }}{{ end }}
+        
+        <!-- Combined score: tag matches heavily weighted, recency as tiebreaker -->
+        {{ $score = add $tagScore $recencyScore }}
+        
+        {{ $scoredPosts = $scoredPosts | append (dict "page" . "score" $score "tagCount" $tagMatchCount) }}
       {{ end }}
       
-      <!-- If we don't have enough, add recent posts -->
-      {{ if lt (len $relatedPages) 3 }}
-        {{ range first 10 (where site.RegularPages "Section" "posts") }}
-          {{ if ne .Permalink $currentPage.Permalink }}
-            {{ $found := false }}
-            {{ range $relatedPages }}{{ if eq .Permalink $.Permalink }}{{ $found = true }}{{ end }}{{ end }}
-            {{ if not $found }}
-              {{ $relatedPages = $relatedPages | append . }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
+      <!-- Sort by score (highest first) and take first 3 -->
+      {{ $sortedPosts := sort $scoredPosts "score" "desc" }}
+      {{ $relatedPages := slice }}
+      {{ range first 3 $sortedPosts }}
+        {{ $relatedPages = $relatedPages | append .page }}
       {{ end }}
       
       <!-- Display first 3 related posts -->
