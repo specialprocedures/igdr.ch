@@ -1,11 +1,11 @@
 ---
-title: "Air pollution in Tbilisi almost halved by COVID-19 measures"
+title: "Air pollution and Covid: Time series discontinuity analysis"
 date: 2020-03-30T11:10:36+08:00
 draft: false
 language: en
 featured_image: ../assets/images/featured/work/airpollution.webp
 caption: A factory in Rustavi. Tamuna Chkareuli/OC Media.
-summary: Particulate matter in Tbilisi’s air has fallen by as much as 45% following the introduction of measures to combat the spread of COVID-19, according to analysis of air quality data by CRRC Georgia.
+summary: At the height of the Covid crisis, I measured the impact of movement restrictions on air pollution in Tbilisi using time-series discontinuity analysis and Facebook's Prophet tool.
 description: Hello world
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
