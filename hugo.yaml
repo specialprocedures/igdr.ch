@@ -113,7 +113,7 @@ params:
           
           **Monitoring, evaluation and learning:** Define your goals, use the right tools to track your progress, learn what makes your programme tick  
           
-          **Communications and technical writing:** Get your message across with clean, clear language, written by a bona-fide human with an eye for presentation
+          **Communications and technical writing:** Get your message across with clean, clear language, written by a _bona fide_ human with an eye for presentation
   
   partners:
     heading: "Clients, colleagues and contexts"
@@ -123,9 +123,10 @@ params:
               I am proud to have worked with some of my sectors' most impactful organisations.
               
               My CV and client list includes UN agencies, global foundations, and some of the world's top aid organisations.              
-              I am also proud to worked for several think tanks and NGOs headquartered in aid-receiving countries.
               
-              I have spent most of my career living and working internationally: in Georgia, Palestine, Lebanon, the Philippines and Hungary.
+              Bigger isn't always better: I am also proud to have supported and represented several national organisations, including [CRRC Georgia](https://crrc.ge/en/) and [Abkhazeti](https://chca.org.ge/eng/).
+              
+              I have spent most of my career in Georgia, but have also worked in Palestine, Lebanon, the Philippines and Hungary.
     logos:
       - identifier: ecf
         image: "images/clients/logo-ecfwhite.png"
@@ -169,7 +170,7 @@ params:
     content:
       - text: |
               I've been working in Python for about seven years and it's my go-to language in most situations. I've also written a lot of SQL, and have professional experience with R and Stata. 
-              I've worked with most mainstream languages for data science and AI, and write pipelines, API integrations and scrapers.
+              I've worked with most mainstream libraries for data science and AI, and write pipelines, API integrations and scrapers.
               
               I have recently published **[Semnet](https://github.com/specialprocedures/semnet)**, a library that creates semantic networks from embeddings.
               
@@ -323,6 +324,10 @@ params:
     linkedin:
       enabled: true
       url: 'https://www.linkedin.com/in/igdrch/'
+    signal:
+      enabled: true
+      url: 'https://signal.me/#eu/igdr.41'
+      icon: 'images/tools/signal.svg'
     mastodon:
       enabled: false
       url: 'https://defcon.social/@specialprocedures'
