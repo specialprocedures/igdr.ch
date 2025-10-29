@@ -1098,15 +1098,15 @@
 .post-author-card {
   display: flex;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background-color: #f9fafb;
+  padding: 1rem 0.5rem;
+  /* background-color: #f9fafb; */
   border-radius: 0.5rem;
-  color: #111827;
+  /* color: #111827; */
 }
 
 .dark .post-author-card {
-  background-color: #111827;
-  color: #111827;
+  /* background-color: #111827; */
+  /* color: #111827; */
 }
 
 .post-author-avatar {

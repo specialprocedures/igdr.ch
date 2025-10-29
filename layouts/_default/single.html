@@ -38,18 +38,18 @@
   {{ if eq .Section "posts" }}
   <div class="post-author-container">
     <div class="post-author-card">
-      <div class="post-author-avatar">
+      {{/*  <div class="post-author-avatar">
         {{ with .Params.authorimage }}
         {{ with resources.Get . }}
         {{ $authorimage := (.Resize "48x webp").RelPermalink }}
         <img src="{{ $authorimage }}" alt="{{ $.Params.author }}">
         {{ end }}
         {{ end }}
-      </div>
-      <div class="post-author-info">
+      </div>  */}}
+      {{/*  <div class="post-author-info">
         <p class="post-author-name">
           {{ .Params.author }}
-        </p>
+        </p>  */}}
         <div class="post-author-meta">
           <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
         </div>
