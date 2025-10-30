@@ -17,13 +17,13 @@ tags: ["Darknet", "Research", "Policy", "Scraping"]
 
 Drug markets in the former Soviet Union are fascinating. Stiff penalties for drug possession and low levels of trust between market participants have pushed sales online, where much of the trade now takes place. Transactions are conducted in crypto-currency, with purchases being dropped off in hidden locations for collection.
 
-In 2020, I provided the first estimate of online drug sales in Georgia, tracking over USD 1.5 million in purchases over a six-month period, and finding that Georgia's online drug trade is substantially larger than most European countries.
+In 2020, I provided the first estimate of online drug sales in Georgia, tracking over USD 1.5 million in purchases over a six-month period, and finding that Georgia's online drug trade is substantially larger than in most European countries.
 
 The study continues to be cited in [high-impact research](https://globalinitiative.net/analysis/russia-drug-trade-organized-crime/), with the methodology [adopted and replicated](https://altgeorgia.ge/news/2023-07-12-07-49-01/) by researchers at Ilia State University.
 
-The study launch blog, originally published at [OC Media](https://oc-media.org/datablog-how-high-georgia-spends-millions-online-on-illegal-drugs-each-year/) is reproduced below.
-
 The full report can be found on the CRRC Georgia [website](https://crrc.ge/uploads/tinymce/documents/PolicyBriefs/Online%20Markets%20for%20Illicit%20Drugs%20in%20Georgia%20-%20Report%20-%20FINAL.pdf?ref=igdr.ch) with source code and data available on [Github](https://github.com/crrcgeorgia/matanga?ref=igdr.ch).
+
+The study launch blog, originally published at [OC Media](https://oc-media.org/datablog-how-high-georgia-spends-millions-online-on-illegal-drugs-each-year/) is reproduced below.
 
 ---
 
