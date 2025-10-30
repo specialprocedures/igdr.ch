@@ -541,6 +541,4 @@ In this post, I've demonstrated how to use Semnet to build a semantic network fr
 
 Semnet is a flexible tool that can be used with any kind of embedding, not just text. You can build networks from images, audio, even other [graphs](https://arxiv.org/abs/1707.05005).
 
-```
-
-```
+I'd stress again that these examples are simply a starting point. I believe there's a lot network analysis can bring to NLP

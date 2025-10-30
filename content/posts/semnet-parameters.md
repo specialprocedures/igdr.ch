@@ -1,7 +1,7 @@
 ---
 title: "Semnet: Optimal parameters in network creation"
 date: 2025-10-24T11:11:36+08:00
-draft: false
+draft: true
 featured: false
 language: en
 featured_image: ../assets/images/posts/semnet/semantic_network_thresholds.png

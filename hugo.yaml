@@ -53,7 +53,7 @@ params:
   # authorimage: ../assets/images/global/author.webp
   # og_image: /images/network.jpg  # Now using hero_image with proper processing
   moto: "Research Engineering Impact"
-  description: Ian is a researcher and engineer who helps non-profits solve problems with data.
+  description: "Ian is a skilled and creative technologist with two decades experience helping non-profits learn, discover and grow"
   summary: Ian is a researcher and engineer who helps non-profits solve problems with data.
 
   services:
