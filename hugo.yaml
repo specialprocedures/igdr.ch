@@ -403,10 +403,6 @@ menu:
       url: /contact/
       weight: 50
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
 
 taxonomies:
   category: Categories
