@@ -9,7 +9,9 @@ featured_image: images/ian-face.jpg
 
 I am an experienced researcher, engineer and coordinator specialising in data and code for non-profits and think tanks. As a skilled and creative technologist, and love to use complex, novel datasets to deliver outstanding, impactful research.
 
-If you’re interested in working with me or just want to say hi, feel free to reach out by email (ian@igdr.ch), or on [LinkedIn](https://www.linkedin.com/in/igdrch/).
+If you're interested in working with me or just want to say hi, feel free to reach out by email (ian@igdr.ch), on [LinkedIn](https://www.linkedin.com/in/igdrch/), or on [Signal](https://signal.me/#eu/Om0PCx4kCcCtoRA6AzSTYFC5XiWVmFeEkf-1X5l3ON2GpHb2jj9Bs5vhUD7Ca_-o).
+
+You can find me on Github as [specialprocedures](https://github.com/specialprocedures/).
 
 ## My Story
 
