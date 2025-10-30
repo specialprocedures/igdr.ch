@@ -5,8 +5,8 @@ draft: false
 featured: false
 language: en
 featured_image: ../assets/images/posts/semnet/cosmo-static.png
-summary: Semnet efficiently constructs network structures from embeddings, enabling graph-based analysis and operations over embedded documents, images, and more.
-description: Semnet efficiently constructs graph structures from embeddings, enabling graph-based analysis and operations over embedded documents, images, and more.
+summary: A demonstration of network analysis methods on a text corpus with Semnet and NetworkX
+description: A demonstration of network analysis methods on a text corpus with Semnet and NetworkX
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
 categories: Work
@@ -202,6 +202,8 @@ Reduced graph from 24022 to 11471.
 ```
 
 It's a lossy approach, dropping over half our data, but this is just a demo so let's proceed.
+
+If you'd like to find out more about dealing with disconnected components, check out the [parameters section](https://semnetdocs.readthedocs.io/en/latest/parameters.html) on the docs.
 
 # Graph algorithms
 
@@ -488,7 +490,7 @@ Sample quotes from community 'happiness_life_happy' (727 items):
 
 ```
 
-# Exporting for visualisation
+# Exporting
 
 And finally, we can export to `pandas` for visualisation and downstream tasks.
 
@@ -497,6 +499,8 @@ from semnet import to_pandas
 
 nodes, edges = to_pandas(G)
 ```
+
+# Visualisation
 
 We can visualise in our IDE with the Cosmograph widget.
 
@@ -531,9 +535,9 @@ nodes.rename(columns={"node_id": "id"}).to_csv("quotes_nodes_big.csv", index=Fal
 edges.to_csv("quotes_edges_big.csv", index=False)
 ```
 
-We can then head over to the Cosmograph website and visualise. You can check out a pre-made network here.
+We can then head over to the Cosmograph website and visualise. You can check out a pre-made network, built from the data we used in this example [here](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&) on Cosmograph.
 
-![Cosmograph at cosmograph.app](images/posts/semnet/cosmo-browser.png)
+[![Cosmograph static image](images/posts/semnet/cosmo-static.png)](https://cosmograph.app/run/?data=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_edges.csv&meta=https://raw.githubusercontent.com/specialprocedures/semnet/refs/heads/main/examples/quotes_nodes.csv&source=source&target=target&gravity=0.25&repulsion=1&repulsionTheta=1.15&linkSpring=1&linkDistance=10&friction=0.85&renderLabels=true&renderHoveredLabel=true&renderLinks=true&nodeSizeScale=1&linkWidthScale=1&linkArrowsSizeScale=1&nodeSize=size-degree_centrality&nodeColor=color-top_terms&nodeLabel=label&linkWidth=width-default&linkColor=color-default&)
 
 # Conclusion
 
@@ -541,4 +545,9 @@ In this post, I've demonstrated how to use Semnet to build a semantic network fr
 
 Semnet is a flexible tool that can be used with any kind of embedding, not just text. You can build networks from images, audio, even other [graphs](https://arxiv.org/abs/1707.05005).
 
-I'd stress again that these examples are simply a starting point. I believe there's a lot network analysis can bring to NLP
+I'd stress again that these examples are simply a starting point. I believe there's a lot network analysis can bring to NLP and I'd be excited to hear if you find an interesting use for it.
+
+# Learn more:
+
+- Check out the [repo](https://github.com/specialprocedures/semnet)
+- Read the [docs](https://semnetdocs.readthedocs.io/)
