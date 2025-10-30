@@ -22,13 +22,15 @@
 }
 
 .nav-title {
-  margin-top: 0.25rem;
-  margin-left: 0.75rem;
-  font-size: 1.25rem;
+  margin-top: 0;
+  margin-left: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1;
   letter-spacing: -0.025em;
   color: #f3f4f6;
+  display: flex;
+  align-items: center;
   /* transition: color 1000ms ease-in-out; */
 }
 
@@ -36,6 +38,7 @@
 .nav-logo {
   height: 2.25rem;
   width: 2.25rem;
+  display: block;
   /* transition: opacity 1000ms ease-in-out; */
   /* Removed filter: invert(1) since network icon is already in brand color */
 }
@@ -51,11 +54,13 @@
 /* Navigation menu item styling - restores original behavior */
 .nav-menu-item {
   padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 0.5rem;
   color: #f3f4f6;
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu-item:hover,
@@ -73,7 +78,7 @@
   align-items: center;
   width: 100%;
   padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0;
   font-size: 1rem;
   font-weight: 600;
   text-align: left;
@@ -95,7 +100,8 @@
   .nav-menu-item,
   .nav-dropdown-button {
     width: auto;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin-top: 0;
     margin-left: 1rem;
   }
@@ -312,6 +318,25 @@
   margin: 0;
 }
 
+/* Images within section frames - ONLY for triplet sections, not partners/tools */
+.section-image-frame:not(:has(.partners-logos-grid)):not(:has(.tools-logos-grid)) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.section-image-frame:not(:has(.partners-logos-grid)):not(:has(.tools-logos-grid)):hover img {
+  transform: scale(1.02);
+}
+
+.section-image-frame:not(:has(.partners-logos-grid)):not(:has(.tools-logos-grid)):hover {
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
+}
+
 /* ==========================================================================
    TOOLS SECTION (Grid & Logo Specific)
    ========================================================================== */
@@ -517,6 +542,12 @@
   border-radius: 0.5rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   background-color: #111827;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.25), 0 20px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
 .work-card-content {
@@ -791,6 +822,10 @@
     min-height: 200px;
   }
 
+  .section-image-frame img {
+    border-radius: 0.5rem;
+  }
+
   /* Grid changes */
   .tools-logos-grid {
     grid-template-columns: repeat(5, 1fr);
@@ -875,6 +910,64 @@
 
 .oxfam-simple-grid img:hover {
   transform: scale(1.02);
+}
+
+/* Reports grid styling for darkweb post */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .reports-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.reports-grid .report-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reports-grid img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+  display: block;
+  margin: 0 auto 1rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reports-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -5px rgba(0, 0, 0, 0.15);
+}
+
+.reports-grid .report-caption {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #f3f4f6);
+  margin-top: 0.5rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.reports-grid a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.reports-grid a:hover .report-caption {
+  color: var(--accent-primary, #8b5cf6);
+  transition: color 0.3s ease;
 }
 
 /* Generic grid styling for image grids */
