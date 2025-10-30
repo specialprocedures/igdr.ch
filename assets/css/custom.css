@@ -161,7 +161,7 @@
 /* Desktop defaults */
 .section-container {
   max-width: 80rem;
-  /* padding: 0 2rem; */
+  padding: 0 4rem; /* Ensure minimal margins on wide screens */
   margin: 0 auto;
 }
 
