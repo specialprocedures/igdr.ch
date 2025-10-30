@@ -81,9 +81,9 @@ params:
 
   triplet1:
     heading: "Research"
-    image: "images/global/cosmo_semnet.png"
-    imageUrl: "https://github.com/specialprocedures/semnet"
-    caption: "A semantic network of Guardian headlines. Built with **[semnet](https://github.com/specialprocedures/semnet)**, my Python library for embedding-based semantic networks."
+    image: "images/posts/drugs/moriarty-2.png"
+    imageUrl: "/posts/darkweb"
+    caption: "Ground-breaking research into the Georgian darkweb"
     content:
       - text: |
 
@@ -95,8 +95,9 @@ params:
           
   triplet2:
     heading: "Engineering"
-    image: "images/data-engineer.svg"
-    caption: Planning data replication from a legacy system
+    image: "images/global/cosmo_semnet.png"
+    imageUrl: "/posts/semnet-intro"
+    caption: A semantic network of Guardian headlines. Built with **[semnet](https://github.com/specialprocedures/semnet)**, my Python library for embedding-based semantic networks.
     content:
       - text: |
           **Data pipelines:** Replicate, enrich and integrate data from across your organisation with robust and scaleable data pipelines
