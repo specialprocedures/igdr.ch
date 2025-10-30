@@ -37,7 +37,7 @@
   height: 2.25rem;
   width: 2.25rem;
   /* transition: opacity 1000ms ease-in-out; */
-  filter: invert(1);
+  /* Removed filter: invert(1) since network icon is already in brand color */
 }
 
 .nav-menu-item:hover,
