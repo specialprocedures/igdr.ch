@@ -74,6 +74,11 @@ params:
     enabled: true
     max_items: 3
 
+  # Image processing control - skip resizing for images with these substrings
+  skip_image_processing:
+    - "cosmo_fullsize"
+    - "foobar"
+
   triplet1:
     heading: "Research"
     image: "images/global/cosmo_semnet.png"
@@ -105,7 +110,7 @@ params:
   triplet3:
     heading: "Impact"
     image: "images/case-study.png"
-    imageUrl: "https://policy-practice.oxfam.org/authors/goodrich-ian/"
+    imageUrl: "/posts/oxfam/"
     caption: Documenting Oxfam's flagship programmes
     content:
       - text: |

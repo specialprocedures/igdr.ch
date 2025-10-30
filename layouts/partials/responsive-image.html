@@ -1,7 +1,6 @@
 {{/*
 Responsive Image Partial
-Usage: {{ partial "responsive-image.html" (dict "src" "path/to/image.jpg" "alt" "Alt text" "class" "css-classes" "sizes"
-"400x400,800x800") }}
+Usage: {{ partial "responsive-image.html" (dict "src" "path/to/image.jpg" "alt" "Alt text" "class" "css-classes" "sizes" "400x400,800x800") }}
 
 Parameters:
 - src: path to the image (required)
@@ -19,8 +18,19 @@ Parameters:
 
 {{ $image := resources.Get $src }}
 {{ with $image }}
+{{ $skipProcessing := false }}
 {{ if strings.HasSuffix $src ".svg" }}
-{{/* Handle SVG files - display directly without processing */}}
+{{ $skipProcessing = true }}
+{{ else }}
+{{/* Check if image should skip processing based on config */}}
+{{ range site.Params.skip_image_processing }}
+{{ if strings.Contains $src . }}
+{{ $skipProcessing = true }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ if $skipProcessing }}
+{{/* Handle SVG files or images that should skip processing - display directly */}}
 <img src="{{ .RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" />
 {{ else }}
 {{/* Handle raster images - create responsive versions */}}
@@ -36,7 +46,7 @@ Parameters:
 {{ end }}
 
 {{ $defaultImg := index $images 0 }}
-<img srcset="{{ delimit $srcset " , " }}" src="{{ $defaultImg.RelPermalink }}" width="{{ $defaultImg.Width }}"
+<img srcset="{{ delimit $srcset ", " }}" src="{{ $defaultImg.RelPermalink }}" width="{{ $defaultImg.Width }}"
     height="{{ $defaultImg.Height }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" />
 {{ end }}
 {{ else }}

@@ -1,6 +1,9 @@
 {{- $src := .Destination -}} {{- $alt := .Text -}} {{- $title := .Title -}} {{/* Try to get the image as a resource
-first */}} {{- $image := resources.Get $src -}} {{- if $image -}} {{/* Image found in assets - process it */}} {{- if
-strings.HasSuffix $src ".svg" -}} {{/* SVG - display directly */}}
+first */}} {{- $image := resources.Get $src -}} {{- if $image -}} {{/* Image found in assets - process it */}} {{-
+$skipProcessing := false -}} {{- if strings.HasSuffix $src ".svg" -}} {{/* SVG - display directly */}} {{-
+$skipProcessing = true -}} {{- else -}} {{/* Check if image should skip processing based on config */}} {{- range
+site.Params.skip_image_processing -}} {{- if strings.Contains $src . -}} {{- $skipProcessing = true -}} {{- end -}} {{-
+end -}} {{- end -}} {{- if $skipProcessing -}}
 <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" {{- with $title }} title="{{ . }}" {{ end }} />
 {{- else -}} {{/* Raster image - create responsive version */}} {{- $processed := $image.Resize "800x webp q90" -}}
 <img src="{{ $processed.RelPermalink }}" alt="{{ $alt }}" {{- with $title }} title="{{ . }}" {{ end }} />

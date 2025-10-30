@@ -167,7 +167,7 @@
                         {{ range $postsToShow }} <div class="work-card">
                             <a href="{{.Permalink}}">
                                 {{ with .Params.featured_image }}
-                                {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "object-fill overflow-hidden rounded-t-lg" "sizes" "500x500") }}
+                                {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "work-card-image" "sizes" "500x500") }}
                                 {{ end }}
                             </a>
                             <div class="work-card-content">
