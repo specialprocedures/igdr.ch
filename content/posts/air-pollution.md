@@ -23,11 +23,11 @@ The findings reflect broader global trends which have seen dramatic decreases in
 
 The plot below examines overall pollution levels in Tbilisi over the last month, overlaid on the same period for the last three years.
 
-It highlights key dates in the COVID-19 crisis: the [first registered case](https://oc-media.org/first-coronavirus-case-confirmed-in-georgia/), on 26 February, the closure of bars and restaurants and [restrictions](https://oc-media.org/georgia-bans-entry-for-all-foreign-citizens-over-coronavirus-fears/) on entry into the country on 16 March, and the declaration of a [state of emergency](https://oc-media.org/georgia-declares-state-of-emergency/) on 21 March.
+It highlights key dates in the COVID-19 crisis: the [first registered case](https://oc-media.org/first-coronavirus-case-confirmed-in-georgia/), on 26 February, the closure of bars and restaurants and [restrictions](https://oc-media.org/georgia-bans-entry-for-all-foreign-citizens-over-coronavirus-fears/) on entry into the country on 16 March, and the declaration of a [state of emergency](https://oc-media.##org/georgia-declares-state-of-emergency/) on 21 March.
 
-## Air Pollution in Tbilisi: February to March, 2018–2020
+#### Air Pollution in Tbilisi: February to March, 2018–2020
 
-<iframe loading="lazy" src="https://crrcgeorgia.github.io/blogcharts/air_quality/en/time_plot.html" width="800" height="450" frameborder="0" scrolling="no"></iframe>
+{{< responsive-iframe src="https://crrcgeorgia.github.io/blogcharts/air_quality/en/time_plot.html" width="636" height="400" >}}
 
 _Data: air.gov.ge (February–March, 2018–2020) Mean normalised levels, all pollutants | CRRC-Georgia._
 
@@ -39,9 +39,9 @@ Models have been created for levels of five key pollutants in Tbilisi, examining
 
 The models show that following the declaration of emergency, almost all categories of air pollution fell. The only exception to this pattern is sulphur dioxide which has remained relatively constant throughout.
 
-## Air pollution in Tbilisi: Percent change from pre-COVID baseline, modelled estimate
+#### Air pollution in Tbilisi: Percent change from pre-COVID baseline, modelled estimate
 
-<iframe loading="lazy" src="https://crrcgeorgia.github.io/blogcharts/air_quality/en/percent_change.html" width="800" height="450" frameborder="0" scrolling="no"></iframe>
+{{< responsive-iframe src="https://crrcgeorgia.github.io/blogcharts/air_quality/en/percent_change.html" width="636" height="400" >}}
 
 _Data: air.gov.ge, power.larc.nasa.gov (1 January 2018 to 25 March 2020) Deseasoned modelled estimates | CRRC-Georgia._
 
