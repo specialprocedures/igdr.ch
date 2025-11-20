@@ -1,0 +1,40 @@
+{{/*
+Responsive Iframe Shortcode
+Usage: {{< responsive-iframe src="/path/to/content.html" width="636" height="400" >}}
+
+Parameters:
+- src: URL/path to the iframe content (required)
+- width: desired width for aspect ratio calculation (required)
+- height: desired height for aspect ratio calculation (required)
+- loading: loading attribute (optional, defaults to "lazy")
+- scrolling: scrolling attribute (optional, defaults to "no")
+- frameborder: frameborder attribute (optional, defaults to "0")
+- class: additional CSS classes (optional)
+*/}}
+
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" | default "636" }}
+{{ $height := .Get "height" | default "400" }}
+{{ $loading := .Get "loading" | default "lazy" }}
+{{ $scrolling := .Get "scrolling" | default "no" }}
+{{ $frameborder := .Get "frameborder" | default "0" }}
+{{ $class := .Get "class" | default "" }}
+
+{{ if not $src }}
+  {{ errorf "responsive-iframe shortcode requires 'src' parameter" }}
+{{ end }}
+
+{{/* Calculate aspect ratio percentage */}}
+{{ $aspectRatio := div (float $height) (float $width) | mul 100 }}
+
+<div class="responsive-iframe-wrapper {{ $class }}">
+  <div class="responsive-iframe-container" style="padding-bottom: {{ $aspectRatio }}%;">
+    <iframe 
+      src="{{ $src }}" 
+      loading="{{ $loading }}"
+      scrolling="{{ $scrolling }}"
+      frameborder="{{ $frameborder }}"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>

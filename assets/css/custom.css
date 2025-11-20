@@ -1013,6 +1013,7 @@
   border-radius: 0.5rem;
 }
 
+
 /* ==========================================================================
    UTILITY CLASSES
    ========================================================================== */
@@ -1367,4 +1368,67 @@
 
 .dark .related-article-meta {
   color: #9ca3af;
+}
+
+/* ==========================================================================
+   RESPONSIVE IFRAME CONTAINERS
+   ========================================================================== */
+
+/* Responsive iframe wrapper and container for charts and embedded content */
+.responsive-iframe-wrapper {
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden; /* This ensures content respects rounded corners */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  /* Force hardware acceleration for better clipping */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  position: relative;
+}
+
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  border-radius: 0.5rem; /* Apply border radius here too */
+  overflow: hidden; /* Double-ensure clipping happens */
+  /* padding-bottom is set inline via the shortcode for aspect ratio */
+}
+
+.responsive-iframe-container iframe {
+  position: absolute;
+  top: 1%;
+  /* left: -2%; */
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block; /* Ensure it's a block element */
+  /* Scale up more aggressively to eliminate margins and fill rounded corners */
+  transform: scale(1.04);
+  transform-origin: center center;
+}
+
+/* Dark mode adjustments for iframe containers */
+.dark .responsive-iframe-wrapper {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsive adjustments for iframe containers */
+@media (max-width: 640px) {
+  .responsive-iframe-wrapper {
+    margin: 1rem -1rem; /* Extend to screen edges on mobile */
+    border-radius: 0;
+  }
+  
+  .responsive-iframe-wrapper .responsive-iframe-container {
+    border-radius: 0; /* Remove border radius on mobile when extending to edges */
+  }
+  
+  .responsive-iframe-wrapper .responsive-iframe-container iframe {
+    transform: scale(1.03); /* Less aggressive scaling on mobile */
+    top: -1%;
+    left: -1%;
+    width: 100qqqqqqq%;
+    height: 100%;
+  }
 }
