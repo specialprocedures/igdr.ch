@@ -23,7 +23,7 @@ Since 2020, private rent has risen fastest in some of the UK's most deprived are
 
 - Private rents have risen by a third across England since 2020
 - Rent has increased fastest in the North West
-- Poorer areas have seen faster rent increases
+- Poorer areas have seen faster rent increases than richer areas
 - Major urban developments may be driving up rents in neighbouring local authorities with high levels of deprivation, particularly in the North West and the Midlands
 
 </div>
