@@ -19,7 +19,13 @@ Rent is a major recurring cost for many low-income households, but over the last
 
 Since the pandemic, rent increases have accelerated outside of traditional hot-spots such as London and the South East. The North West of England has been most affected, with rents rising 38% over the last five year, five percentage points above the national average of 33%.
 
+<div class="responsive-chart-desktop">
 {{< responsive-iframe src="/charts/jrf/private_rent_change_by_la.html" width="636" height="800" >}}
+</div>
+
+<div class="responsive-chart-mobile">
+{{< responsive-iframe src="/charts/jrf/private_rent_change_by_la_mobile.html" width="636" height="1000" >}}
+</div>
 
 _Source: [Office for National Statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/october2025)_
 
@@ -46,7 +52,13 @@ This trend can be seen at a national level, with a 1 point increase in deprivati
 
 This suggests that landlords in poorer areas may be taking advantage of dwindling rental supply in the [social and private sectors](https://www.jrf.org.uk/housing/is-the-private-rented-sector-shrinking) to raise rents in line with national pricing.
 
+<div class="responsive-chart-desktop">
 {{< responsive-iframe src="/charts/jrf/imd_rent_scatter.html" width="636" height="600" >}}
+</div>
+
+<div class="responsive-chart-mobile">
+{{< responsive-iframe src="/charts/jrf/imd_rent_scatter_mobile.html" width="636" height="800" >}}
+</div>
 
 In the context of a broader cost of living crisis, we should be concerned about the the ability of households in low-income areas to absorb accelerating rental costs.
 
@@ -54,7 +66,14 @@ Interventions seeking to cool rent pressures or support at-risk households may b
 
 By taking the product of post-2020 rent changes and income deprivation scoring, we can construct a simple index which highlights areas in which households may be at highest risk of rapidly rising rents.
 
+<div class="responsive-chart-desktop">
 {{< responsive-iframe src="/charts/jrf/rent_risk_index_map.html" width="636" height="800" >}}
+</div>
+
+<div class="responsive-chart-mobile">
+{{< responsive-iframe src="/charts/jrf/rent_risk_index_map_mobile.html" width="636" height="700" >}}
+</div>
+
 _Source: [Ministry of Housing, Communities & Local Government](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025/english-indices-of-deprivation-2025-statistical-release), [Office for National Statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/october2025)_
 
 Examining the local authorities most at risk from price rises, we again see the North West dominate the top ten, but also that areas of the East and West Midlands feature prominently.

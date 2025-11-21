@@ -1428,7 +1428,31 @@
     transform: scale(1.03); /* Less aggressive scaling on mobile */
     top: -1%;
     left: -1%;
-    width: 100qqqqqqq%;
+    width: 100%;
     height: 100%;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE CHART VISIBILITY
+   ========================================================================== */
+
+/* Show desktop charts on larger screens, hide mobile charts */
+.responsive-chart-desktop {
+  display: block;
+}
+
+.responsive-chart-mobile {
+  display: none;
+}
+
+/* On mobile/tablet, hide desktop charts and show mobile charts */
+@media (max-width: 768px) {
+  .responsive-chart-desktop {
+    display: none;
+  }
+  
+  .responsive-chart-mobile {
+    display: block;
   }
 }
