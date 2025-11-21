@@ -21,7 +21,7 @@ tags: ["UK", "Housing", "Research", "Policy"]
 
 Since 2020, private rent has risen fastest in some of the UK's most deprived areas. This article tracks post-pandemic rent increases across the country and highlights geographies where income deprivation intersects with rising housing costs.
 
-- Private rents have risen by a third across England since 2025
+- Private rents have risen by a third across England since 2020
 - Rent has increased fastest in the North West
 - Areas surrounding urban investment programmes in the North West and Midlands are most likely to struggle with rising rents
 
