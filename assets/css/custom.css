@@ -1456,3 +1456,29 @@
     display: block;
   }
 }
+
+/* ==========================================================================
+   KEY FINDINGS CALLOUT
+   ========================================================================== */
+
+.key-findings {
+  background-color: rgba(139, 92, 246, 0.08);
+  border-left: 4px solid rgba(139, 92, 246, 0.4);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+}
+
+.dark .key-findings {
+  background-color: rgba(139, 92, 246, 0.12);
+  border-left-color: rgba(139, 92, 246, 0.6);
+}
+
+/* Mobile adjustments for key findings */
+@media (max-width: 640px) {
+  .key-findings {
+    padding: 1rem 1.25rem;
+    margin: 1.5rem -1rem;
+    border-radius: 0;
+  }
+}
