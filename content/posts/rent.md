@@ -116,7 +116,7 @@ Examining the local authorities most at risk from price rises, we again see the 
 ## Urban development
 A common thread linking all these areas appears to be that they are, or are located near, major urban centres undergoing substantial programmes of investment and regeneration.
 
-Manchester here, provides an interesting case study that challenges the prevailing wisdom that new construction alone can solve the crisis in housing affordability. Manchester has [added over 25,000](https://commonslibrary.parliament.uk/local-authority-data-housing-supply/) housing units over the last decade, but has simultaneously seen private rents in deprived areas around the city rise well above the national average in recent years.
+Manchester here, provides an interesting case study that challenges the prevailing wisdom that new construction alone can solve the crisis in housing affordability. Manchester has [added over 25,000](https://commonslibrary.parliament.uk/local-authority-data-housing-supply/) housing units over the last decade, but has simultaneously seen private rents in deprived areas around the city rise well above the national average.
 
 Whilst further analysis is required to draw conclusions as to why rents are increasing alongside growing housing stock, a reasonable hypothesis is that premium urban centre accommodation raises averages overall, but also sets higher expectations for rental prices in the wider area. 
 
