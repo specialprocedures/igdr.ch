@@ -2,10 +2,11 @@
 title: "Rising rent in England: a vulnerability analysis"
 date: 2025-11-20T11:10:36+08:00
 draft: false
+featured: true
 language: en
 featured_image: ../assets/images/posts/jrf/main.jpg
 caption: Keith Edkins / Any property to let round here? / CC BY-SA 2.0
-summary: Analysing private rent increases in UK local authorities.
+summary: Since 2020, private rent has risen fastest in some of the UK's most deprived areas. This article tracks post-pandemic rent increases across the country and highlights geographies where income deprivation intersects with rising housing costs.
 description: Analysing private rent increases in UK local authorities.
 author: Ian
 authorimage: ../assets/images/global/ian-face.png

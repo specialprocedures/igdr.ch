@@ -2,7 +2,7 @@
 title: "Documenting Oxfam's Flagship Programming"
 date: 2017-07-10T11:10:36+08:00
 draft: false
-featured: true
+featured: false
 language: en
 featured_image: ../assets/images/posts/oxfam/pakistan-cropped.png
 summary: In 2017 I was contracted to write technical case studies on Oxfam's flagship programmes in Sierra Leone, Ghana, Tajikistan, Rwanda, Kenya, Pakistan and the South Caucasus
