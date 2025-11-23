@@ -1,6 +1,6 @@
 ---
 title: "Climate coverage and the COP effect"
-date: 2025-11-24T11:00:36+04:00
+date: 2025-11-23T11:00:36+04:00
 draft: false
 featured: true
 language: en
