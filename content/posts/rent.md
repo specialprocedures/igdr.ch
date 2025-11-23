@@ -6,7 +6,7 @@ featured: true
 language: en
 featured_image: ../assets/images/posts/jrf/main.jpg
 caption: Keith Edkins / Any property to let round here? / CC BY-SA 2.0
-summary: Since 2020, private rent has risen fastest in some of the UK's most deprived areas. This article tracks post-pandemic rent increases across the country and highlights geographies where income deprivation intersects with rising housing costs.
+summary: Since 2020, private rent has risen fastest in some of the UK's most deprived areas. 
 description: Analysing private rent increases in UK local authorities.
 author: Ian
 authorimage: ../assets/images/global/ian-face.png

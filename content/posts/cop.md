@@ -1,6 +1,6 @@
 ---
-title: "The COP effect is dwindling"
-date: 2025-11-23T11:10:36+08:00
+title: "Climate coverage and the COP effect"
+date: 2025-11-24T11:00:36+04:00
 draft: false
 featured: true
 language: en
