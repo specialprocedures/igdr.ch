@@ -1,4 +1,4 @@
-<div class="top-0 z-50 w-full text-gray-200 bg-gray-900 border-2 border-gray-900 md:sticky border-b-stone-200/10">
+<div class="top-0 z-50 w-full text-text bg-crust border-2 border-crust md:sticky">
   <div
     x-data="{ open: false }"
     class="section-container flex flex-col max-w-full mx-auto md:items-center md:justify-between md:flex-row"
@@ -73,14 +73,14 @@
           x-transition:leave-end="transform opacity-0 scale-95"
           class="absolute right-0 z-30 w-full mt-2 origin-top-right md:max-w-sm md:w-screen"
         >
-          <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg text-zinc-900">
+          <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg text-base">
             <div class="grid grid-cols-1 gap-4">
               {{ range (index site.Menus .Identifier) }}
               <a
                 class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline"
                 href="{{ .URL | absLangURL }}"
               >
-                <div class="p-3 text-white rounded-lg bg-primary-600 group-hover:bg-gray-900">
+                <div class="p-3 text-white rounded-lg bg-primary-600 group-hover:bg-base">
                   {{ if (eq .Pre "stars") }}
                   <svg
                     fill="none"
@@ -179,7 +179,7 @@
       <button
         id="theme-toggle"
         type="button"
-        class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden"
+        class="p-2 text-sm text-neutral-500 rounded-lg md: dark:text-subtext0 md:hover:bg-neutral-100 dark:md:hover:bg-surface1 md:focus:outline-none md:focus:ring-4 md:focus:ring-neutral-200 dark:md:focus:ring-surface1 md:ml-2 xs:hidden"
       >
         <svg
           id="theme-toggle-dark-icon"

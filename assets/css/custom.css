@@ -4,9 +4,9 @@
    OVERRIDES
    ========================================================================== */
 
-/* Override vibrant blue header with cooler, darker color */
+/* Override with Catppuccin Mocha surface color */
 .bg-primary-600 {
-  background-color: #374151 !important;
+  background-color: #313244 !important; /* surface0 */
 }
 
 /* ==========================================================================
@@ -15,8 +15,8 @@
 
 /* Navigation title styling - matches original behavior but synchronized */
 .nav-title-logo-effect {
-  color: #f3f4f6;
-  background-color: #374151; /* This uses the overridden primary-600 color */
+  color: #cdd6f4; /* text */
+  background-color: #313244; /* surface0 */
   outline: none;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
@@ -28,7 +28,7 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.025em;
-  color: #f3f4f6;
+  color: #cdd6f4; /* text */
   display: flex;
   align-items: center;
   /* transition: color 1000ms ease-in-out; */
@@ -45,8 +45,8 @@
 
 .nav-menu-item:hover,
 .nav-menu-item:focus {
-  color: #f3f4f6;
-  background-color: #374151; /* This uses the overridden primary-600 color */
+  color: #cdd6f4; /* text */
+  background-color: #313244; /* surface0 */
   outline: none;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
@@ -58,15 +58,15 @@
   font-size: 1rem;
   font-weight: 600;
   border-radius: 0.5rem;
-  color: #f3f4f6;
+  color: #cdd6f4; /* text */
   display: flex;
   align-items: center;
 }
 
 .nav-menu-item:hover,
 .nav-menu-item:focus {
-  color: #f3f4f6;
-  background-color: #374151; /* This uses the overridden primary-600 color */
+  color: #cdd6f4; /* text */
+  background-color: #313244; /* surface0 */
   outline: none;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
@@ -84,13 +84,13 @@
   text-align: left;
   background-color: transparent;
   border-radius: 0.5rem;
-  color: #f3f4f6;
+  color: #cdd6f4; /* text */
 }
 
 .nav-dropdown-button:hover,
 .nav-dropdown-button:focus {
-  color: #f3f4f6;
-  background-color: #374151; /* This uses the overridden primary-600 color */
+  color: #cdd6f4; /* text */
+  background-color: #313244; /* surface0 */
   outline: none;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
@@ -116,12 +116,15 @@
 }
 
 .hero-gradient-overlay {
+  filter: saturate(0.05) brightness(0.7);
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.6) 30%,
-    rgba(0, 0, 0, 0.5) 60%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(17, 17, 27, 0.95) 0%,       /* crust - #11111b */
+    rgba(24, 24, 37, 0.93) 25%,      /* mantle - #181825 */
+    rgba(30, 30, 46, 0.90) 50%,      /* base - #1e1e2e */
+    rgba(203, 166, 247, 0.15) 75%,   /* mauve - #cba6f7 */
+    rgba(180, 190, 254, 0.12) 90%,   /* lavender - #b4befe */
+    rgba(245, 224, 220, 0.08) 100%   /* rosewater - #f5e0dc */
   );
   /* padding-bottom: 3rem; */
 }
@@ -132,7 +135,7 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.025em;
-  color: #f3f4f6;
+  color: #cdd6f4;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
 }
 
@@ -140,7 +143,7 @@
   padding-bottom: 0.5rem;
   font-size: 1.875rem;
   font-weight: 300;
-  color: #f3f4f6;
+  color: #cdd6f4;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
 }
 
@@ -148,7 +151,7 @@
   max-width: 48rem;
   margin: 0 auto 1.5rem;
   font-weight: 400;
-  color: #f3f4f6;
+  color: #cdd6f4;
   font-size: 1rem;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
   text-wrap: balance;
@@ -212,7 +215,7 @@
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.025em;
-  color: #f3f4f6;
+  color: #cdd6f4;
   text-wrap-style: balance;
   /* margin-bottom: 1.5rem; */
 }
@@ -223,7 +226,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.05em;
-  color: #f3f4f6;
+  color: #cdd6f4;
   text-align: left;
   /* margin-bottom: 3rem; */
   text-wrap: balance;
@@ -250,7 +253,7 @@
 /* Content wrapper styles */
 .section-content-wrapper,
 .section-content-inner {
-  color: #f3f4f6;
+  color: #cdd6f4;
   position: relative;
   z-index: 3;
   text-wrap: pretty;
@@ -264,7 +267,7 @@
 .section-paragraph {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: #f3f4f6;
+  color: #cdd6f4;
   text-wrap: balance;
 }
 
@@ -308,7 +311,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #f3f4f6;
+  color: #cdd6f4;
   padding: 0.5rem;
 }
 
@@ -471,7 +474,7 @@
 
 .work-section-wrapper {
   all: unset; /* Reset all styles */
-  background-color: #111827; /* Explicitly redefine background color */
+  background-color: #1e1e2e; /* Explicitly redefine background color */
   width: 100vw; /* Explicitly redefine width */
   margin: 0; /* Explicitly redefine margin */
   padding: 0; /* Explicitly redefine padding */
@@ -523,18 +526,18 @@
   max-width: 42rem;
   margin: 0.75rem auto 0;
   font-size: 1.25rem;
-  color: #6b7280;
+  color: #6c7086;
 }
 
 .work-content {
   /* margin: 0 auto; */
-  color: #111827;
+  color: #1e1e2e;
   /* max-width: 80rem; */
 }
 
 .work-cards-container {
   /* padding: 0 1rem; */
-  color: #111827;
+  color: #181825;
 }
 
 /* Posts template specific width constraint */
@@ -556,7 +559,7 @@
   overflow: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background-color: #111827;
+  background-color: #181825;
   transition: box-shadow 0.3s ease;
 }
 
@@ -632,7 +635,7 @@
   padding: 0.125rem 0.625rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #111827;
+  color: #1e1e2e;
   transition-property: background-color, color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -693,7 +696,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f3f4f6;
+  background-color: #cdd6f4;
   aspect-ratio: 1.2;
 }
 
@@ -975,7 +978,7 @@
 .reports-grid .report-caption {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary, #f3f4f6);
+  color: var(--text-primary, #cdd6f4);
   margin-top: 0.5rem;
   text-align: center;
   line-height: 1.4;
@@ -1083,17 +1086,17 @@
 .prose pre,
 .markdown-content pre[class*="language-"],
 .markdown-content pre {
-  background-color: #111827 !important; /* darker than main bg */
-  color: #f3f4f6 !important;
-  border: 1px solid #374151 !important;
+  background-color: #1e1e2e !important; /* darker than main bg */
+  color: #cdd6f4 !important;
+  border: 1px solid #313244 !important;
 }
 
 .prose :not(pre) > code[class*="language-"],
 .prose :not(pre) > code,
 .markdown-content :not(pre) > code[class*="language-"],
 .markdown-content :not(pre) > code {
-  background-color: #374151 !important;
-  color: #f3f4f6 !important;
+  background-color: #313244 !important;
+  color: #cdd6f4 !important;
   padding: 0.125rem 0.375rem !important;
   border-radius: 0.25rem !important;
   font-size: 0.875em !important;
@@ -1190,7 +1193,7 @@
 
 .featured-image-caption p {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #6c7086;
   font-style: italic;
   margin: 0;
   line-height: 1.4;
@@ -1217,12 +1220,12 @@
   padding: 1rem 0.5rem;
   /* background-color: #f9fafb; */
   border-radius: 0.5rem;
-  /* color: #111827; */
+  /* color: #1e1e2e; */
 }
 
 .dark .post-author-card {
-  /* background-color: #111827; */
-  /* color: #111827; */
+  /* background-color: #1e1e2e; */
+  /* color: #1e1e2e; */
 }
 
 .post-author-avatar {
@@ -1244,7 +1247,7 @@
 .post-author-name {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #111827;
+  color: #1e1e2e;
   margin: 0;
 }
 
@@ -1257,7 +1260,7 @@
   justify-content: flex-end;
   gap: 0.25rem;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #6c7086;
   margin-top: 0.25rem;
 }
 
@@ -1277,13 +1280,13 @@
 }
 
 .dark .related-articles-container {
-  border-top-color: #374151;
+  border-top-color: #313244;
 }
 
 .related-articles-heading {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: #1e1e2e;
   margin-bottom: 1.5rem;
 }
 
@@ -1321,7 +1324,7 @@
 .related-article-title {
   font-size: 1.125rem;
   font-weight: 500;
-  color: #111827;
+  color: #1e1e2e;
   margin: 0 0 0.25rem 0;
 }
 
@@ -1344,7 +1347,7 @@
 
 .related-article-summary {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #6c7086;
   margin: 0 0 0.5rem 0;
   line-height: 1.4;
   display: -webkit-box;
@@ -1363,7 +1366,7 @@
   align-items: center;
   gap: 0.25rem;
   font-size: 0.75rem;
-  color: #6b7280;
+  color: #6c7086;
 }
 
 .dark .related-article-meta {
@@ -1397,14 +1400,14 @@
 
 .responsive-iframe-container iframe {
   position: absolute;
-  top: 1%;
-  /* left: -2%; */
-  width: 100%;
-  height: 100%;
+  top: -1%;
+  left: -1%;
+  width: 102%;
+  height: 102%;
   border: 0;
   display: block; /* Ensure it's a block element */
-  /* Scale up more aggressively to eliminate margins and fill rounded corners */
-  transform: scale(1.04);
+  /* Scale up to eliminate margins and fill rounded corners */
+  transform: scale(1.03);
   transform-origin: center center;
 }
 
@@ -1428,8 +1431,8 @@
     transform: scale(1.03); /* Less aggressive scaling on mobile */
     top: -1%;
     left: -1%;
-    width: 100%;
-    height: 100%;
+    width: 102%;
+    height: 102%;
   }
 }
 
@@ -1481,4 +1484,42 @@
     margin: 1.5rem -1rem;
     border-radius: 0;
   }
+}
+
+/* ==========================================================================
+   BLOCKQUOTE CUSTOMIZATION
+   ========================================================================== */
+
+/* Remove quotation marks from blockquotes */
+.prose :where(blockquote p:first-of-type):not(:where([class~=not-prose],[class~=not-prose] *))::before {
+  content: "" !important;
+}
+
+.prose :where(blockquote p:last-of-type):not(:where([class~=not-prose],[class~=not-prose] *))::after {
+  content: "" !important;
+}
+
+/* ==========================================================================
+   HEADING SPACING
+   ========================================================================== */
+
+/* Adjust heading spacing to have more space before than after */
+.prose h1 {
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.prose h2 {
+  margin-top: 1em !important;
+  margin-bottom: 0.75em !important;
+}
+
+.prose h3 {
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.prose h4 {
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
 }

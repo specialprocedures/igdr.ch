@@ -2,18 +2,18 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 {{ $js := resources.Get "js/darkmode.js" | js.Build }}
 <script src="{{ $js.RelPermalink }}" defer></script>
-<footer class="bg-gray-900">
+<footer class="bg-crust">
     <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
             {{ range site.Menus.footer }}
             <div class="px-5 py-2">
-                <a href="{{ .URL | absLangURL }}" class="text-base text-gray-400 hover:text-gray-300">{{ .Name }}</a>
+                <a href="{{ .URL | absLangURL }}" class="text-base text-subtext0 hover:text-text">{{ .Name }}</a>
             </div>
             {{ end }}
         </nav>
         <div class="flex justify-center mt-8 space-x-6">
             {{ if .Site.Params.Social_media.Facebook.Enabled }}
-            <a href="{{ $.Site.Params.Social_media.Facebook.Url }}" class="text-gray-400 hover:text-gray-300">
+            <a href="{{ $.Site.Params.Social_media.Facebook.Url }}" class="text-subtext0 hover:text-text">
                 <span class="sr-only">Facebook</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd"
@@ -23,7 +23,7 @@
             </a>
             {{ end }}
             {{ if .Site.Params.Social_media.Instagram.Enabled }}
-            <a href="{{ $.Site.Params.Social_media.Instagram.Url }}" class="text-gray-400 hover:text-gray-300">
+            <a href="{{ $.Site.Params.Social_media.Instagram.Url }}" class="text-subtext0 hover:text-text">
                 <span class="sr-only">Instagram</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd"
@@ -33,7 +33,7 @@
             </a>
             {{ end }}
             {{ if .Site.Params.Social_media.Twitter.Enabled }}
-            <a href="{{ $.Site.Params.Social_media.Twitter.Url }}" class="text-gray-400 hover:text-gray-300">
+            <a href="{{ $.Site.Params.Social_media.Twitter.Url }}" class="text-subtext0 hover:text-text">
                 <span class="sr-only">Twitter</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -42,7 +42,7 @@
             </a>
             {{ end }}
             {{ if .Site.Params.Social_media.Github.Enabled }}
-            <a href="{{ $.Site.Params.Social_media.Github.Url }}" class="text-gray-400 hover:text-gray-300">
+            <a href="{{ $.Site.Params.Social_media.Github.Url }}" class="text-subtext0 hover:text-text">
                 <span class="sr-only">GitHub</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd"
@@ -52,7 +52,7 @@
             </a>
             {{ end }}
             {{ if .Site.Params.Social_media.Linkedin.Enabled }}
-            <a href="{{ $.Site.Params.Social_media.Linkedin.Url }}" class="text-gray-400 hover:text-gray-300">
+            <a href="{{ $.Site.Params.Social_media.Linkedin.Url }}" class="text-subtext0 hover:text-text">
                 <span class="sr-only">LinkedIn</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -61,7 +61,7 @@
             </a>
             {{ end }}
             {{ if .Site.Params.Social_media.Mastodon.Enabled }}
-            <a href="{{ $.Site.Params.Social_media.Mastodon.Url }}" class="text-gray-400 hover:text-gray-300" rel="me">
+            <a href="{{ $.Site.Params.Social_media.Mastodon.Url }}" class="text-subtext0 hover:text-text" rel="me">
                 <span class="sr-only">Mastodon</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path

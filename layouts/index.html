@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="relative">
-    <div class="hero-section relative bg-gray-200 dark:bg-gray-900 min-h-screen w-full flex items-center overflow-hidden" style="height: calc(100vh + 80px); margin-top: -80px;">
+    <div class="hero-section relative bg-neutral-200 dark:bg-base min-h-screen w-full flex items-center overflow-hidden" style="height: calc(100vh + 80px); margin-top: -80px;">
         <!-- Hero image as background -->
         <div class="absolute inset-0 z-0">
             {{ $heroImage := resources.Get .Site.Params.Hero_image }}
@@ -364,12 +364,12 @@
                         <div class="flex-1 min-w-0">
                             <label for="cta-email" class="sr-only">{{ .Site.Params.P5.Label }}</label>
                             <input id="cta-email" type="email"
-                                class="block w-full px-5 py-3 text-base text-gray-900 placeholder-gray-500 border border-transparent rounded-md shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500"
+                                class="block w-full px-5 py-3 text-base text-base placeholder-neutral-500 border border-transparent rounded-md shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500"
                                 placeholder="{{ .Site.Params.P5.Placeholder }}">
                         </div>
                         <div class="mt-4 sm:mt-0 sm:ml-3">
                             <button type="submit"
-                                class="block w-full px-5 py-3 text-base font-medium text-white bg-gray-900 border border-transparent rounded-md shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 sm:px-10">
+                                class="block w-full px-5 py-3 text-base font-medium text-white bg-base border border-transparent rounded-md shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 sm:px-10">
                                 {{ .Site.Params.P5.Button }}
                             </button>
                         </div>
