@@ -116,17 +116,13 @@
 }
 
 .hero-gradient-overlay {
-  filter: saturate(0.05) brightness(0.7);
   background: linear-gradient(
     135deg,
-    rgba(17, 17, 27, 0.95) 0%,       /* crust - #11111b */
-    rgba(24, 24, 37, 0.93) 25%,      /* mantle - #181825 */
-    rgba(30, 30, 46, 0.90) 50%,      /* base - #1e1e2e */
-    rgba(203, 166, 247, 0.15) 75%,   /* mauve - #cba6f7 */
-    rgba(180, 190, 254, 0.12) 90%,   /* lavender - #b4befe */
-    rgba(245, 224, 220, 0.08) 100%   /* rosewater - #f5e0dc */
+    rgba(203, 166, 247, 0.8) 0%,    /* mauve - #cba6f7 */
+    rgba(180, 190, 254, 0.2) 20%,     /* lavender - #b4befe */
+    rgba(0, 0, 0, 0.4) 50%,            /* dark base layer */
+    rgba(245, 194, 231, 0.5) 100%,     /* pink - #f5c2e7 */
   );
-  /* padding-bottom: 3rem; */
 }
 
 .hero-title {
@@ -136,24 +132,24 @@
   line-height: 1;
   letter-spacing: -0.025em;
   color: #cdd6f4;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.8));
 }
 
 .hero-subtitle {
   padding-bottom: 0.5rem;
   font-size: 1.875rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #cdd6f4;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.8));
 }
 
 .hero-description {
   max-width: 48rem;
   margin: 0 auto 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #cdd6f4;
-  font-size: 1rem;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  font-size: 1.5rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9);
   text-wrap: balance;
 }
 
