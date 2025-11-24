@@ -11,7 +11,7 @@ description: Over the last ten years, COP has driven media coverage of climate c
 author: Ian
 authorimage: ../assets/images/global/ian-face.png
 categories: Work
-tags: ["Climate", "Media"]
+tags: ["Climate", "Environment", "Media"]
 ---
 
 ---
