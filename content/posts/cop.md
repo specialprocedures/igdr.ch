@@ -34,7 +34,7 @@ The Conference of the Parties (COP) to the United Nations Framework Convention o
 </div>
  
 <div class="responsive-chart-mobile">
-{{< responsive-iframe src="/charts/cop/climate_ts_mobile.html" width="636" height="600" >}}
+{{< responsive-iframe src="/charts/cop/climate_ts_mobile.html" width="636" height="800" >}}
 </div>
 
 The Glasgow COP was a breakthrough in terms of climate coverage, and remains the most reported-on climate event in the last decade. 
@@ -49,7 +49,7 @@ The last two years, however, have seen growth in climate coverage stall and then
 </div>
  
 <div class="responsive-chart-mobile">
-{{< responsive-iframe src="/charts/cop/climate_yearly_pct_change.html" width="636" height="600" >}}
+{{< responsive-iframe src="/charts/cop/climate_yearly_pct_change.html" width="636" height="800" >}}
 </div>
 
 I'm hesitant to draw any conclusions from this data but it is not unlikely that the Trump administration's hostility to the climate movement may have contributed to the decline in coverage over the last year. This year's COP in Belém has taken place both [without a formal US delegation](https://abcnews.go.com/US/trump-administration-send-delegation-cop30-us-maintaining-presence/story?id=127524096) and in absence of [major US networks](https://www.theguardian.com/us-news/2025/nov/13/cop30-climate-talks-belem-us-broadcasters).
@@ -64,7 +64,7 @@ We can track the impact of a COP by comparing the level of climate coverage seen
 </div>
  
 <div class="responsive-chart-mobile">
-{{< responsive-iframe src="/charts/cop/cop_effect.html" width="636" height="600" >}}
+{{< responsive-iframe src="/charts/cop/cop_effect.html" width="636" height="800" >}}
 </div>
 
 By far the largest "COP effect" we've seen in the last decade was at Glasgow (274%), where we saw record levels of climate news follow a sustained lull over the pandemic. COP21, which saw the signing of the historic Paris Agreement, had a COP effect of 187%. 
@@ -82,7 +82,7 @@ Climate still occupies a much larger place in the media than it did before 2021.
 </div>
  
 <div class="responsive-chart-mobile">
-{{< responsive-iframe src="/charts/cop/climate_pre_post_glasgow.html" width="636" height="600" >}}
+{{< responsive-iframe src="/charts/cop/climate_pre_post_glasgow.html" width="636" height="800" >}}
 </div>
 
 2025 has been an unprecedented year of shocks and setbacks, with an incredibly crowded media landscape. Going into 2026, the climate movement will need to redouble its efforts to regain lost ground, but it is coming from a much stronger position than just five years ago.
@@ -101,7 +101,7 @@ This doesn't mean however, that the media has given up on climate change. The re
 </div>
  
 <div class="responsive-chart-mobile">
-{{< responsive-iframe src="/charts/cop/cop_effect_grouped.html" width="636" height="600" >}}
+{{< responsive-iframe src="/charts/cop/cop_effect_grouped.html" width="636" height="800" >}}
 </div>
 
 The last five years have seen an overall trend towards year-round climate coverage with steady growth in average articles per day outside of the COP period, interrupted only by an admittedly-challenging 2025.
@@ -147,14 +147,19 @@ Whilst it is certainly possible to question the inclusion or exclusion of certai
 ## Further analysis
 This is a very basic piece, written in a day, and focusing only on volumes of coverage because it's easy and cheap to do. 
 
-[Hit me up](/contact) if you're interested in a deeper dive. [NewsAPI](https://newsapi.ai/) provides very rich data, including full text and named entities. 
+[NewsAPI](https://newsapi.ai/) provides very rich data, including full text and named entities. 
 
 I'll be demoing more over the coming months, but it's possible to look at:
-- Differences between outlets (e.g., has American coverage dropped in 2025?)
-- Classification of articles (e.g., how much reporting is on oil and gas?)
-- Quote extraction and attribution (e.g., which organisations and spokespersons are being quoted most?)
-- Messages and narratives (e.g., what are the narratives around solar?)
-- Co-occurrence networks (e.g., who gets quoted alongside whom?)
+
+| Analysis Type | Example Question |
+|--------------|------------------|
+| Differences between outlets | Has American coverage dropped in 2025? |
+| Classification of articles | How much reporting is on oil and gas? |
+| Quote extraction and attribution | Which organisations and spokespersons are being quoted most? |
+| Messages and narratives | What are the narratives around solar? |
+| Co-occurrence networks | Who gets quoted alongside whom? |
+
+[Hit me up](/contact) if you're interested in a deeper dive. 
 
 ---
 
