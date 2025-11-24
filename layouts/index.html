@@ -1,18 +1,27 @@
 {{ define "main" }}
 <main class="relative">
     <div class="hero-section relative bg-neutral-200 dark:bg-base min-h-screen w-full flex items-center overflow-hidden" style="height: calc(100vh + 80px); margin-top: -80px;">
-        <!-- Hero image as background -->
+        <!-- Base image (network.jpg for structure/shapes) -->
         <div class="absolute inset-0 z-0">
-            {{ $heroImage := resources.Get .Site.Params.Hero_image }}
-            {{ with $heroImage }}
-            <img src="{{ .RelPermalink }}" alt="Ian Goodrich" class="w-full h-full object-cover" />
+            {{ $networkImage := resources.Get "images/network.jpg" }}
+            {{ with $networkImage }}
+            <img src="{{ .RelPermalink }}" alt="Network background" class="w-full h-full object-cover" />
             {{ end }}
-            <!-- Gradient overlay for better text readability -->
-            <div class="absolute inset-0 hero-gradient-overlay"></div>
         </div>
         
+        <!-- Overlay image (abstract.jpg for colors) with blend mode -->
+        <div class="absolute inset-0 z-0" style="mix-blend-mode: color; opacity: 0.8;">
+            {{ $abstractImage := resources.Get "images/abstract.jpg" }}
+            {{ with $abstractImage }}
+            <img src="{{ .RelPermalink }}" alt="Abstract overlay" class="w-full h-full object-cover" />
+            {{ end }}
+        </div>
+        
+        <!-- Gradient overlay for better text readability -->
+        <div class="absolute inset-0 hero-gradient-overlay" style="z-index: 1;"></div>
+        
         <!-- Text content overlaid on image -->
-        <div class="relative z-10 w-full max-w-screen-xl px-4 py-8 mx-auto text-center" style="padding-top: 80px;">
+        <div class="relative z-10 w-full max-w-screen-xl px-4 py-8 mx-auto text-center" style="padding-top: 80px; z-index: 2;">
             <h1 class="hero-title">
                 {{ .Site.Params.Author }}
             </h1>
