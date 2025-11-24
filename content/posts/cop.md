@@ -21,9 +21,9 @@ This article presents a rapid, post-COP analysis of global climate coverage sinc
 
 It finds that:
 
-- Coverage of climate issues fell by a fifth between 2024 and 2025, but remain well above pre-Glasgow norms
+- Coverage of climate issues fell by a fifth between 2024 and 2025, but remain well above pre-Glasgow levels
 - The last two COPs (Belém and Baku) have driven smaller increases in climate coverage than any COP in the last ten years
-- Levels of reporting outside of COP season have grown since 2021, suggesting COPs may becoming less important in anchoring climate coverage
+- Reporting outside of COP season has grown since 2021, suggesting COPs may be becoming less important in anchoring climate coverage
 
 </div>
 
