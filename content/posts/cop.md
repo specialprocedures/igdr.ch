@@ -1,6 +1,6 @@
 ---
 title: "Climate coverage and the COP effect"
-date: 2025-11-23T11:00:36+04:00
+date: 2025-11-23
 draft: false
 featured: true
 language: en
@@ -17,7 +17,7 @@ tags: ["Climate", "Media"]
 ---
 
 <div style="background-color: rgba(139, 92, 246, 0.08); border-left: 4px solid rgba(139, 92, 246, 0.4); padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0.5rem;">
-This article presents a rapid, post-COP analysis of global climate coverage since 2015 using data from <a href="https://newsapi.ai/">NewsAPI.ai</a>. It examines the role COPs play in driving climate reporting and looks at 2025 in the context of the last decade.
+This article presents a rapid, post-COP analysis of global climate coverage since 2015 using data from <a href="https://newsapi.ai/">NewsAPI.ai</a>. It examines the role COPs play in driving climate reporting and looks at 2025 coverage in the context of the last decade.
 
 It finds that:
 
@@ -27,8 +27,7 @@ It finds that:
 
 </div>
 
-# The COP Effect
-The United Nations Climate Change Conference, the conference of the parties (COP) to the United Nations Framework Convention on Climate Change (UNFCCC), is the largest event in the annual climate calendar. It serves as hook for stories about climate change in the international media, with the period around COP typically seeing a surge in climate reporting. 
+The Conference of the Parties (COP) to the United Nations Framework Convention on Climate Change (UNFCCC), is the largest event in the annual climate calendar. It serves as hook for stories about climate change in the international media, with the period around COP typically seeing a surge in climate reporting. 
 
 <div class="responsive-chart-desktop">
 {{< responsive-iframe src="/charts/cop/climate_ts.html" width="636" height="400" >}}
@@ -38,11 +37,11 @@ The United Nations Climate Change Conference, the conference of the parties (COP
 {{< responsive-iframe src="/charts/cop/climate_ts_mobile.html" width="636" height="600" >}}
 </div>
 
-The Glasgow COP was a breakthrough in climate reporting, and remains the most reported-on event in the last decade. 
+The Glasgow COP was a breakthrough in terms of climate coverage, and remains the most reported-on climate event in the last decade. 
 
-The 2021 conference also had a substantial and sustained impact on reporting, with average daily climate coverage more than doubling, increasing by 124% in the years following Glasgow.
+The 2021 conference also had a substantial and sustained impact on reporting, with average daily coverage more than doubling, increasing by 124% in the years following Glasgow.
 
-# Contraction
+## Contraction in coverage
 The last two years, however, have seen growth in climate coverage stall and then contract, with the number of articles in major outlets falling over 22% between 2024 and 2025, the largest decline since the pandemic.
 
 <div class="responsive-chart-desktop">
@@ -53,16 +52,13 @@ The last two years, however, have seen growth in climate coverage stall and then
 {{< responsive-iframe src="/charts/cop/climate_yearly_pct_change.html" width="636" height="600" >}}
 </div>
 
-As a quick and simple aggregated time-series analysis, I'm hesitant to draw any conclusions from this data[^1] but it is not unlikely that the Trump administration's hostility to the climate movement may have contributed to the decline in coverage over the last year.
+I'm hesitant to draw any conclusions from this data but it is not unlikely that the Trump administration's hostility to the climate movement may have contributed to the decline in coverage over the last year. This year's COP in Belém has taken place both [without a formal US delegation](https://abcnews.go.com/US/trump-administration-send-delegation-cop30-us-maintaining-presence/story?id=127524096) and in absence of [major US networks](https://www.theguardian.com/us-news/2025/nov/13/cop30-climate-talks-belem-us-broadcasters).
 
-[^1]: If this is a question which interests you, feel free to [reach out](/contact).
 
-# Declining COP effect
-One area in which US hostility to climate action has likely harmed coverage is in how COP has been covered. This year's COP in Belém has taken place both [without a formal US delegation](https://abcnews.go.com/US/trump-administration-send-delegation-cop30-us-maintaining-presence/story?id=127524096) and in absence of [major US networks](https://www.theguardian.com/us-news/2025/nov/13/cop30-climate-talks-belem-us-broadcasters).
+## A declining COP effect
 
 We can track the impact of a COP by comparing the level of climate coverage seen over the period of the conference with the previous twelve months. 
 
-[^2]: Median is important here, given that Paris and Glasgow were very much outliers.
 <div class="responsive-chart-desktop">
 {{< responsive-iframe src="/charts/cop/cop_effect.html" width="636" height="400" >}}
 </div>
@@ -71,15 +67,15 @@ We can track the impact of a COP by comparing the level of climate coverage seen
 {{< responsive-iframe src="/charts/cop/cop_effect.html" width="636" height="600" >}}
 </div>
 
-By far the largest "COP effect" we've seen in the last decade was again, at Glasgow (274%), where we saw record levels of climate news follow a sustained lull over the pandemic. COP21, which saw the signing of the historic Paris Agreement, had a COP effect of 187%. 
+By far the largest "COP effect" we've seen in the last decade was at Glasgow (274%), where we saw record levels of climate news follow a sustained lull over the pandemic. COP21, which saw the signing of the historic Paris Agreement, had a COP effect of 187%. 
 
-A median[^2] COP sees a COP effect of 73%. The last two COPs in Baku and Belém have underperformed, with COP effects of 29 and 30 percent respectively.
+A median COP sees a COP effect of 73%. The last two COPs in Baku and Belém have underperformed, with COP effects of 29 and 30 percent respectively.
 
-# Reasons to be cheerful
-This has been a tough year for the climate movement. There are, however, two silver linings in the data:
+## Reasons to be cheerful
+Neither a fall in coverage nor a declining impact of COP will be welcome news for those working on climate. There are, however, two silver linings in the data:
 
-## We are still well up on the pre-Glasgow baseline
-Climate still occupies a much larger place in the media than it did before 2021. Coverage in 2025 is 86% larger than it was before Glasgow and we're only fifteen percent down on 2022.
+### We are still well up on the pre-Glasgow baseline
+Climate still occupies a much larger place in the media than it did before 2021. Despite a year-on-year fall, coverage in 2025 is 86% larger than it was before Glasgow.
 
 <div class="responsive-chart-desktop">
 {{< responsive-iframe src="/charts/cop/climate_pre_post_glasgow.html" width="636" height="400" >}}
@@ -89,10 +85,16 @@ Climate still occupies a much larger place in the media than it did before 2021.
 {{< responsive-iframe src="/charts/cop/climate_pre_post_glasgow.html" width="636" height="600" >}}
 </div>
 
-## The COP effect is fading, but year-round coverage is stronger than ever
-This year has been a [difficult COP](https://www.politico.com/newsletters/politico-nightly/2025/11/21/the-sad-sorry-state-of-cop-). Recent years have also seen COPs taking place in some of the world's largest fossil fuel-producing countries, one of which fresh out of a [war of territorial expansion](https://en.wikipedia.org/wiki/Second_Nagorno-Karabakh_War).
+2025 has been an unprecedented year of shocks and setbacks, with an incredibly crowded media landscape. Going into 2026, the climate movement will need to redouble its efforts to regain lost ground, but it is coming from a much stronger position than just five years ago.
 
-COP remains central to international efforts to stop climate change, but the reduced "COP effect" may have as much to do with coverage shifting outside of COP season. 
+### The COP effect is fading, but year-round coverage is increasing
+This year has been a [difficult COP](https://www.politico.com/newsletters/politico-nightly/2025/11/21/the-sad-sorry-state-of-cop-), which feels like the new normal. 
+
+Recent years have seen COPs taking place in some of the world's largest fossil fuel-producing countries, one of which fresh out of a [war of territorial expansion](https://en.wikipedia.org/wiki/Second_Nagorno-Karabakh_War). The Americans are out, delegates are divided, and business interests are everywhere.
+
+COPs defined by questionable hosting choices, high-profile abstentions, fossil fuel lobbying and watered-down agreements are less able to find footing in an increasingly-crowded news agenda.
+
+This doesn't mean however, that the media has given up on climate change. The reduced "COP effect" may merely signal that COP is simply becoming less central to reporting.
 
 <div class="responsive-chart-desktop">
 {{< responsive-iframe src="/charts/cop/cop_effect_grouped.html" width="636" height="400" >}}
@@ -106,7 +108,10 @@ The last five years have seen an overall trend towards year-round climate covera
 
 Reporting in 2024 peaked mid-year, outside of COP, and 2025 has seen a very steady stream of climate-related articles throughout the year.
 
-Whilst urgent work is needed to regain momentum in 2026, climate communications no longer needs mega-events like COP26 to drive coverage throughout the year.
+# Conclusion
+Urgent work is needed to regain momentum in 2026. COP remains the main venue for international agreement on climate action, but is held back by widely-recognised problems which are impacting its ability to draw media engagement. 
+
+The climate movement must increasingly look beyond the annual COP cycle to sustain media attention, finding new opportunities to influence policymakers, engage audiences and drive meaningful reductions in emissions.
 
 ---
 
