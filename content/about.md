@@ -9,7 +9,7 @@ featured_image: images/ian-face.jpg
 
 I am an experienced researcher, engineer and coordinator specialising in data and code for non-profits and think tanks. As a skilled and creative technologist, and love to use complex, novel datasets to deliver outstanding, impactful research.
 
-If you're interested in working with me or just want to say hi, feel free to reach out by email (ian@igdr.ch), on [LinkedIn](https://www.linkedin.com/in/igdrch/), or on [Signal](https://signal.me/#eu/Om0PCx4kCcCtoRA6AzSTYFC5XiWVmFeEkf-1X5l3ON2GpHb2jj9Bs5vhUD7Ca_-o).
+If you're interested in working with me or just want to say hi, feel free to reach out by [email](mailto:ian@igdr.ch), on [LinkedIn](https://www.linkedin.com/in/igdrch/), or on [Signal](https://signal.me/#eu/Om0PCx4kCcCtoRA6AzSTYFC5XiWVmFeEkf-1X5l3ON2GpHb2jj9Bs5vhUD7Ca_-o).
 
 You can find me on Github as [specialprocedures](https://github.com/specialprocedures/).
 
@@ -26,6 +26,12 @@ In 2017, I went back to school at [Central European University](https://www.ceu.
 This consultancy is almost two decades old. I've always filled down-time between full-time contracts with short-term consultancies. Over the years this has evolved from copy-editing, to bid-writing, gap-fill in funding and project management roles, to research and evaluation.
 
 Today I am primarily available for research and engineering contracts, but I'm also here to provide support on monitoring and evaluation, fundraising and communications.
+
+## This site
+
+This site is built in [Hugo](https://gohugo.io/) using a heavily modified version of the [Tailbliss](https://github.com/nusserstudios/tailbliss) template from [Nusserstudios](https://github.com/nusserstudios/).
+
+The source code for the site is [available on my github](https://github.com/specialprocedures/igdr.ch).
 
 ## Outside of work
 
