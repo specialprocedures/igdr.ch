@@ -130,6 +130,8 @@ I used a short, broad query consisting primarily of synonyms for "climate change
 - [Fossil_fuel](http://en.wikipedia.org/wiki/Fossil_fuel)
 - [Köppen_climate_classification](http://en.wikipedia.org/wiki/Köppen_climate_classification)
 
+The full query is available [in the repo](https://github.com/specialprocedures/cop).
+
 ## Sources
 The news outlets covered draw on the "Top 50" group in [NewsAPI.ai](https://newsapi.ai/), which features their highest-ranked outlets in the database by Alexa Rank. The sources included in the aggregation are as follows:
 
@@ -143,7 +145,9 @@ Whilst it is certainly possible to question the inclusion or exclusion of certai
 - There are a large number of sources, so any gaps in the (scraped) data will be offset
 
 ## Further analysis
-This is a very basic piece, written in a day, and focusing only on volumes of coverage because it's easy and cheap to do. [Hit me up](/contact) if you're interested in a deeper dive. [NewsAPI](https://newsapi.ai/) provides very rich data, including full text and named entities. 
+This is a very basic piece, written in a day, and focusing only on volumes of coverage because it's easy and cheap to do. 
+
+[Hit me up](/contact) if you're interested in a deeper dive. [NewsAPI](https://newsapi.ai/) provides very rich data, including full text and named entities. 
 
 I'll be demoing more over the coming months, but it's possible to look at:
 - Differences between outlets (e.g., has American coverage dropped in 2025?)
@@ -154,4 +158,4 @@ I'll be demoing more over the coming months, but it's possible to look at:
 
 ---
 
-_The data and replication code for the analysis presented above is available [here](https://github.com/specialprocedures/rent)._
+_The data and replication code for the analysis presented above is available [here](https://github.com/specialprocedures/cop)._
