@@ -1,6 +1,6 @@
 ---
 title: "Links"
-description: "Interesting stuff I've read recently, published weekly"
+description: "Interesting stuff I've read recently. Published weekly"
 ---
 
-<center>Interesting stuff I've read recently, published weekly.</center>
+<center>Interesting stuff I've read recently. Published weekly.</center>
