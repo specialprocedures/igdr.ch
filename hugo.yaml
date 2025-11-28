@@ -345,6 +345,10 @@ menu:
       name: Work
       url: categories/work/
       weight: 10
+    - identifier: links
+      name: Links
+      url: categories/links/
+      weight: 15
     - identifier: about
       name: About
       url: /about/
@@ -398,6 +402,10 @@ menu:
       name: Work
       url: /categories/work/
       weight: 20
+    - identifier: links
+      name: Links
+      url: /categories/links/
+      weight: 30
     - identifier: contact
       name: Contact
       url: /contact/
