@@ -32,7 +32,3 @@ Today I am primarily available for research and engineering contracts, but I'm a
 This site is built in [Hugo](https://gohugo.io/) using a heavily modified version of the [Tailbliss](https://github.com/nusserstudios/tailbliss) template from [Nusserstudios](https://github.com/nusserstudios/).
 
 The source code for the site is [available on my github](https://github.com/specialprocedures/igdr.ch).
-
-## Outside of work
-
-I currently live in Tbilisi, Georgia, with my partner and dog. I do a lot of reading, dog-walks and an occasional [bit of art](https://pixelfed.social/specialprocedures).

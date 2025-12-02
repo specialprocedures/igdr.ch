@@ -345,10 +345,10 @@ menu:
       name: Work
       url: categories/work/
       weight: 10
-    - identifier: links
-      name: Links
-      url: categories/links/
-      weight: 15
+    # - identifier: links
+    #   name: Links
+    #   url: categories/links/
+    #   weight: 15
     - identifier: about
       name: About
       url: /about/
