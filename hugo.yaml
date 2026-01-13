@@ -67,7 +67,7 @@ params:
   disable_theme_toggle: true
   disable_stay_uptodate: true
   logo: "images/network-icon.svg"
-  hero_image: "images/abstract.jpg"
+  hero_image: "images/abstract.webp"
   
   # Featured content control
   featured:
