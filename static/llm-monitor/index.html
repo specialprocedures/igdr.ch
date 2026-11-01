@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Climate AI Monitor</title>
+<style>
+:root{--bg:#eff0f0;--panel:#e3e6e6;--line:#cdd3d3;--fg:#1a1a1a;--muted:#677272;--accent:#0F7173;--bad:#c23350;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#121717;--panel:#1b2222;--line:#2d3838;--fg:#eef2f2;--muted:#8e9b9b;--accent:#5cc4c6;--bad:#ff7a93;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:16px;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.gate{width:100%;max-width:380px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px 24px}
+h1{margin:0 0 6px;font-size:20px;color:var(--accent)}
+p{margin:0 0 18px;color:var(--muted);font-size:14px}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+input[type=password]{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font:inherit}
+input[type=password]:focus{outline:2px solid var(--accent);outline-offset:1px}
+.rem{display:flex;align-items:center;gap:8px;margin:12px 0 18px;font-weight:400;color:var(--muted)}
+button{width:100%;padding:10px;border:0;border-radius:8px;background:var(--accent);color:var(--bg);font:600 15px system-ui,sans-serif;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+#msg{margin:14px 0 0;min-height:1.5em;font-size:13.5px}
+#msg.err{color:var(--bad)}
+</style>
+</head>
+<body>
+<main class="gate">
+  <h1>Climate AI Monitor</h1>
+  <p>This dashboard is private. Enter the password to open it.</p>
+  <form id="f">
+    <label for="pw">Password</label>
+    <input type="password" id="pw" autocomplete="current-password" required autofocus>
+    <label class="rem"><input type="checkbox" id="rem"> Remember me on this device</label>
+    <button type="submit" id="go">Open</button>
+    <p id="msg" role="status" aria-live="polite"></p>
+  </form>
+</main>
+<script>
+// Everything else in this folder is encrypted (AES-GCM, key from the password by PBKDF2-SHA-256). This page derives the
+// key, decrypts the dashboard and its data, and writes the dashboard in place of itself. Written by publish.py.
+(function(){
+  // the dashboard uses relative paths, so the address must end in a slash
+  if(!/\/$|\.html$/.test(location.pathname)){ location.replace(location.pathname+'/'+location.search+location.hash); return; }
+  const SALT='i6SbuU8rSSIJaIggCpJsug==', ITER=600000, STORE='llm-monitor-key';
+  const b64d=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+  const b64e=u=>{ let s=''; for(let i=0;i<u.length;i+=0x8000) s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000)); return btoa(s); };
+  const $=id=>document.getElementById(id), msg=(t,err)=>{ $('msg').textContent=t; $('msg').className=err?'err':''; };
+  if(!window.crypto||!crypto.subtle||!window.DecompressionStream){ msg('This browser is too old to open the dashboard. Please use a current version of Chrome, Edge, Firefox or Safari.',true); $('go').disabled=true; return; }
+  async function derive(pw){
+    const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']);
+    return new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',salt:b64d(SALT),iterations:ITER,hash:'SHA-256'},k,256));
+  }
+  async function getText(key,path){
+    const r=await fetch(path,{cache:'no-cache'}); if(!r.ok) throw new Error('missing '+path);
+    const b=new Uint8Array(await r.arrayBuffer());
+    const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:b.slice(0,12)},key,b.slice(12)); // throws on a wrong key
+    return new Response(new Blob([plain]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+  }
+  // escape "</script" so data can sit inside an inline script tag (only ever occurs inside JS strings, where \/ = /)
+  const inline=js=>'<script>'+js.replace(/<\/(script)/gi,'<\\/$1')+'<\/script>';
+  async function open(raw,remember){
+    const key=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);
+    let app;
+    try{ app=await getText(key,'app.enc'); }catch(e){ if(/missing/.test(e.message)) throw e; return false; }
+    msg('Loading the data…');
+    const [core,pages]=await Promise.all([getText(key,'data/core.enc'),getText(key,'data/pages.enc')]);
+    if(remember){ try{ localStorage.setItem(STORE,b64e(raw)); }catch(e){} }
+    // topic text loads later, on demand: give the dashboard a loader that fetches and decrypts it
+    const loader=`(function(){ var raw=Uint8Array.from(atob(${JSON.stringify(b64e(raw))}),function(c){return c.charCodeAt(0);}), kp=null;
+      function key(){ return kp||(kp=crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt'])); }
+      window.LOAD_TEXT=function(t){ var path='data/text_'+t+'.enc';
+        return key().then(function(k){ return fetch(path,{cache:'no-cache'}).then(function(r){ if(!r.ok) throw new Error('Could not load '+path); return r.arrayBuffer(); })
+          .then(function(buf){ var b=new Uint8Array(buf); return crypto.subtle.decrypt({name:'AES-GCM',iv:b.slice(0,12)},k,b.slice(12)); }); })
+          .then(function(p){ return new Response(new Blob([p]).stream().pipeThrough(new DecompressionStream('gzip'))).text(); })
+          .then(function(js){ (0,eval)(js); }); };
+      window.LOCK_DASHBOARD=function(){ try{ localStorage.removeItem(${JSON.stringify(STORE)}); }catch(e){} location.reload(); }; })();`;
+    const html=app.replace('<!--__ENC_DATA__-->',()=>inline(loader)+inline(core)+inline(pages));
+    document.open(); document.write(html); document.close();
+    return true;
+  }
+  // a remembered key opens straight away
+  let saved=null; try{ saved=localStorage.getItem(STORE); }catch(e){}
+  if(saved){ msg('Opening…'); open(b64d(saved),false).then(ok=>{ if(!ok){ try{ localStorage.removeItem(STORE); }catch(e){} msg(''); } }).catch(e=>msg('Could not load the dashboard ('+e.message+').',true)); }
+  $('f').addEventListener('submit',async ev=>{
+    ev.preventDefault(); $('go').disabled=true; msg('Checking…');
+    try{ const ok=await open(await derive($('pw').value),$('rem').checked);
+      if(!ok){ msg('That password isn’t right.',true); $('go').disabled=false; $('pw').select(); } }
+    catch(e){ msg('Could not load the dashboard ('+e.message+').',true); $('go').disabled=false; }
+  });
+})();
+</script>
+</body>
+</html>
