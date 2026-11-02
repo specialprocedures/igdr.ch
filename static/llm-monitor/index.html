@@ -25,7 +25,8 @@ button:disabled{opacity:.6;cursor:wait}
 </head>
 <body>
 <main class="gate">
-  <h1>Enter the password</h1>
+  <h1>Climate AI Monitor</h1>
+  <p>This dashboard is private. Enter the password to open it.</p>
   <form id="f">
     <label for="pw">Password</label>
     <input type="password" id="pw" autocomplete="current-password" required autofocus>
@@ -40,7 +41,7 @@ button:disabled{opacity:.6;cursor:wait}
 (function(){
   // the dashboard uses relative paths, so the address must end in a slash
   if(!/\/$|\.html$/.test(location.pathname)){ location.replace(location.pathname+'/'+location.search+location.hash); return; }
-  const SALT='i6SbuU8rSSIJaIggCpJsug==', ITER=600000, STORE='llm-monitor-key';
+  const SALT='d+piZ2jlp4xST+Nj2vjEMA==', ITER=600000, STORE='llm-monitor-key';
   const b64d=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
   const b64e=u=>{ let s=''; for(let i=0;i<u.length;i+=0x8000) s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000)); return btoa(s); };
   const $=id=>document.getElementById(id), msg=(t,err)=>{ $('msg').textContent=t; $('msg').className=err?'err':''; };
