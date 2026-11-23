@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /redmeat/
 Disallow: /redmeat/charts
 Disallow: /llm-monitor/
+Disallow: /narrative-map/
